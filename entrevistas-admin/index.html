@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrevistas de Acompanhamento | ZenFisio</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F2F4F0; --surface: #FFFFFF; --border: #DDE0D8;
+    --text: #1C201A; --text-muted: #5E6659; --text-hint: #9AA394;
+    --accent: #4A7C59; --accent-light: #EAF2EC; --radius: 12px; --radius-sm: 8px;
+    --red: #9b3a2e; --red-light: #fdf0ee;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* ── LOGIN ── */
+  #tela-login {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 2rem 1rem;
+  }
+  .login-box {
+    background: white; border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 2.5rem 2rem; width: 100%; max-width: 380px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .login-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
+  .login-logo img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+  .login-logo h1 { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 700; color: var(--accent); line-height: 1.2; }
+  .login-logo p { font-size: 0.78rem; color: var(--text-hint); }
+  .login-field { margin-bottom: 1rem; }
+  .login-field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.35rem; }
+  .login-field input {
+    width: 100%; padding: 10px 13px; border: 1px solid var(--border);
+    border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
+    font-size: 14px; outline: none; transition: border-color 0.15s;
+  }
+  .login-field input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,124,89,0.1); }
+  .login-btn {
+    width: 100%; padding: 11px; background: var(--accent); color: white;
+    border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer; margin-top: 0.5rem;
+    transition: background 0.15s;
+  }
+  .login-btn:hover { background: #3a6347; }
+  .login-erro {
+    background: var(--red-light); border: 1px solid #e8b4ae; border-radius: var(--radius-sm);
+    padding: 0.6rem 0.9rem; font-size: 0.85rem; color: var(--red);
+    margin-top: 0.75rem; display: none;
+  }
+
+  /* ── PAINEL ── */
+  #tela-painel { display: none; padding: 2rem 1rem 5rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .page-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
+  .header-logo { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+  .page-header h1 { font-family: 'Lora', serif; font-size: 1.4rem; font-weight: 700; color: var(--accent); line-height: 1.2; }
+  .page-header p { font-size: 0.85rem; color: var(--text-hint); margin-top: 2px; }
+
+  .usuario-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--accent-light); border: 1px solid #c3dac9; border-radius: var(--radius-sm);
+    padding: 0.6rem 1rem; margin-bottom: 1.5rem; font-size: 0.85rem;
+  }
+  .usuario-bar span { color: #2d5438; }
+  .usuario-bar b { color: var(--accent); }
+  .btn-sair {
+    background: none; border: 1px solid var(--accent); color: var(--accent);
+    padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+    cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s;
+  }
+  .btn-sair:hover { background: var(--accent); color: white; }
+
+  .tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .tab-btn {
+    padding: 0.5rem 1.25rem; border-radius: 8px; border: 1.5px solid var(--border);
+    background: white; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    font-weight: 600; cursor: pointer; color: var(--text-muted); transition: all 0.15s;
+  }
+  .tab-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .tab-btn:hover:not(.active) { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+
+  .search-bar { position: relative; margin-bottom: 1.25rem; }
+  .search-bar input {
+    width: 100%; padding: 10px 13px 10px 38px; border: 1px solid var(--border);
+    border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
+    font-size: 14px; outline: none; background: white;
+  }
+  .search-bar input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,124,89,0.1); }
+  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-hint); font-size: 14px; }
+
+  .lista { display: flex; flex-direction: column; gap: 0.75rem; }
+  .card-item {
+    background: white; border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1rem 1.25rem; cursor: pointer; transition: all 0.15s;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .card-item:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(74,124,89,0.12); }
+  .card-nome { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+  .card-meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+  .card-right { display: flex; align-items: center; gap: 0.6rem; }
+  .card-badge {
+    font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap;
+  }
+  .badge-ef { background: #e3f5e1; color: #2e7d32; }
+  .badge-ds { background: var(--red-light); color: var(--red); }
+  .badge-colab { background: var(--accent-light); color: var(--accent); }
+  .badge-lider { background: #e8f0fe; color: #1a56db; }
+  .badge-edit { font-size: 0.72rem; color: var(--text-hint); background: var(--bg); border: 1px solid var(--border); padding: 2px 8px; border-radius: 6px; }
+
+  .empty { text-align: center; padding: 3rem 1rem; color: var(--text-hint); }
+  .empty-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .loading { text-align: center; padding: 2rem; color: var(--text-hint); }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+    z-index: 1000; align-items: flex-start; justify-content: center;
+    padding: 2rem 1rem; overflow-y: auto;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: white; border-radius: var(--radius); width: 100%; max-width: 780px;
+    max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.2); margin: auto;
+  }
+  .modal-header {
+    position: sticky; top: 0; background: white; padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border); display: flex; align-items: center;
+    justify-content: space-between; z-index: 10; gap: 1rem;
+  }
+  .modal-titulo { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 700; color: var(--accent); flex: 1; }
+  .modal-header-btns { display: flex; gap: 0.5rem; align-items: center; }
+  .btn-editar {
+    padding: 6px 14px; background: var(--accent); color: white; border: none;
+    border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+    font-weight: 600; cursor: pointer; transition: background 0.15s;
+  }
+  .btn-editar:hover { background: #3a6347; }
+  .btn-editar.salvar { background: #2e7d32; }
+  .btn-editar.salvar:hover { background: #1b5e20; }
+  .btn-cancelar {
+    padding: 6px 14px; background: transparent; color: var(--text-muted);
+    border: 1px solid var(--border); border-radius: 6px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.15s;
+  }
+  .btn-cancelar:hover { background: var(--bg); }
+  .modal-close {
+    width: 32px; height: 32px; border-radius: 50%; border: none; background: var(--bg);
+    cursor: pointer; font-size: 1.1rem; display: flex; align-items: center;
+    justify-content: center; color: var(--text-muted); transition: background 0.15s; flex-shrink: 0;
+  }
+  .modal-close:hover { background: var(--border); }
+  .modal-body { padding: 1.5rem; }
+
+  .detalhe-secao { margin-bottom: 1.5rem; }
+  .detalhe-secao-titulo {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-hint); margin-bottom: 0.75rem; padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .detalhe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .detalhe-item { }
+  .detalhe-full { grid-column: 1 / -1; }
+  .detalhe-label { font-size: 0.78rem; font-weight: 600; color: var(--text-hint); margin-bottom: 3px; }
+  .detalhe-valor { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+  .detalhe-valor.verde { font-weight: 700; color: var(--accent); }
+  .detalhe-valor.vermelho { font-weight: 700; color: var(--red); }
+
+  .edit-input {
+    width: 100%; padding: 8px 11px; border: 1.5px solid var(--accent);
+    border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; outline: none; background: #f9fbf9;
+  }
+  .edit-textarea {
+    width: 100%; padding: 8px 11px; border: 1.5px solid var(--accent);
+    border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; outline: none; background: #f9fbf9;
+    min-height: 72px; resize: vertical;
+  }
+  .edit-select {
+    width: 100%; padding: 8px 11px; border: 1.5px solid var(--accent);
+    border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; outline: none; background: #f9fbf9;
+  }
+
+  .toast {
+    position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    color: white; padding: 12px 24px; border-radius: 8px; font-size: 0.9rem;
+    font-weight: 600; z-index: 9999; opacity: 0; transition: opacity 0.3s; pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+
+  @media (max-width: 600px) {
+    .detalhe-grid { grid-template-columns: 1fr; }
+    .tabs { flex-wrap: wrap; }
+    .modal-header { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TELA DE LOGIN -->
+<div id="tela-login">
+  <div class="login-box">
+    <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#4A7C59;text-decoration:none;padding:5px 12px;border-radius:8px;border:1.5px solid #4A7C59;margin-bottom:1.5rem;transition:background 0.15s;" onmouseover="this.style.background='#EAF2EC'" onmouseout="this.style.background='white'">← Início</a>
+    <div class="login-logo">
+      <div>
+        <h1>Entrevistas de Acompanhamento</h1>
+        <p>ZenFisio · Gestão de Pessoas</p>
+      </div>
+    </div>
+    <div class="login-field">
+      <label>Usuário</label>
+      <input type="text" id="inp-usuario" placeholder="seu usuário" autocomplete="username" onkeydown="if(event.key==='Enter') fazerLogin()">
+    </div>
+    <div class="login-field">
+      <label>Senha</label>
+      <input type="password" id="inp-senha" placeholder="sua senha" autocomplete="current-password" onkeydown="if(event.key==='Enter') fazerLogin()">
+    </div>
+    <button class="login-btn" onclick="fazerLogin()">Entrar</button>
+    <div class="login-erro" id="login-erro">Usuário ou senha incorretos.</div>
+  </div>
+</div>
+
+<!-- TELA DO PAINEL -->
+<div id="tela-painel">
+  <a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#4A7C59;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #4A7C59;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#EAF2EC'" onmouseout="this.style.background='white'" class="no-print" id="btn-inicio">← Início</a>
+  <div class="container" style="padding-top:4rem;">
+
+    <div class="page-header">
+      <div>
+        <h1>Entrevistas de Acompanhamento</h1>
+        <p>Painel de consulta · ZenFisio RH</p>
+      </div>
+    </div>
+
+    <div class="usuario-bar">
+      <span>Logado como <b id="nome-usuario"></b> · <span id="perfil-usuario" style="color:var(--text-muted);"></span></span>
+      <button class="btn-sair" onclick="sair()">Sair</button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="trocarTipo('colaborador', this)">📋 Avaliação Colaborador</button>
+      <button class="tab-btn" onclick="trocarTipo('lider', this)">👤 Avaliação Líder</button>
+    </div>
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="busca" placeholder="Buscar por nome, função ou data..." oninput="filtrar()">
+    </div>
+
+    <div id="lista-wrap">
+      <div class="loading">Carregando entrevistas...</div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="fecharModalClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <span class="modal-titulo" id="modal-titulo">Detalhe</span>
+      <div class="modal-header-btns" id="modal-btns"></div>
+      <button class="modal-close" onclick="fecharModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYOEGropdzHP5V_nuR29qP7KNDEvFfNIV4JtDifPDZxIG1gX5T9buFyn361K_GISvvkQ/exec';
+
+const USUARIOS = {
+  'cledison':  { senha: 'zen@cledison',  nome: 'Cledison',  cargo: 'Diretor',              perfil: 'rh'    },
+  'taiz':      { senha: 'zen@taiz',      nome: 'Taiz',      cargo: 'Analista de CS',        perfil: 'lider' },
+  'juliana':   { senha: 'zen@juliana',   nome: 'Juliana',   cargo: 'Analista de Marketing', perfil: 'lider' },
+  'gustavo':   { senha: 'zen@gustavo',   nome: 'Gustavo',   cargo: 'Analista de Produto',   perfil: 'lider' },
+  'lucas':     { senha: 'zen@lucas',     nome: 'Lucas',     cargo: 'Analista de Produto',   perfil: 'lider' },
+  'anderson':  { senha: 'zen@anderson',  nome: 'Anderson',  cargo: 'Analista de Produto',   perfil: 'lider' },
+  'guilherme': { senha: 'zen@guilherme', nome: 'Guilherme', cargo: 'Analista de Negócio',   perfil: 'lider' },
+  'viviane':   { senha: 'zen@viviane',   nome: 'Viviane',   cargo: 'Analista de Marketing', perfil: 'lider' },
+  'rh':        { senha: 'zen@rh',        nome: 'RH',        cargo: 'Gestão de Pessoas',     perfil: 'rh'    },
+};
+
+let usuarioLogado = null;
+let tipoAtual = 'colaborador';
+let todosRegistros = [];
+let registroAtual = null;
+let modoEdicao = false;
+
+// ── LOGIN ────────────────────────────────────────────────────
+function fazerLogin() {
+  const u = document.getElementById('inp-usuario').value.trim().toLowerCase();
+  const s = document.getElementById('inp-senha').value;
+  const erro = document.getElementById('login-erro');
+  const usr = USUARIOS[u];
+  if (!usr || usr.senha !== s) {
+    erro.style.display = 'block';
+    return;
+  }
+  erro.style.display = 'none';
+  usuarioLogado = { ...usr, usuario: u };
+  document.getElementById('tela-login').style.display = 'none';
+  document.getElementById('tela-painel').style.display = 'block';
+  document.getElementById('nome-usuario').textContent = usr.nome;
+  document.getElementById('perfil-usuario').textContent = usr.cargo;
+  carregar();
+}
+
+function sair() {
+  usuarioLogado = null;
+  todosRegistros = [];
+  document.getElementById('tela-painel').style.display = 'none';
+  document.getElementById('tela-login').style.display = 'flex';
+  document.getElementById('inp-usuario').value = '';
+  document.getElementById('inp-senha').value = '';
+}
+
+// ── PERMISSÃO DE EDIÇÃO ──────────────────────────────────────
+function podeEditar(registro) {
+  if (!usuarioLogado) return false;
+  if (usuarioLogado.perfil === 'rh') return true;
+  if (tipoAtual === 'lider') {
+    const liderReg = (registro['Líder Avaliador'] || '').toLowerCase().trim();
+    const nomeUser = usuarioLogado.nome.toLowerCase().trim();
+    return liderReg.includes(nomeUser) || nomeUser.includes(liderReg);
+  }
+  return false;
+}
+
+// ── CARREGAR DADOS (com filtro por líder) ────────────────────
+async function carregar() {
+  document.getElementById('lista-wrap').innerHTML = '<div class="loading">Carregando...</div>';
+  try {
+    const resp = await fetch(SCRIPT_URL + '?acao=listar&tipo=' + tipoAtual);
+    const json = await resp.json();
+    if (!json.ok) throw new Error(json.erro);
+    let dados = json.dados || [];
+
+    // Líderes veem apenas as próprias avaliações; RH vê tudo
+    if (usuarioLogado.perfil === 'lider' && tipoAtual === 'lider') {
+      const nomeUser = usuarioLogado.nome.toLowerCase().trim();
+      dados = dados.filter(r => {
+        const liderReg = (r['Líder Avaliador'] || '').toLowerCase().trim();
+        return liderReg.includes(nomeUser) || nomeUser.includes(liderReg);
+      });
+    }
+
+    todosRegistros = dados;
+    renderLista(todosRegistros);
+  } catch(e) {
+    document.getElementById('lista-wrap').innerHTML =
+      '<div class="empty"><div class="empty-icon">⚠️</div><p>Erro ao carregar dados.</p></div>';
+  }
+}
+
+function trocarTipo(tipo, btn) {
+  tipoAtual = tipo;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('busca').value = '';
+  carregar();
+}
+
+function filtrar() {
+  const q = document.getElementById('busca').value.toLowerCase().trim();
+  if (!q) { renderLista(todosRegistros); return; }
+  const f = todosRegistros.filter(r => {
+    const nome = (r['Nome'] || r['Colaborador'] || '').toLowerCase();
+    const funcao = (r['Função'] || '').toLowerCase();
+    const data = (r['Data'] || '').toString().toLowerCase();
+    const parecer = (r['Deseja Seguir'] || r['Parecer Final'] || '').toLowerCase();
+    return nome.includes(q) || funcao.includes(q) || data.includes(q) || parecer.includes(q);
+  });
+  renderLista(f);
+}
+
+// ── RENDERIZAR LISTA ─────────────────────────────────────────
+function renderLista(registros) {
+  if (!registros.length) {
+    document.getElementById('lista-wrap').innerHTML =
+      '<div class="empty"><div class="empty-icon">📭</div><p>Nenhuma entrevista encontrada.</p></div>';
+    return;
+  }
+  const isLider = tipoAtual === 'lider';
+  const html = registros.map((r, i) => {
+    const nome = r['Nome'] || r['Colaborador'] || '—';
+    const funcao = r['Função'] || '—';
+    const data = formatarData(r['Data'] || r['Timestamp']);
+    const parecer = isLider ? (r['Parecer Final'] || '') : (r['Deseja Seguir'] || '');
+    const badgeClass = isLider
+      ? (parecer.includes('Efetiv') ? 'badge-ef' : parecer.includes('Deslig') ? 'badge-ds' : 'badge-lider')
+      : 'badge-colab';
+    const podEd = podeEditar(r);
+    return `<div class="card-item" onclick="abrirDetalhe(${i})">
+      <div>
+        <div class="card-nome">${nome}</div>
+        <div class="card-meta">${funcao} · ${data}${isLider && r['Líder Avaliador'] ? ' · ' + r['Líder Avaliador'] : ''}</div>
+      </div>
+      <div class="card-right">
+        ${podEd ? '<span class="badge-edit">✏️ pode editar</span>' : ''}
+        <span class="card-badge ${badgeClass}">${parecer || (isLider ? 'Líder' : 'Colaborador')}</span>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('lista-wrap').innerHTML = `<div class="lista">${html}</div>`;
+}
+
+// ── ABRIR DETALHE ────────────────────────────────────────────
+function abrirDetalhe(idx) {
+  registroAtual = todosRegistros[idx];
+  modoEdicao = false;
+  renderModal();
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  modoEdicao = false;
+  registroAtual = null;
+}
+
+function fecharModalClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) fecharModal();
+}
+
+// ── RENDER MODAL ─────────────────────────────────────────────
+function renderModal() {
+  const r = registroAtual;
+  const isLider = tipoAtual === 'lider';
+  const nome = r['Nome'] || r['Colaborador'] || '—';
+  const podEd = podeEditar(r);
+
+  document.getElementById('modal-titulo').textContent = nome;
+
+  const btns = document.getElementById('modal-btns');
+  if (podEd && !modoEdicao) {
+    btns.innerHTML = `<button class="btn-editar" onclick="ativarEdicao()">✏️ Editar</button>`;
+  } else if (modoEdicao) {
+    btns.innerHTML = `
+      <button class="btn-cancelar" onclick="cancelarEdicao()">Cancelar</button>
+      <button class="btn-editar salvar" onclick="salvarEdicao()">💾 Salvar</button>`;
+  } else {
+    btns.innerHTML = '';
+  }
+
+  let body = '';
+  if (isLider) {
+    body += secao('Identificação', [
+      campo('Colaborador', r['Colaborador'], 'colaborador', false),
+      campo('Data', formatarData(r['Data']), 'data', false),
+      campo('Função', r['Função'], 'funcao', false),
+      campo('Líder Avaliador', r['Líder Avaliador'], 'lider_avaliador', false),
+    ]);
+    body += secao('Adaptação à Empresa', [
+      campoSelect('Disciplina', r['Disciplina'], 'disciplina', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Disciplina', r['Coment. Disciplina'], 'coment_disciplina', true),
+      campoSelect('Pontualidade', r['Pontualidade'], 'pontualidade', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Pontualidade', r['Coment. Pontualidade'], 'coment_pontualidade', true),
+      campoSelect('Coletividade', r['Coletividade'], 'coletividade', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Coletividade', r['Coment. Coletividade'], 'coment_coletividade', true),
+      campoSelect('Fit Cultural', r['Fit Cultural'], 'fit_cultural', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Fit Cultural', r['Coment. Fit Cultural'], 'coment_fit', true),
+    ]);
+    body += secao('Desempenho', [
+      campoSelect('Produtividade', r['Produtividade'], 'produtividade', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Produtividade', r['Coment. Produtividade'], 'coment_produtividade', true),
+      campoSelect('Cooperação', r['Cooperação'], 'cooperacao', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Cooperação', r['Coment. Cooperação'], 'coment_cooperacao', true),
+      campoSelect('Iniciativa', r['Iniciativa'], 'iniciativa', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Iniciativa', r['Coment. Iniciativa'], 'coment_iniciativa', true),
+      campoSelect('Organização', r['Organização'], 'organizacao', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Organização', r['Coment. Organização'], 'coment_organizacao', true),
+      campoSelect('Tecnologias', r['Tecnologias'], 'tecnologias', ['Excelente.','Bom.','Regular.','Ruim.']),
+      campoText('Coment. Tecnologias', r['Coment. Tecnologias'], 'coment_tecnologias', true),
+      campoText('Aspectos Positivos', r['Aspectos Positivos'], 'aspectos_positivos', true),
+      campoText('Aspectos a Melhorar', r['Aspectos a Melhorar'], 'aspectos_melhoria', true),
+    ]);
+    const parecer = r['Parecer Final'] || '';
+    const corParecer = parecer.includes('Efetiv') ? 'verde' : parecer.includes('Deslig') ? 'vermelho' : '';
+    body += secao('Parecer Final', [
+      campoSelect('Desempenho Geral', r['Desempenho Geral'], 'desempenho_geral',
+        ['Excelente, acima do esperado.','Satisfatório, com possibilidade de aproveitamento.',
+         'Aceitável, necessitando de maior aprimoramento.','Fraco, sem possibilidade de aproveitamento.']),
+      campoSelectParecer('Parecer Final', parecer, 'parecer_final', corParecer),
+      campoText('Observações Finais', r['Observações Finais'], 'obs_final', true),
+      campo('Responsável RH', r['Responsável RH'], 'resp_rh', false),
+      campo('Gestor', r['Gestor'], 'gestor', false),
+    ]);
+  } else {
+    body += secao('Identificação', [
+      campo('Nome', r['Nome'], null, false),
+      campo('Data', formatarData(r['Data']), null, false),
+      campo('Função', r['Função'], null, false),
+      campo('Responsável', r['Responsável'], null, false),
+    ]);
+    body += secao('Adaptação à Empresa', [
+      campo('Adaptação Normas/Horários', r['Adaptação Normas/Horários'], null, true),
+      campo('Adaptação à Função', r['Adaptação à Função'], null, true),
+    ]);
+    body += secao('Ambiente de Trabalho', [
+      campo('Relacionamento Colegas', r['Relacionamento Colegas'], null, true),
+      campo('Apoio dos Colegas', r['Apoio dos Colegas'], null, true),
+      campo('Relacionamento Líder', r['Relacionamento Líder'], null, true),
+    ]);
+    body += secao('Expectativas', [
+      campo('Atividades vs Proc. Seletivo', r['Atividades vs Proc. Seletivo'], null, true),
+      campo('Sugestões', r['Sugestões'], null, true),
+      campo('Deseja Seguir', r['Deseja Seguir'], null, false),
+    ]);
+  }
+
+  document.getElementById('modal-body').innerHTML = body;
+}
+
+// ── HELPERS DE CAMPO ─────────────────────────────────────────
+function secao(titulo, campos) {
+  return `<div class="detalhe-secao">
+    <div class="detalhe-secao-titulo">${titulo}</div>
+    <div class="detalhe-grid">${campos.join('')}</div>
+  </div>`;
+}
+
+function campo(label, valor, id, full) {
+  const v = valor || '—';
+  return `<div class="detalhe-item${full ? ' detalhe-full' : ''}">
+    <div class="detalhe-label">${label}</div>
+    <div class="detalhe-valor">${v}</div>
+  </div>`;
+}
+
+function campoText(label, valor, id, full) {
+  const v = valor || '—';
+  if (modoEdicao && id) {
+    const el = v === '—' ? '' : v;
+    return `<div class="detalhe-item${full ? ' detalhe-full' : ''}">
+      <div class="detalhe-label">${label}</div>
+      ${full
+        ? `<textarea class="edit-textarea" id="ed_${id}">${el}</textarea>`
+        : `<input class="edit-input" id="ed_${id}" value="${el}">`}
+    </div>`;
+  }
+  return campo(label, v, id, full);
+}
+
+function campoSelect(label, valor, id, opcoes) {
+  const v = valor || '—';
+  if (modoEdicao && id) {
+    const opts = opcoes.map(o => `<option value="${o}"${o === valor ? ' selected' : ''}>${o}</option>`).join('');
+    return `<div class="detalhe-item">
+      <div class="detalhe-label">${label}</div>
+      <select class="edit-select" id="ed_${id}">${opts}</select>
+    </div>`;
+  }
+  return campo(label, v, id, false);
+}
+
+function campoSelectParecer(label, valor, id, cor) {
+  if (modoEdicao && id) {
+    const opcoes = ['Efetivação', 'Desligamento'];
+    const opts = opcoes.map(o => `<option value="${o}"${o === valor ? ' selected' : ''}>${o}</option>`).join('');
+    return `<div class="detalhe-item">
+      <div class="detalhe-label">${label}</div>
+      <select class="edit-select" id="ed_${id}">${opts}</select>
+    </div>`;
+  }
+  return `<div class="detalhe-item">
+    <div class="detalhe-label">${label}</div>
+    <div class="detalhe-valor ${cor}">${valor || '—'}</div>
+  </div>`;
+}
+
+// ── EDIÇÃO ───────────────────────────────────────────────────
+function ativarEdicao() {
+  modoEdicao = true;
+  renderModal();
+  mostrarToast('Modo edição ativado', false);
+}
+
+function cancelarEdicao() {
+  modoEdicao = false;
+  renderModal();
+}
+
+async function salvarEdicao() {
+  const r = registroAtual;
+  const g = id => document.getElementById('ed_' + id)?.value ?? null;
+
+  const dados = {
+    tipo: 'editar_lider',
+    linha: r._linha,
+    disciplina:           g('disciplina'),
+    coment_disciplina:    g('coment_disciplina'),
+    pontualidade:         g('pontualidade'),
+    coment_pontualidade:  g('coment_pontualidade'),
+    coletividade:         g('coletividade'),
+    coment_coletividade:  g('coment_coletividade'),
+    fit_cultural:         g('fit_cultural'),
+    coment_fit:           g('coment_fit'),
+    produtividade:        g('produtividade'),
+    coment_produtividade: g('coment_produtividade'),
+    cooperacao:           g('cooperacao'),
+    coment_cooperacao:    g('coment_cooperacao'),
+    iniciativa:           g('iniciativa'),
+    coment_iniciativa:    g('coment_iniciativa'),
+    organizacao:          g('organizacao'),
+    coment_organizacao:   g('coment_organizacao'),
+    tecnologias:          g('tecnologias'),
+    coment_tecnologias:   g('coment_tecnologias'),
+    aspectos_positivos:   g('aspectos_positivos'),
+    aspectos_melhoria:    g('aspectos_melhoria'),
+    desempenho_geral:     g('desempenho_geral'),
+    parecer_final:        g('parecer_final'),
+    obs_final:            g('obs_final'),
+    editado_por:          usuarioLogado.nome,
+    editado_em:           new Date().toLocaleString('pt-BR'),
+  };
+
+  const btn = document.querySelector('.btn-editar.salvar');
+  btn.disabled = true; btn.textContent = 'Salvando...';
+
+  try {
+    await fetch(SCRIPT_URL, {method:'POST', mode:'no-cors', body: JSON.stringify(dados)});
+    Object.assign(r, {
+      'Disciplina': dados.disciplina,
+      'Coment. Disciplina': dados.coment_disciplina,
+      'Pontualidade': dados.pontualidade,
+      'Coment. Pontualidade': dados.coment_pontualidade,
+      'Coletividade': dados.coletividade,
+      'Coment. Coletividade': dados.coment_coletividade,
+      'Fit Cultural': dados.fit_cultural,
+      'Coment. Fit Cultural': dados.coment_fit,
+      'Produtividade': dados.produtividade,
+      'Coment. Produtividade': dados.coment_produtividade,
+      'Cooperação': dados.cooperacao,
+      'Coment. Cooperação': dados.coment_cooperacao,
+      'Iniciativa': dados.iniciativa,
+      'Coment. Iniciativa': dados.coment_iniciativa,
+      'Organização': dados.organizacao,
+      'Coment. Organização': dados.coment_organizacao,
+      'Tecnologias': dados.tecnologias,
+      'Coment. Tecnologias': dados.coment_tecnologias,
+      'Aspectos Positivos': dados.aspectos_positivos,
+      'Aspectos a Melhorar': dados.aspectos_melhoria,
+      'Desempenho Geral': dados.desempenho_geral,
+      'Parecer Final': dados.parecer_final,
+      'Observações Finais': dados.obs_final,
+    });
+    modoEdicao = false;
+    renderModal();
+    renderLista(todosRegistros);
+    mostrarToast('✓ Alterações salvas com sucesso!', false);
+  } catch(e) {
+    mostrarToast('Erro ao salvar. Tente novamente.', true);
+    btn.disabled = false; btn.textContent = '💾 Salvar';
+  }
+}
+
+// ── HELPERS ──────────────────────────────────────────────────
+function formatarData(d) {
+  if (!d) return '—';
+  const s = d.toString();
+  if (s.includes('-')) {
+    const [ano, mes, dia] = s.split('T')[0].split('-');
+    return `${dia}/${mes}/${ano}`;
+  }
+  return s.split(' ')[0];
+}
+
+function mostrarToast(msg, erro) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = erro ? '#c0392b' : '#2d5438';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+window.onload = () => document.getElementById('inp-usuario').focus();
+</script>
+</body>
+</html>
