@@ -3,50 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal de RH — HD Distribuidora</title>
+<title>Portal de RH — ZenFisio</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --bg: #F0F3F8; --surface: #FFFFFF; --border: #C8D6E8; --text: #1A1E2E; --text-hint: #8893B0; --accent: #2E4DA6; --accent-light: #E8EDF8; --radius: 12px; }
-body { font-family: "Lora"; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; }
-.wrap { max-width: 560px; width: 100%; text-align: center; }
-.logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.25rem; border: 3px solid rgba(46,77,166,0.2); display: block; }
-.title { font-size: 28px; font-weight: 600; margin-bottom: 0.4rem; }
-.subtitle { font-size: 14px; color: var(--text-hint); margin-bottom: 2.5rem; }
-.cards { display: flex; flex-direction: column; gap: 12px; }
-.card-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.15s; }
-.card-group:hover { border-color: var(--accent); }
-.card-toggle { display: flex; align-items: center; gap: 16px; padding: 1.25rem 1.5rem; cursor: pointer; background: transparent; border: none; width: 100%; text-align: left; font-family:"Lora"; font-size: 15px; font-weight: 500; color: var(--text); }
-.card-toggle:hover { background: rgba(46,77,166,0.03); }
-.card-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 10px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; }
-.card-body { flex: 1; }
-.card-title { font-size: 15px; font-weight: 500; margin-bottom: 3px; }
-.card-desc { font-size: 13px; color: var(--text-hint); line-height: 1.4; }
-.card-arrow { color: var(--text-hint); font-size: 18px; transition: transform 0.2s; }
-.card-arrow.open { transform: rotate(90deg); color: var(--accent); }
-.sub-items { display: none; border-top: 1px solid var(--border); }
-.sub-items.open { display: block; }
-.sub-link { display: flex; align-items: center; gap: 14px; padding: 1rem 1.5rem 1rem 5rem; text-decoration: none; border-bottom: 1px solid #edf0f8; transition: background 0.15s; }
-.sub-link:last-child { border-bottom: none; }
-.sub-link:hover { background: rgba(46,77,166,0.04); }
-.sub-body { flex: 1; text-align: left; }
-.sub-title { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
-.sub-desc { font-size: 12px; color: var(--text-hint); }
-.sub-arrow { color: var(--text-hint); font-size: 16px; transition: transform 0.15s; }
-.sub-link:hover .sub-arrow { transform: translateX(3px); color: var(--accent); }
-.footer { margin-top: 2.5rem; font-size: 12px; color: var(--text-hint); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F2F4F0; --surface: #FFFFFF; --border: #DDE0D8; --border-focus: #4A7C59;
+    --text: #1C201A; --text-muted: #5E6659; --text-hint: #9AA394;
+    --accent: #4A7C59; --accent-light: #EAF2EC; --accent-text: #2D5438;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  body { font-family: "Lora"; background: var(--bg); color: var(--text);
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding: 2rem 1rem; }
+  .wrap { max-width: 560px; width: 100%; text-align: center; }
+  .logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
+    margin-bottom: 1.25rem; border: 3px solid rgba(74,124,89,0.2); }
+  .title { font-family: "Lora"; font-size: 28px; font-weight: 600;
+    color: var(--text); letter-spacing: -0.3px; margin-bottom: 0.4rem; }
+  .subtitle { font-size: 14px; color: var(--text-hint); margin-bottom: 2.5rem; }
+  .cards { display: flex; flex-direction: column; gap: 12px; }
+  .card-link {
+    display: flex; align-items: center; gap: 16px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.25rem 1.5rem;
+    text-decoration: none; transition: all 0.15s; text-align: left; cursor: pointer;
+  }
+  .card-link:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(74,124,89,0.1); transform: translateY(-1px); }
+  .card-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.15s; }
+  .card-group:hover { border-color: var(--accent); }
+  .card-toggle { display: flex; align-items: center; gap: 16px; padding: 1.25rem 1.5rem; cursor: pointer; background: transparent; border: none; width: 100%; text-align: left; font-family:"Lora"; font-size: 15px; font-weight: 500; color: var(--text); }
+  .card-toggle:hover { background: rgba(74,124,89,0.03); }
+  .card-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 10px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; }
+  .card-body { flex: 1; }
+  .card-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+  .card-desc { font-size: 13px; color: var(--text-hint); line-height: 1.4; }
+  .card-arrow { color: var(--text-hint); font-size: 18px; transition: transform 0.2s; }
+  .card-link:hover .card-arrow { transform: translateX(4px); color: var(--accent); }
+  .card-arrow.open { transform: rotate(90deg); color: var(--accent); }
+  .sub-items { display: none; border-top: 1px solid var(--border); }
+  .sub-items.open { display: block; }
+  .sub-link { display: flex; align-items: center; gap: 14px; padding: 1rem 1.5rem 1rem 5rem; text-decoration: none; border-bottom: 1px solid #f0f0ec; transition: background 0.15s; }
+  .sub-link:last-child { border-bottom: none; }
+  .sub-link:hover { background: rgba(74,124,89,0.04); }
+  .sub-body { flex: 1; text-align: left; }
+  .sub-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .sub-desc { font-size: 12px; color: var(--text-hint); }
+  .sub-arrow { color: var(--text-hint); font-size: 16px; transition: transform 0.15s; }
+  .sub-link:hover .sub-arrow { transform: translateX(3px); color: var(--accent); }
+  .footer { margin-top: 2.5rem; font-size: 12px; color: var(--text-hint); }
+
+  /* MODAL OUVIDORIA */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 1000; align-items: center; justify-content: center; padding: 1.5rem; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: white; border-radius: var(--radius); width: 100%; max-width: 480px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); overflow: hidden; animation: slideUp 0.2s ease; max-height: 92vh; overflow-y: auto; }
+  @keyframes slideUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+  .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: white; z-index: 1; }
+  .modal-header h2 { font-family: "Lora"; font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+  .modal-close { width: 32px; height: 32px; border-radius: 50%; border: none; background: var(--bg); cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: background 0.15s; }
+  .modal-close:hover { background: var(--border); }
+  .modal-body { padding: 1.5rem; }
+  .modal-aviso { background: var(--accent-light); border: 1px solid #c3dac9; border-radius: var(--radius-sm); padding: 0.7rem 1rem; font-size: 0.82rem; color: var(--accent-text); margin-bottom: 1.25rem; line-height: 1.5; font-family: 'DM Sans', sans-serif; }
+  .form-field { margin-bottom: 1rem; }
+  .form-field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.4rem; font-family: 'DM Sans', sans-serif; }
+  .form-field .opcional { font-weight: 400; color: var(--text-hint); font-size: 0.78rem; }
+  .form-field input, .form-field textarea { width: 100%; padding: 10px 13px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; transition: border-color 0.15s; color: var(--text); background: white; }
+  .form-field input:focus, .form-field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,124,89,0.1); }
+  .form-field textarea { min-height: 110px; resize: vertical; }
+  .form-contador { font-size: 0.75rem; color: var(--text-hint); text-align: right; margin-top: 4px; font-family: 'DM Sans', sans-serif; }
+  .categorias { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .cat-pill { padding: 6px 14px; border-radius: 20px; border: 1.5px solid var(--border); background: white; font-family: 'DM Sans', sans-serif; font-size: 0.83rem; font-weight: 500; cursor: pointer; color: var(--text-muted); transition: all 0.15s; user-select: none; }
+  .cat-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+  .cat-pill.selected { border-color: var(--accent); background: var(--accent); color: white; }
+  .btn-enviar { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background 0.15s; margin-top: 0.5rem; }
+  .btn-enviar:hover { background: #3a6347; }
+  .btn-enviar:disabled { background: var(--text-hint); cursor: not-allowed; }
+  .modal-sucesso { display: none; text-align: center; padding: 2rem 1.5rem; }
+  .sucesso-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; }
+  .sucesso-titulo { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; }
+  .sucesso-desc { font-size: 0.88rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; line-height: 1.5; }
+  .btn-fechar { margin-top: 1.5rem; padding: 10px 28px; background: var(--accent); color: white; border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+  .btn-fechar:hover { background: #3a6347; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <img src="logo.jpg" alt="HD Distribuidora" class="logo">
+  <img src="assets/logo.png" alt="ZenFisio" class="logo">
   <h1 class="title">Portal de RH</h1>
-  <p class="subtitle">HD Distribuidora — Gestão de Pessoas</p>
+  <p class="subtitle">ZenFisio &mdash; Gestão de Pessoas</p>
+
   <div class="cards">
+
+    <!-- Manual -->
+    <a class="card-link" href="manual/index.html">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Manual de Conduta &amp; Cultura</div>
+        <div class="card-desc">Valores, princípios e diretrizes da ZenFisio</div>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+<a class="card-link" href="dashboard/index.html">
+  <div class="card-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+      <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+    </svg>
+  </div>
+  <div class="card-body">
+    <div class="card-title">Perfil da Equipe</div>
+    <div class="card-desc">Indicadores gerais sobre a equipe ZenFisio</div>
+  </div>
+  <span class="card-arrow">→</span>
+</a>
+   
+    <!-- Ouvidoria -->
+    <div class="card-group">
+      <button class="card-toggle" onclick="toggle('ouvidoria')">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="12" y2="13"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Ouvidoria — Conecta ZenFisio</div>
+          <div class="card-desc">Envie sua opinião, sugestão ou reclamação</div>
+        </div>
+        <span class="card-arrow" id="arrow-ouvidoria">→</span>
+      </button>
+      <div class="sub-items" id="sub-ouvidoria">
+        <div class="sub-link" onclick="abrirOuvidoria()" style="cursor:pointer;">
+          <div class="sub-body">
+            <div class="sub-title">Enviar mensagem</div>
+            <div class="sub-desc">Anônimo ou identificado — tratado com sigilo pelo RH</div>
+          </div>
+          <span class="sub-arrow">→</span>
+        </div>
+        <a class="sub-link" href="painel-ouvidoria/index.html">
+          <div class="sub-body">
+            <div class="sub-title">Painel da Ouvidoria</div>
+            <div class="sub-desc">Consulta e gestão das mensagens recebidas — RH</div>
+          </div>
+          <span class="sub-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Calendário -->
+    <a class="card-link" href="calendario/index.html">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Calendário de Eventos</div>
+        <div class="card-desc">Aniversários, admissões e férias da equipe</div>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <!-- Solicitações -->
+    <div class="card-group">
+      <button class="card-toggle" onclick="toggle('solicitacoes')">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="9" y1="13" x2="15" y2="13"/>
+            <line x1="9" y1="17" x2="12" y2="17"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Solicitações</div>
+          <div class="card-desc">Férias e folgas — nova solicitação ou ajuste</div>
+        </div>
+        <span class="card-arrow" id="arrow-solicitacoes">→</span>
+      </button>
+      <div class="sub-items" id="sub-solicitacoes">
+        <a class="sub-link" href="solicitacoes/index.html?aba=ferias">
+          <div class="sub-body">
+            <div class="sub-title">🏖️ Solicitação de Férias</div>
+            <div class="sub-desc">Nova solicitação ou ajuste de período</div>
+          </div>
+          <span class="sub-arrow">→</span>
+        </a>
+        <a class="sub-link" href="solicitacoes/index.html?aba=folga">
+          <div class="sub-body">
+            <div class="sub-title">📅 Solicitação de Folga</div>
+            <div class="sub-desc">Antecipação de férias, abono ou outro</div>
+          </div>
+          <span class="sub-arrow">→</span>
+        </a>
+        <a class="sub-link" href="painel-solicitacoes/index.html">
+          <div class="sub-body">
+            <div class="sub-title">🗂️ Painel de Solicitações</div>
+            <div class="sub-desc">Consulta e gestão das solicitações — RH</div>
+          </div>
+          <span class="sub-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contratação -->
     <div class="card-group">
       <button class="card-toggle" onclick="toggle('contratacao')">
-        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="card-body"><div class="card-title">Contratação</div><div class="card-desc">Formulários e checklists de admissão</div></div>
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Contratação</div>
+          <div class="card-desc">Formulários e checklists de admissão</div>
+        </div>
         <span class="card-arrow" id="arrow-contratacao">→</span>
       </button>
       <div class="sub-items" id="sub-contratacao">
@@ -55,10 +234,19 @@ body { font-family: "Lora"; background: var(--bg); color: var(--text); min-heigh
         <a class="sub-link" href="checklist-contratacao/index.html"><div class="sub-body"><div class="sub-title">Checklist de Contratação</div><div class="sub-desc">Conferência de documentos e registros de admissão</div></div><span class="sub-arrow">→</span></a>
       </div>
     </div>
+
+    <!-- Desligamento -->
     <div class="card-group">
       <button class="card-toggle" onclick="toggle('desligamento')">
-        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></div>
-        <div class="card-body"><div class="card-title">Desligamento</div><div class="card-desc">Processos de encerramento de vínculo</div></div>
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Desligamento</div>
+          <div class="card-desc">Processos de encerramento de vínculo</div>
+        </div>
         <span class="card-arrow" id="arrow-desligamento">→</span>
       </button>
       <div class="sub-items" id="sub-desligamento">
@@ -67,28 +255,243 @@ body { font-family: "Lora"; background: var(--bg); color: var(--text); min-heigh
         <a class="sub-link" href="checklist-desligamento-admin/index.html"><div class="sub-body"><div class="sub-title">Checklist de Desligamento</div><div class="sub-desc">Procedimentos de saída do colaborador</div></div><span class="sub-arrow">→</span></a>
       </div>
     </div>
+
+    <!-- Acompanhamento -->
     <div class="card-group">
       <button class="card-toggle" onclick="toggle('acompanhamento')">
-        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div class="card-body"><div class="card-title">Acompanhamento</div><div class="card-desc">Ferramentas de desenvolvimento e feedback</div></div>
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acompanhamento</div>
+          <div class="card-desc">Ferramentas de desenvolvimento e feedback</div>
+        </div>
         <span class="card-arrow" id="arrow-acompanhamento">→</span>
       </button>
       <div class="sub-items" id="sub-acompanhamento">
         <a class="sub-link" href="feedback/index.html"><div class="sub-body"><div class="sub-title">Registro de Feedback</div><div class="sub-desc">Feedback 1:1 entre gestor e colaborador</div></div><span class="sub-arrow">→</span></a>
+        <div style="margin: 0.75rem 0 0.5rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-hint); padding: 0 0.25rem;">Avaliação — Período de Experiência</div>
+        <a class="sub-link" href="avaliacao-colaborador/index.html"><div class="sub-body"><div class="sub-title">Avaliação Colaborador</div><div class="sub-desc">Autoavaliação no período de experiência</div></div><span class="sub-arrow">→</span></a>
+        <a class="sub-link" href="avaliacao-lider/index.html"><div class="sub-body"><div class="sub-title">Avaliação Líder</div><div class="sub-desc">Avaliação do colaborador pelo gestor</div></div><span class="sub-arrow">→</span></a>
+        <a class="sub-link" href="entrevistas-admin/index.html"><div class="sub-body"><div class="sub-title">Entrevistas de Acompanhamento</div><div class="sub-desc">Consulta e painel de respostas das avaliações</div></div><span class="sub-arrow">→</span></a>
       </div>
     </div>
+
+   <a class="card-link" href="painel-gestao/index.html">
+  <div class="card-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+      <path d="M2 17l10 5 10-5"/>
+      <path d="M2 12l10 5 10-5"/>
+    </svg>
   </div>
-  <p class="footer">© HD Distribuidora · Uso interno</p>
+  <div class="card-body">
+    <div class="card-title">Painel de Gestão</div>
+    <div class="card-desc">Remuneração e indicadores — acesso restrito RH</div>
+  </div>
+  <span class="card-arrow">→</span>
+</a> 
+   
+    <!-- Aniversariantes -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;text-align:left;transition:border-color 0.15s,box-shadow 0.15s;" onmouseover="this.style.borderColor='#4A7C59';this.style.boxShadow='0 4px 16px rgba(74,124,89,0.1)'" onmouseout="this.style.borderColor='#DDE0D8';this.style.boxShadow='none'">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:0.9rem;">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="10" width="20" height="12" rx="2"/>
+            <path d="M12 2a4 4 0 0 1 4 4v4H8V6a4 4 0 0 1 4-4z"/>
+            <line x1="12" y1="2" x2="12" y2="4"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">🎂 Aniversariantes do Mês</div>
+          <div class="card-desc" id="aniv-desc">Carregando...</div>
+        </div>
+      </div>
+      <div id="aniv-lista"></div>
+    </div>
+
+  </div>
+  <p class="footer">&copy; ZenFisio &middot; Uso interno</p>
 </div>
+
+<!-- MODAL OUVIDORIA -->
+<div class="modal-overlay" id="modal-ouvidoria" onclick="fecharModalClick(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>💬 Ouvidoria — Conecta ZenFisio</h2>
+      <button class="modal-close" onclick="fecharOuvidoria()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-form">
+      <div class="modal-aviso">
+        🔒 Sua mensagem é tratada com sigilo pelo RH. A identificação é totalmente opcional.
+      </div>
+      <div class="form-field">
+        <label>Nome <span class="opcional">(opcional — deixe em branco para envio anônimo)</span></label>
+        <input type="text" id="ouv-nome" placeholder="Seu nome ou apelido" maxlength="100">
+      </div>
+      <div class="form-field">
+        <label>Categoria <span class="opcional">*</span></label>
+        <div class="categorias">
+          <span class="cat-pill" onclick="selecionarCategoria(this)">Elogio</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">Sugestão</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">Reclamação</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">Dúvida</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">Denúncia</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">Outro</span>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Mensagem <span class="opcional">*</span></label>
+        <textarea id="ouv-mensagem" placeholder="Escreva sua mensagem aqui..." maxlength="2000" oninput="atualizarContador()"></textarea>
+        <div class="form-contador"><span id="contador">0</span>/2000</div>
+      </div>
+      <button class="btn-enviar" id="btn-enviar" onclick="enviarOuvidoria()">Enviar mensagem</button>
+    </div>
+    <div class="modal-sucesso" id="modal-sucesso">
+      <div class="sucesso-icon">✅</div>
+      <div class="sucesso-titulo">Mensagem enviada!</div>
+      <div class="sucesso-desc">Obrigado pelo seu retorno. Sua mensagem foi recebida pelo RH e será tratada com sigilo.</div>
+      <button class="btn-fechar" onclick="fecharOuvidoria()">Fechar</button>
+    </div>
+  </div>
+</div>
+
 <script>
-function toggle(id) {
-  const sub = document.getElementById('sub-' + id);
-  const arrow = document.getElementById('arrow-' + id);
-  const isOpen = sub.classList.contains('open');
-  document.querySelectorAll('.sub-items').forEach(el => el.classList.remove('open'));
-  document.querySelectorAll('.card-arrow[id]').forEach(el => { el.classList.remove('open'); el.textContent = '→'; });
-  if (!isOpen) { sub.classList.add('open'); arrow.classList.add('open'); arrow.textContent = '↓'; }
-}
+  const SCRIPT_OUVIDORIA = 'https://script.google.com/macros/s/AKfycbyhtNE9aZqBr1N7cERxpghKKCBCOgG66PgtWOel303VoTryvq9Zit7_tzD9QvHlXFP-/exec';
+  let categoriasSelecionadas = [];
+
+  function selecionarCategoria(el) {
+    el.classList.toggle('selected');
+    const cat = el.textContent;
+    if (el.classList.contains('selected')) {
+      categoriasSelecionadas.push(cat);
+    } else {
+      categoriasSelecionadas = categoriasSelecionadas.filter(c => c !== cat);
+    }
+  }
+
+  function abrirOuvidoria() {
+    document.getElementById('modal-ouvidoria').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('modal-form').style.display = 'block';
+    document.getElementById('modal-sucesso').style.display = 'none';
+    document.getElementById('ouv-nome').value = '';
+    document.getElementById('ouv-mensagem').value = '';
+    document.getElementById('contador').textContent = '0';
+    document.getElementById('btn-enviar').disabled = false;
+    document.getElementById('btn-enviar').textContent = 'Enviar mensagem';
+    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('selected'));
+    categoriasSelecionadas = [];
+  }
+
+  function fecharOuvidoria() {
+    document.getElementById('modal-ouvidoria').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function fecharModalClick(e) {
+    if (e.target === document.getElementById('modal-ouvidoria')) fecharOuvidoria();
+  }
+
+  function atualizarContador() {
+    document.getElementById('contador').textContent = document.getElementById('ouv-mensagem').value.length;
+  }
+
+  async function enviarOuvidoria() {
+    const nome = document.getElementById('ouv-nome').value.trim();
+    const mensagem = document.getElementById('ouv-mensagem').value.trim();
+    const btn = document.getElementById('btn-enviar');
+
+    if (categoriasSelecionadas.length === 0) {
+      document.querySelectorAll('.cat-pill').forEach(p => {
+        p.style.borderColor = '#c0392b';
+        setTimeout(() => p.style.borderColor = '', 2000);
+      });
+      return;
+    }
+    if (!mensagem) {
+      const t = document.getElementById('ouv-mensagem');
+      t.style.borderColor = '#c0392b';
+      t.focus();
+      setTimeout(() => t.style.borderColor = '', 2000);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      await fetch(SCRIPT_OUVIDORIA, {
+        method: 'POST', mode: 'no-cors',
+        body: JSON.stringify({
+          tipo: 'ouvidoria',
+          nome: nome || 'Anônimo',
+          categorias: categoriasSelecionadas.join(', '),
+          mensagem,
+          data: new Date().toLocaleString('pt-BR'),
+        }),
+      });
+      document.getElementById('modal-form').style.display = 'none';
+      document.getElementById('modal-sucesso').style.display = 'block';
+    } catch(e) {
+      btn.disabled = false;
+      btn.textContent = 'Enviar mensagem';
+      alert('Erro ao enviar. Tente novamente.');
+    }
+  }
+
+  function toggle(id) {
+    const sub = document.getElementById('sub-' + id);
+    const arrow = document.getElementById('arrow-' + id);
+    const isOpen = sub.classList.contains('open');
+    document.querySelectorAll('.sub-items').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.card-arrow[id]').forEach(el => { el.classList.remove('open'); el.textContent = '→'; });
+    if (!isOpen) {
+      sub.classList.add('open');
+      arrow.classList.add('open');
+      arrow.textContent = '↓';
+    }
+  }
+
+  // ANIVERSARIANTES
+  (async function() {
+    const SHEET_ID = '1X0PlIpFRuZudc4vgbpFotm2lPjQf1eDeIMExNNPYQbQ';
+    const GID = '786777393';
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}`;
+    const nomesMes = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+    const mesAtual = new Date().getMonth();
+    const nomeMes = nomesMes[mesAtual];
+    const mesNum = String(mesAtual + 1).padStart(2, '0');
+    const descEl = document.getElementById('aniv-desc');
+    const listaEl = document.getElementById('aniv-lista');
+    try {
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const text = await resp.text();
+      const linhas = text.trim().split('\n').slice(1);
+      const aniversariantes = [];
+      for (const linha of linhas) {
+        const cols = linha.split(',');
+        const nome = cols[0]?.replace(/"/g, '').trim();
+        const data = cols[1]?.replace(/"/g, '').trim();
+        if (!nome || !data) continue;
+        const partes = data.split('/');
+        if (partes.length === 2 && partes[1].trim() === mesNum) aniversariantes.push({ nome, data });
+      }
+      aniversariantes.sort((a, b) => parseInt(a.data) - parseInt(b.data));
+      if (aniversariantes.length === 0) { descEl.textContent = nomeMes + ' — nenhum aniversariante'; return; }
+      descEl.textContent = nomeMes + ' · ' + aniversariantes.length + ' aniversariante' + (aniversariantes.length > 1 ? 's' : '');
+      listaEl.innerHTML = aniversariantes.map((a, i, arr) => {
+        const borda = i < arr.length - 1 ? 'border-bottom:1px solid #f0f0ec;' : '';
+        return `<div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;${borda}font-family:'DM Sans',sans-serif;">
+          <span style="font-size:14px;font-weight:500;color:#1C201A;">🎉 ${a.nome}</span>
+          <span style="font-size:13px;color:#9AA394;font-weight:600;">${a.data}</span>
+        </div>`;
+      }).join('');
+    } catch(e) { descEl.textContent = 'Não foi possível carregar os dados.'; }
+  })();
 </script>
 </body>
 </html>
