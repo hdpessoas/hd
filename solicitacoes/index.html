@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Solicitações — ZenFisio RH</title>
+  <title>SolicitaÃ§Ãµes â ZenFisio RH</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #F2F4F0; --surface: #FFFFFF; --border: #DDE0D8;
+      --bg: #F0F3F8; --surface: #FFFFFF; --border: #C8D6E8;
       --text: #1C201A; --text-muted: #5E6659; --text-hint: #9AA394;
-      --accent: #4A7C59; --accent-light: #EAF2EC; --accent-text: #2D5438;
+      --accent: #2E4DA6; --accent-light: #E8EDF8; --accent-text: #1A2D6B;
       --radius: 12px; --radius-sm: 8px;
     }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
@@ -37,7 +37,7 @@
       outline: none; transition: border-color .15s, box-shadow .15s;
     }
     .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,124,89,0.1);
+      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(46,77,166,0.1);
     }
     .form-field textarea { min-height: 90px; resize: vertical; }
     .tipo-pills { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -79,55 +79,55 @@
 </head>
 <body>
 <header>
-  <a class="header-back" href="../">← Portal RH</a>
-  <span class="header-title">Solicitações</span>
+  <a class="header-back" href="../">â Portal RH</a>
+  <span class="header-title">SolicitaÃ§Ãµes</span>
 </header>
 
 <div class="container">
   <div class="tabs">
-    <button class="tab-btn active" onclick="trocarTab('ferias')">🏖️ Férias</button>
-    <button class="tab-btn" onclick="trocarTab('folga')">📅 Folga</button>
+    <button class="tab-btn active" onclick="trocarTab('ferias')">ðï¸ FÃ©rias</button>
+    <button class="tab-btn" onclick="trocarTab('folga')">ð Folga</button>
   </div>
 
-  <!-- FÉRIAS -->
+  <!-- FÃRIAS -->
   <div class="form-card active" id="form-ferias">
     <div id="ferias-form-inner">
-      <h2>Solicitação de Férias</h2>
-      <p>Preencha os dados abaixo. Você receberá uma confirmação no seu e-mail assim que a solicitação for registrada.</p>
-      <div class="aviso">📌 A aprovação está sujeita à análise do RH e do seu gestor. Em caso de ajuste, informe o período anterior nas observações.</div>
+      <h2>SolicitaÃ§Ã£o de FÃ©rias</h2>
+      <p>Preencha os dados abaixo. VocÃª receberÃ¡ uma confirmaÃ§Ã£o no seu e-mail assim que a solicitaÃ§Ã£o for registrada.</p>
+      <div class="aviso">ð A aprovaÃ§Ã£o estÃ¡ sujeita Ã  anÃ¡lise do RH e do seu gestor. Em caso de ajuste, informe o perÃ­odo anterior nas observaÃ§Ãµes.</div>
 
       <div class="form-field">
-        <label>Tipo de solicitação *</label>
+        <label>Tipo de solicitaÃ§Ã£o *</label>
         <div class="tipo-pills">
-          <span class="tipo-pill" onclick="selecionarPill(this,'ferias-tipo')">Nova solicitação</span>
-          <span class="tipo-pill" onclick="selecionarPill(this,'ferias-tipo')">Ajuste de solicitação</span>
+          <span class="tipo-pill" onclick="selecionarPill(this,'ferias-tipo')">Nova solicitaÃ§Ã£o</span>
+          <span class="tipo-pill" onclick="selecionarPill(this,'ferias-tipo')">Ajuste de solicitaÃ§Ã£o</span>
         </div>
-        <div class="erro-msg" id="err-ferias-tipo">Selecione o tipo de solicitação.</div>
+        <div class="erro-msg" id="err-ferias-tipo">Selecione o tipo de solicitaÃ§Ã£o.</div>
       </div>
 
       <div class="form-row">
         <div class="form-field">
           <label>Nome completo *</label>
           <input type="text" id="ferias-nome" placeholder="Seu nome completo"/>
-          <div class="erro-msg" id="err-ferias-nome">Campo obrigatório.</div>
+          <div class="erro-msg" id="err-ferias-nome">Campo obrigatÃ³rio.</div>
         </div>
         <div class="form-field">
           <label>E-mail *</label>
           <input type="email" id="ferias-email" placeholder="seu@email.com"/>
-          <div class="erro-msg" id="err-ferias-email">Informe um e-mail válido.</div>
+          <div class="erro-msg" id="err-ferias-email">Informe um e-mail vÃ¡lido.</div>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-field">
-          <label>Data de início *</label>
+          <label>Data de inÃ­cio *</label>
           <input type="date" id="ferias-inicio" oninput="calcularDiasFerias()"/>
-          <div class="erro-msg" id="err-ferias-inicio">Campo obrigatório.</div>
+          <div class="erro-msg" id="err-ferias-inicio">Campo obrigatÃ³rio.</div>
         </div>
         <div class="form-field">
           <label>Data de fim *</label>
           <input type="date" id="ferias-fim" oninput="calcularDiasFerias()"/>
-          <div class="erro-msg" id="err-ferias-fim">Campo obrigatório.</div>
+          <div class="erro-msg" id="err-ferias-fim">Campo obrigatÃ³rio.</div>
         </div>
       </div>
 
@@ -137,47 +137,47 @@
       </div>
 
       <div class="form-field">
-        <label>Observações</label>
-        <textarea id="ferias-obs" placeholder="Ex: período anterior programado era 01/06 a 15/06..."></textarea>
+        <label>ObservaÃ§Ãµes</label>
+        <textarea id="ferias-obs" placeholder="Ex: perÃ­odo anterior programado era 01/06 a 15/06..."></textarea>
       </div>
 
-      <button class="btn-enviar" id="btn-ferias" onclick="enviarFerias()">Enviar solicitação</button>
+      <button class="btn-enviar" id="btn-ferias" onclick="enviarFerias()">Enviar solicitaÃ§Ã£o</button>
     </div>
     <div class="sucesso" id="ferias-sucesso">
-      <div class="sucesso-icon">✅</div>
-      <h3>Solicitação enviada!</h3>
-      <p>Sua solicitação de férias foi registrada.<br>Você receberá uma confirmação no e-mail informado.</p>
-      <button class="btn-nova" onclick="novaSolicitacao('ferias')">Nova solicitação</button>
+      <div class="sucesso-icon">â</div>
+      <h3>SolicitaÃ§Ã£o enviada!</h3>
+      <p>Sua solicitaÃ§Ã£o de fÃ©rias foi registrada.<br>VocÃª receberÃ¡ uma confirmaÃ§Ã£o no e-mail informado.</p>
+      <button class="btn-nova" onclick="novaSolicitacao('ferias')">Nova solicitaÃ§Ã£o</button>
     </div>
   </div>
 
   <!-- FOLGA -->
   <div class="form-card" id="form-folga">
     <div id="folga-form-inner">
-      <h2>Solicitação de Folga</h2>
-      <p>Preencha os dados abaixo. Você receberá uma confirmação no seu e-mail assim que a solicitação for registrada.</p>
-      <div class="aviso">📌 A aprovação está sujeita à análise do RH e do seu gestor. Em caso de ajuste, informe a data anterior nas observações.</div>
-      <div class="aviso-info">ℹ️ A quantidade de dias é calculada considerando apenas <strong>dias úteis</strong> (segunda a sexta-feira). Finais de semana não são contabilizados como folga.</div>
+      <h2>SolicitaÃ§Ã£o de Folga</h2>
+      <p>Preencha os dados abaixo. VocÃª receberÃ¡ uma confirmaÃ§Ã£o no seu e-mail assim que a solicitaÃ§Ã£o for registrada.</p>
+      <div class="aviso">ð A aprovaÃ§Ã£o estÃ¡ sujeita Ã  anÃ¡lise do RH e do seu gestor. Em caso de ajuste, informe a data anterior nas observaÃ§Ãµes.</div>
+      <div class="aviso-info">â¹ï¸ A quantidade de dias Ã© calculada considerando apenas <strong>dias Ãºteis</strong> (segunda a sexta-feira). Finais de semana nÃ£o sÃ£o contabilizados como folga.</div>
 
       <div class="form-field">
-        <label>Tipo de solicitação *</label>
+        <label>Tipo de solicitaÃ§Ã£o *</label>
         <div class="tipo-pills">
-          <span class="tipo-pill" onclick="selecionarPill(this,'folga-tipo')">Nova solicitação</span>
-          <span class="tipo-pill" onclick="selecionarPill(this,'folga-tipo')">Ajuste de solicitação</span>
+          <span class="tipo-pill" onclick="selecionarPill(this,'folga-tipo')">Nova solicitaÃ§Ã£o</span>
+          <span class="tipo-pill" onclick="selecionarPill(this,'folga-tipo')">Ajuste de solicitaÃ§Ã£o</span>
         </div>
-        <div class="erro-msg" id="err-folga-tipo">Selecione o tipo de solicitação.</div>
+        <div class="erro-msg" id="err-folga-tipo">Selecione o tipo de solicitaÃ§Ã£o.</div>
       </div>
 
       <div class="form-row">
         <div class="form-field">
           <label>Nome completo *</label>
           <input type="text" id="folga-nome" placeholder="Seu nome completo"/>
-          <div class="erro-msg" id="err-folga-nome">Campo obrigatório.</div>
+          <div class="erro-msg" id="err-folga-nome">Campo obrigatÃ³rio.</div>
         </div>
         <div class="form-field">
           <label>E-mail *</label>
           <input type="email" id="folga-email" placeholder="seu@email.com"/>
-          <div class="erro-msg" id="err-folga-email">Informe um e-mail válido.</div>
+          <div class="erro-msg" id="err-folga-email">Informe um e-mail vÃ¡lido.</div>
         </div>
       </div>
 
@@ -186,7 +186,7 @@
           <label>Tipo de folga *</label>
           <select id="folga-tipo-folga" onchange="toggleOutro()">
             <option value="">Selecione...</option>
-            <option value="Antecipação de férias">Antecipação de férias</option>
+            <option value="AntecipaÃ§Ã£o de fÃ©rias">AntecipaÃ§Ã£o de fÃ©rias</option>
             <option value="Abono">Abono</option>
             <option value="Outro">Outro</option>
           </select>
@@ -200,34 +200,34 @@
 
       <div class="form-row">
         <div class="form-field">
-          <label>Data de início *</label>
+          <label>Data de inÃ­cio *</label>
           <input type="date" id="folga-inicio" oninput="calcularDiasFolga()"/>
-          <div class="erro-msg" id="err-folga-inicio">Campo obrigatório.</div>
+          <div class="erro-msg" id="err-folga-inicio">Campo obrigatÃ³rio.</div>
         </div>
         <div class="form-field">
           <label>Data de fim *</label>
           <input type="date" id="folga-fim" oninput="calcularDiasFolga()"/>
-          <div class="erro-msg" id="err-folga-fim">Campo obrigatório.</div>
+          <div class="erro-msg" id="err-folga-fim">Campo obrigatÃ³rio.</div>
         </div>
       </div>
 
       <div class="form-field">
-        <label>Quantidade de dias úteis</label>
+        <label>Quantidade de dias Ãºteis</label>
         <div class="dias-badge" id="folga-dias-badge">Preencha as datas acima</div>
       </div>
 
       <div class="form-field">
-        <label>Observações</label>
-        <textarea id="folga-obs" placeholder="Informações adicionais, justificativa..."></textarea>
+        <label>ObservaÃ§Ãµes</label>
+        <textarea id="folga-obs" placeholder="InformaÃ§Ãµes adicionais, justificativa..."></textarea>
       </div>
 
-      <button class="btn-enviar" id="btn-folga" onclick="enviarFolga()">Enviar solicitação</button>
+      <button class="btn-enviar" id="btn-folga" onclick="enviarFolga()">Enviar solicitaÃ§Ã£o</button>
     </div>
     <div class="sucesso" id="folga-sucesso">
-      <div class="sucesso-icon">✅</div>
-      <h3>Solicitação enviada!</h3>
-      <p>Sua solicitação de folga foi registrada.<br>Você receberá uma confirmação no e-mail informado.</p>
-      <button class="btn-nova" onclick="novaSolicitacao('folga')">Nova solicitação</button>
+      <div class="sucesso-icon">â</div>
+      <h3>SolicitaÃ§Ã£o enviada!</h3>
+      <p>Sua solicitaÃ§Ã£o de folga foi registrada.<br>VocÃª receberÃ¡ uma confirmaÃ§Ã£o no e-mail informado.</p>
+      <button class="btn-nova" onclick="novaSolicitacao('folga')">Nova solicitaÃ§Ã£o</button>
     </div>
   </div>
 </div>
@@ -260,7 +260,7 @@
     document.getElementById('folga-outro-campo').style.display = val === 'Outro' ? 'block' : 'none';
   }
 
-  // Dias corridos (férias)
+  // Dias corridos (fÃ©rias)
   function calcularDiasFerias() {
     const ini = document.getElementById('ferias-inicio').value;
     const fim = document.getElementById('ferias-fim').value;
@@ -271,14 +271,14 @@
         const dias = Math.round((d2 - d1) / 86400000) + 1;
         badge.textContent = dias + (dias === 1 ? ' dia' : ' dias');
       } else {
-        badge.textContent = 'Data de fim deve ser após o início';
+        badge.textContent = 'Data de fim deve ser apÃ³s o inÃ­cio';
       }
     } else {
       badge.textContent = 'Preencha as datas acima';
     }
   }
 
-  // Dias úteis (folgas)
+  // Dias Ãºteis (folgas)
   function calcularDiasFolga() {
     const ini = document.getElementById('folga-inicio').value;
     const fim = document.getElementById('folga-fim').value;
@@ -293,9 +293,9 @@
           if (dow !== 0 && dow !== 6) count++;
           cur.setDate(cur.getDate() + 1);
         }
-        badge.textContent = count + (count === 1 ? ' dia útil' : ' dias úteis');
+        badge.textContent = count + (count === 1 ? ' dia Ãºtil' : ' dias Ãºteis');
       } else {
-        badge.textContent = 'Data de fim deve ser após o início';
+        badge.textContent = 'Data de fim deve ser apÃ³s o inÃ­cio';
       }
     } else {
       badge.textContent = 'Preencha as datas acima';
@@ -363,7 +363,7 @@
     if (!ok) return;
 
     const dias = getDiasFerias();
-    if (dias <= 0) { marcarErro('ferias-fim','err-ferias-fim','Data de fim deve ser após o início.'); return; }
+    if (dias <= 0) { marcarErro('ferias-fim','err-ferias-fim','Data de fim deve ser apÃ³s o inÃ­cio.'); return; }
 
     const btn = document.getElementById('btn-ferias');
     btn.disabled = true; btn.textContent = 'Enviando...';
@@ -383,7 +383,7 @@
       document.getElementById('ferias-form-inner').style.display = 'none';
       document.getElementById('ferias-sucesso').style.display = 'block';
     } catch(e) {
-      btn.disabled = false; btn.textContent = 'Enviar solicitação';
+      btn.disabled = false; btn.textContent = 'Enviar solicitaÃ§Ã£o';
       alert('Erro ao enviar. Tente novamente.');
     }
   }
@@ -415,7 +415,7 @@
     if (!ok) return;
 
     const dias = getDiasFolga();
-    if (dias <= 0) { marcarErro('folga-fim','err-folga-fim','Data de fim deve ser após o início.'); return; }
+    if (dias <= 0) { marcarErro('folga-fim','err-folga-fim','Data de fim deve ser apÃ³s o inÃ­cio.'); return; }
 
     const btn = document.getElementById('btn-folga');
     btn.disabled = true; btn.textContent = 'Enviando...';
@@ -435,7 +435,7 @@
       document.getElementById('folga-form-inner').style.display = 'none';
       document.getElementById('folga-sucesso').style.display = 'block';
     } catch(e) {
-      btn.disabled = false; btn.textContent = 'Enviar solicitação';
+      btn.disabled = false; btn.textContent = 'Enviar solicitaÃ§Ã£o';
       alert('Erro ao enviar. Tente novamente.');
     }
   }
@@ -449,7 +449,7 @@
       document.querySelectorAll('#form-ferias .tipo-pill').forEach(p => p.classList.remove('selected'));
       pillSelecionado['ferias-tipo'] = null;
       document.getElementById('btn-ferias').disabled = false;
-      document.getElementById('btn-ferias').textContent = 'Enviar solicitação';
+      document.getElementById('btn-ferias').textContent = 'Enviar solicitaÃ§Ã£o';
     } else {
       document.getElementById('folga-form-inner').style.display = 'block';
       document.getElementById('folga-sucesso').style.display = 'none';
@@ -460,7 +460,7 @@
       document.querySelectorAll('#form-folga .tipo-pill').forEach(p => p.classList.remove('selected'));
       pillSelecionado['folga-tipo'] = null;
       document.getElementById('btn-folga').disabled = false;
-      document.getElementById('btn-folga').textContent = 'Enviar solicitação';
+      document.getElementById('btn-folga').textContent = 'Enviar solicitaÃ§Ã£o';
     }
   }
 </script>
