@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AvaliaÃ§Ã£o â PerÃ­odo de ExperiÃªncia (Colaborador) | HD Distribuidora</title>
+<title>Avaliação — Período de Experiência (Colaborador) | HD Distribuidora</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,17 +30,15 @@
   }
   .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--border-focus); box-shadow: 0 0 0 3px rgba(74,124,89,0.1); }
   .field textarea { min-height: 90px; resize: vertical; }
-  .field textarea.required-field:invalid { border-color: #c0392b; }
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  /* Radio horizontal: bolinha ANTES do texto */
   .radio-group { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.5rem; }
   .radio-opt { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 16px !important; cursor: pointer; padding: 0.5rem 0.75rem; border-radius: 6px; transition: background 0.12s; }
   .radio-opt:hover { background: var(--accent-light); }
   .radio-opt input[type=radio] { flex-shrink: 0 !important; width: 17px !important; height: 17px !important; margin: 0 !important; cursor: pointer; accent-color: #4A7C59; appearance: auto; }
   .radio-opt span { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
   .q-label { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; display: block; }
-  .q-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.6rem; line-height: 1.45; font-style: italic; }
   .required-star { color: #c0392b; margin-left: 2px; }
+  .q-separator { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
   .form-footer { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 2rem; }
   .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
   .btn-primary { background: var(--accent); color: white; }
@@ -57,24 +55,25 @@
 </style>
 </head>
 <body>
-<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#4A7C59;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #4A7C59;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#EAF2EC'" onmouseout="this.style.background='white'" class="no-print">â InÃ­cio</a>
+<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#4A7C59;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #4A7C59;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#EAF2EC'" onmouseout="this.style.background='white'" class="no-print">← Início</a>
+
 <div class="container">
 
   <div class="page-header no-print">
-    <img src="../logo.jpg" class="header-logo" alt="HD Distribuidora"/>
+    <img src="../assets/logo.png" class="header-logo" alt="HD Distribuidora"/>
     <div>
-      <h1>AvaliaÃ§Ã£o â PerÃ­odo de ExperiÃªncia</h1>
-      <p>AvaliaÃ§Ã£o Colaborador Â· HD Distribuidora</p>
+      <h1>Avaliação — Período de Experiência</h1>
+      <p>Avaliação Colaborador · HD Distribuidora RH</p>
     </div>
   </div>
 
   <div class="notice">
-    A Entrevista de Acompanhamento tem o objetivo de verificar a sua adaptaÃ§Ã£o e satisfaÃ§Ã£o no ambiente de trabalho durante o perÃ­odo de experiÃªncia. Responda da forma mais sincera possÃ­vel â suas respostas nos ajudam a melhorar continuamente o ambiente de trabalho.
+    A Entrevista de Acompanhamento tem o objetivo de verificar a sua adaptação e satisfação no ambiente de trabalho durante o período de experiência. Responda da forma mais sincera possível — suas respostas nos ajudam a melhorar continuamente o ambiente de trabalho.
   </div>
 
-  <!-- IDENTIFICAÃÃO -->
+  <!-- IDENTIFICAÇÃO -->
   <div class="card">
-    <div class="section-label">IdentificaÃ§Ã£o</div>
+    <div class="section-label">Identificação</div>
     <div class="grid-2">
       <div class="field">
         <label>Nome <span class="required-star">*</span></label>
@@ -87,41 +86,64 @@
     </div>
     <div class="grid-2">
       <div class="field">
-        <label>FunÃ§Ã£o <span class="required-star">*</span></label>
-        <input type="text" id="funcao" placeholder="Ex: Vendedor">
+        <label>Função <span class="required-star">*</span></label>
+        <input type="text" id="funcao" placeholder="Ex: Vendedor(a)">
       </div>
       <div class="field">
-        <label>ResponsÃ¡vel pelo acompanhamento <span class="required-star">*</span></label>
-        <input type="text" id="responsavel" placeholder="Nome do lÃ­der">
+        <label>Responsável pelo acompanhamento <span class="required-star">*</span></label>
+        <input type="text" id="responsavel" placeholder="Nome do líder">
       </div>
     </div>
   </div>
 
-  <!-- ADAPTAÃÃO Ã EMPRESA -->
+  <!-- ADAPTAÇÃO À EMPRESA -->
   <div class="card">
-    <div class="section-label">AdaptaÃ§Ã£o Ã  Empresa</div>
-    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.25rem;">Essa seÃ§Ã£o Ã© para que possamos entender como estÃ¡ sua adaptaÃ§Ã£o no contexto geral da empresa e das suas atividades.</p>
+    <div class="section-label">Adaptação à Empresa</div>
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.25rem;">Essa seção é para que possamos entender como está sua adaptação no contexto geral da empresa e das suas atividades.</p>
 
     <div class="field">
-      <span class="q-label">Como estÃ¡ sendo a sua adaptaÃ§Ã£o Ã s Normas, HorÃ¡rios e Faltas? <span class="required-star">*</span></span>
+      <span class="q-label">Como está sendo a sua adaptação às Normas, Horários e Faltas? <span class="required-star">*</span></span>
       <div class="radio-group" id="rg-q1">
-        <label class="radio-opt"><input type="radio" name="q1" value="Excelente. Me adaptei bem Ã s normas da empresa e aos horÃ¡rios de trabalho."><span>Excelente. Me adaptei bem Ã s normas da empresa e aos horÃ¡rios de trabalho.</span></label>
-        <label class="radio-opt"><input type="radio" name="q1" value="Boa. Ainda estou me adaptando Ã s normas e horÃ¡rios, mas acredito que estou no caminho certo."><span>Boa. Ainda estou me adaptando Ã s normas e horÃ¡rios, mas acredito que estou no caminho certo.</span></label>
-        <label class="radio-opt"><input type="radio" name="q1" value="Regular. Ainda estou com dificuldades para cumprir as normas e horÃ¡rios da empresa."><span>Regular. Ainda estou com dificuldades para cumprir as normas e horÃ¡rios da empresa.</span></label>
-        <label class="radio-opt"><input type="radio" name="q1" value="Ruim. NÃ£o estou conseguindo me adaptar Ã s normas e horÃ¡rios propostos."><span>Ruim. NÃ£o estou conseguindo me adaptar Ã s normas e horÃ¡rios propostos.</span></label>
+        <label class="radio-opt"><input type="radio" name="q1" value="Excelente. Me adaptei bem às normas da empresa e aos horários de trabalho."><span>Excelente. Me adaptei bem às normas da empresa e aos horários de trabalho.</span></label>
+        <label class="radio-opt"><input type="radio" name="q1" value="Boa. Ainda estou me adaptando às normas e horários, mas acredito que estou no caminho certo."><span>Boa. Ainda estou me adaptando às normas e horários, mas acredito que estou no caminho certo.</span></label>
+        <label class="radio-opt"><input type="radio" name="q1" value="Regular. Ainda estou com dificuldades para cumprir as normas e horários da empresa."><span>Regular. Ainda estou com dificuldades para cumprir as normas e horários da empresa.</span></label>
+        <label class="radio-opt"><input type="radio" name="q1" value="Ruim. Não estou conseguindo me adaptar às normas e horários propostos."><span>Ruim. Não estou conseguindo me adaptar às normas e horários propostos.</span></label>
       </div>
-      <div class="error-msg" id="err-q1">Selecione uma opÃ§Ã£o.</div>
+      <div class="error-msg" id="err-q1">Selecione uma opção.</div>
     </div>
 
-    <div class="field" style="margin-top:1.25rem;">
-      <span class="q-label">Como estÃ¡ sendo a sua adaptaÃ§Ã£o Ã  FunÃ§Ã£o? <span class="required-star">*</span></span>
+    <hr class="q-separator">
+
+    <div class="field">
+      <span class="q-label">Como está sendo a sua adaptação à Função? <span class="required-star">*</span></span>
       <div class="radio-group" id="rg-q2">
-        <label class="radio-opt"><input type="radio" name="q2" value="Excelente. Estou bem adaptado(a) Ã  funÃ§Ã£o, realizando as tarefas com facilidade e eficiÃªncia."><span>Excelente. Estou bem adaptado(a) Ã  funÃ§Ã£o, realizando as tarefas com facilidade e eficiÃªncia.</span></label>
-        <label class="radio-opt"><input type="radio" name="q2" value="Boa. Estou me adaptando bem, mas ainda tenho algumas dificuldades em tarefas especÃ­ficas."><span>Boa. Estou me adaptando bem, mas ainda tenho algumas dificuldades em tarefas especÃ­ficas.</span></label>
-        <label class="radio-opt"><input type="radio" name="q2" value="Regular. Ainda estou com muitas dificuldades para realizar as atividades da minha funÃ§Ã£o."><span>Regular. Ainda estou com muitas dificuldades para realizar as atividades da minha funÃ§Ã£o.</span></label>
-        <label class="radio-opt"><input type="radio" name="q2" value="Ruim. Estou com sÃ©rias dificuldades na adaptaÃ§Ã£o Ã  minha funÃ§Ã£o."><span>Ruim. Estou com sÃ©rias dificuldades na adaptaÃ§Ã£o Ã  minha funÃ§Ã£o.</span></label>
+        <label class="radio-opt"><input type="radio" name="q2" value="Excelente. Estou bem adaptado(a) à função, realizando as tarefas com facilidade e eficiência."><span>Excelente. Estou bem adaptado(a) à função, realizando as tarefas com facilidade e eficiência.</span></label>
+        <label class="radio-opt"><input type="radio" name="q2" value="Boa. Estou me adaptando bem, mas ainda tenho algumas dificuldades em tarefas específicas."><span>Boa. Estou me adaptando bem, mas ainda tenho algumas dificuldades em tarefas específicas.</span></label>
+        <label class="radio-opt"><input type="radio" name="q2" value="Regular. Ainda estou com muitas dificuldades para realizar as atividades da minha função."><span>Regular. Ainda estou com muitas dificuldades para realizar as atividades da minha função.</span></label>
+        <label class="radio-opt"><input type="radio" name="q2" value="Ruim. Estou com sérias dificuldades na adaptação à minha função."><span>Ruim. Estou com sérias dificuldades na adaptação à minha função.</span></label>
       </div>
-      <div class="error-msg" id="err-q2">Selecione uma opÃ§Ã£o.</div>
+      <div class="error-msg" id="err-q2">Selecione uma opção.</div>
+    </div>
+
+    <hr class="q-separator">
+
+    <div class="field">
+      <span class="q-label">As atividades e rotinas do seu trabalho estão de acordo com o que foi apresentado no processo seletivo? <span class="required-star">*</span></span>
+      <div class="radio-group" id="rg-q6">
+        <label class="radio-opt"><input type="radio" name="q6" value="Sim, completamente. As atividades estão totalmente de acordo com o que foi apresentado."><span>Sim, completamente. As atividades estão totalmente de acordo com o que foi apresentado.</span></label>
+        <label class="radio-opt"><input type="radio" name="q6" value="Sim, em grande parte. Há algumas pequenas diferenças, mas nada que me preocupe."><span>Sim, em grande parte. Há algumas pequenas diferenças, mas nada que me preocupe.</span></label>
+        <label class="radio-opt"><input type="radio" name="q6" value="Parcialmente. Há diferenças significativas entre o que foi apresentado e a realidade."><span>Parcialmente. Há diferenças significativas entre o que foi apresentado e a realidade.</span></label>
+        <label class="radio-opt"><input type="radio" name="q6" value="Não. As atividades são bem diferentes do que me foi apresentado no processo seletivo."><span>Não. As atividades são bem diferentes do que me foi apresentado no processo seletivo.</span></label>
+      </div>
+      <div class="error-msg" id="err-q6">Selecione uma opção.</div>
+    </div>
+
+    <hr class="q-separator">
+
+    <div class="field">
+      <label>Você tem encontrado alguma dificuldade na execução de seu trabalho? <span class="required-star">*</span></label>
+      <textarea id="dificuldade" placeholder="Descreva as dificuldades encontradas..."></textarea>
+      <div class="error-msg" id="err-dificuldade">Campo obrigatório.</div>
     </div>
   </div>
 
@@ -130,81 +152,92 @@
     <div class="section-label">Ambiente de Trabalho</div>
 
     <div class="field">
-      <span class="q-label">Como vocÃª tem se relacionado com os colegas? <span class="required-star">*</span></span>
+      <span class="q-label">Como você tem se relacionado com os colegas? <span class="required-star">*</span></span>
       <div class="radio-group" id="rg-q3">
-        <label class="radio-opt"><input type="radio" name="q3" value="Excelente. NÃ£o tenho tido dificuldades de me enturmar ou de pedir ajuda."><span>Excelente. NÃ£o tenho tido dificuldades de me enturmar ou de pedir ajuda.</span></label>
-        <label class="radio-opt"><input type="radio" name="q3" value="Boa. Ainda tem pessoas que nÃ£o conheÃ§o, mas consigo ter uma boa interaÃ§Ã£o."><span>Boa. Ainda tem pessoas que nÃ£o conheÃ§o, mas consigo ter uma boa interaÃ§Ã£o.</span></label>
+        <label class="radio-opt"><input type="radio" name="q3" value="Excelente. Não tenho tido dificuldades de me enturmar ou de pedir ajuda."><span>Excelente. Não tenho tido dificuldades de me enturmar ou de pedir ajuda.</span></label>
+        <label class="radio-opt"><input type="radio" name="q3" value="Boa. Ainda tem pessoas que não conheço, mas consigo ter uma boa interação."><span>Boa. Ainda tem pessoas que não conheço, mas consigo ter uma boa interação.</span></label>
         <label class="radio-opt"><input type="radio" name="q3" value="Regular. Ainda estou com dificuldades para me enturmar com a equipe."><span>Regular. Ainda estou com dificuldades para me enturmar com a equipe.</span></label>
-        <label class="radio-opt"><input type="radio" name="q3" value="Ruim. NÃ£o tenho conseguido me relacionar com os colegas. Preciso de apoio."><span>Ruim. NÃ£o tenho conseguido me relacionar com os colegas. Preciso de apoio.</span></label>
+        <label class="radio-opt"><input type="radio" name="q3" value="Ruim. Não tenho conseguido me relacionar com os colegas. Preciso de apoio."><span>Ruim. Não tenho conseguido me relacionar com os colegas. Preciso de apoio.</span></label>
       </div>
-      <div class="error-msg" id="err-q3">Selecione uma opÃ§Ã£o.</div>
+      <div class="error-msg" id="err-q3">Selecione uma opção.</div>
     </div>
 
-    <div class="field" style="margin-top:1.25rem;">
-      <span class="q-label">Os colegas tÃªm contribuÃ­do no sentido de facilitar sua adaptaÃ§Ã£o? <span class="required-star">*</span></span>
+    <hr class="q-separator">
+
+    <div class="field">
+      <span class="q-label">Os colegas têm contribuído no sentido de facilitar sua adaptação? <span class="required-star">*</span></span>
       <div class="radio-group" id="rg-q4">
-        <label class="radio-opt"><input type="radio" name="q4" value="Sempre. Todos se mostram disponÃ­veis a ajudar sempre que peÃ§o apoio."><span>Sempre. Todos se mostram disponÃ­veis a ajudar sempre que peÃ§o apoio.</span></label>
-        <label class="radio-opt"><input type="radio" name="q4" value="Ãs vezes. Alguns ainda tÃªm dificuldades em ajudar, mas em sua grande maioria estÃ£o disponÃ­veis."><span>Ãs vezes. Alguns ainda tÃªm dificuldades em ajudar, mas em sua grande maioria estÃ£o disponÃ­veis.</span></label>
+        <label class="radio-opt"><input type="radio" name="q4" value="Sempre. Todos se mostram disponíveis a ajudar sempre que peço apoio."><span>Sempre. Todos se mostram disponíveis a ajudar sempre que peço apoio.</span></label>
+        <label class="radio-opt"><input type="radio" name="q4" value="Às vezes. Alguns ainda têm dificuldades em ajudar, mas em sua grande maioria estão disponíveis."><span>Às vezes. Alguns ainda têm dificuldades em ajudar, mas em sua grande maioria estão disponíveis.</span></label>
         <label class="radio-opt"><input type="radio" name="q4" value="Raramente ajudam quando preciso."><span>Raramente ajudam quando preciso.</span></label>
-        <label class="radio-opt"><input type="radio" name="q4" value="Nenhum pouco. NÃ£o se mostram disponÃ­veis para ajudar."><span>Nenhum pouco. NÃ£o se mostram disponÃ­veis para ajudar.</span></label>
+        <label class="radio-opt"><input type="radio" name="q4" value="Nenhum pouco. Não se mostram disponíveis para ajudar."><span>Nenhum pouco. Não se mostram disponíveis para ajudar.</span></label>
       </div>
-      <div class="error-msg" id="err-q4">Selecione uma opÃ§Ã£o.</div>
+      <div class="error-msg" id="err-q4">Selecione uma opção.</div>
     </div>
 
-    <div class="field" style="margin-top:1.25rem;">
-      <span class="q-label">Como Ã© seu relacionamento com seu LÃ­der? <span class="required-star">*</span></span>
+    <hr class="q-separator">
+
+    <div class="field">
+      <span class="q-label">Como é seu relacionamento com seu Líder? <span class="required-star">*</span></span>
       <div class="radio-group" id="rg-q5">
-        <label class="radio-opt"><input type="radio" name="q5" value="Excelente. Tenho um Ã³timo relacionamento com meu lÃ­der. Ele(a) Ã© acessÃ­vel e sempre me apoia."><span>Excelente. Tenho um Ã³timo relacionamento com meu lÃ­der. Ele(a) Ã© acessÃ­vel e sempre me apoia.</span></label>
+        <label class="radio-opt"><input type="radio" name="q5" value="Excelente. Tenho um ótimo relacionamento com meu líder. Ele(a) é acessível e sempre me apoia."><span>Excelente. Tenho um ótimo relacionamento com meu líder. Ele(a) é acessível e sempre me apoia.</span></label>
         <label class="radio-opt"><input type="radio" name="q5" value="Bom. Tenho um bom relacionamento, mas ainda estamos nos conhecendo melhor."><span>Bom. Tenho um bom relacionamento, mas ainda estamos nos conhecendo melhor.</span></label>
-        <label class="radio-opt"><input type="radio" name="q5" value="Regular. Tenho algumas dificuldades de me comunicar com meu lÃ­der."><span>Regular. Tenho algumas dificuldades de me comunicar com meu lÃ­der.</span></label>
-        <label class="radio-opt"><input type="radio" name="q5" value="Ruim. NÃ£o tenho um bom relacionamento com meu lÃ­der. Preciso de apoio."><span>Ruim. NÃ£o tenho um bom relacionamento com meu lÃ­der. Preciso de apoio.</span></label>
+        <label class="radio-opt"><input type="radio" name="q5" value="Regular. Tenho algumas dificuldades de me comunicar com meu líder."><span>Regular. Tenho algumas dificuldades de me comunicar com meu líder.</span></label>
+        <label class="radio-opt"><input type="radio" name="q5" value="Ruim. Não tenho um bom relacionamento com meu líder. Preciso de apoio."><span>Ruim. Não tenho um bom relacionamento com meu líder. Preciso de apoio.</span></label>
       </div>
-      <div class="error-msg" id="err-q5">Selecione uma opÃ§Ã£o.</div>
+      <div class="error-msg" id="err-q5">Selecione uma opção.</div>
+    </div>
+
+    <hr class="q-separator">
+
+    <div class="field">
+      <label>Como seu líder poderia te ajudar/auxiliar mais? <span class="required-star">*</span></label>
+      <textarea id="ajuda-lider" placeholder="Descreva como seu líder poderia te apoiar melhor..."></textarea>
+      <div class="error-msg" id="err-ajuda-lider">Campo obrigatório.</div>
     </div>
   </div>
 
-  <!-- EXPECTATIVAS -->
+  <!-- SUGESTÕES -->
   <div class="card">
-    <div class="section-label">Expectativas</div>
+    <div class="section-label">Sugestões</div>
 
     <div class="field">
-      <span class="q-label">As atividades e rotinas do seu trabalho estÃ£o de acordo com o que foi apresentado no processo seletivo? <span class="required-star">*</span></span>
-      <div class="radio-group" id="rg-q6">
-        <label class="radio-opt"><input type="radio" name="q6" value="Sim, completamente. As atividades estÃ£o totalmente de acordo com o que foi apresentado."><span>Sim, completamente. As atividades estÃ£o totalmente de acordo com o que foi apresentado.</span></label>
-        <label class="radio-opt"><input type="radio" name="q6" value="Sim, em grande parte. HÃ¡ algumas pequenas diferenÃ§as, mas nada que me preocupe."><span>Sim, em grande parte. HÃ¡ algumas pequenas diferenÃ§as, mas nada que me preocupe.</span></label>
-        <label class="radio-opt"><input type="radio" name="q6" value="Parcialmente. HÃ¡ diferenÃ§as significativas entre o que foi apresentado e a realidade."><span>Parcialmente. HÃ¡ diferenÃ§as significativas entre o que foi apresentado e a realidade.</span></label>
-        <label class="radio-opt"><input type="radio" name="q6" value="NÃ£o. As atividades sÃ£o bem diferentes do que me foi apresentado no processo seletivo."><span>NÃ£o. As atividades sÃ£o bem diferentes do que me foi apresentado no processo seletivo.</span></label>
-      </div>
-      <div class="error-msg" id="err-q6">Selecione uma opÃ§Ã£o.</div>
+      <label>Você acha necessário receber algum treinamento adicional sobre os produtos da HD ou de alguma ferramenta que usamos? Em caso afirmativo, nos dê exemplos do que gostaria de aprender mais. <span class="required-star">*</span></label>
+      <textarea id="treinamento" placeholder="Descreva os treinamentos que gostaria de receber..."></textarea>
+      <div class="error-msg" id="err-treinamento">Campo obrigatório.</div>
     </div>
 
-    <div class="field" style="margin-top:1.25rem;">
-      <label>VocÃª gostaria de deixar alguma sugestÃ£o? <span class="required-star">*</span></label>
-      <textarea id="sugestao" placeholder="Seja para a HD Distribuidora ou para as atividades em geral..." required></textarea>
-      <div class="error-msg" id="err-sugestao">Campo obrigatÃ³rio.</div>
+    <hr class="q-separator">
+
+    <div class="field">
+      <label>Você gostaria de deixar alguma sugestão? <span class="required-star">*</span></label>
+      <textarea id="sugestao" placeholder="Seja para a HD ou para as atividades em geral..."></textarea>
+      <div class="error-msg" id="err-sugestao">Campo obrigatório.</div>
     </div>
 
-    <div class="field" style="margin-top:1.25rem;">
-      <span class="q-label">VocÃª deseja seguir conosco? <span class="required-star">*</span></span>
+    <hr class="q-separator">
+
+    <div class="field">
+      <span class="q-label">Você deseja seguir conosco? <span class="required-star">*</span></span>
       <div class="radio-group" id="rg-q7">
         <label class="radio-opt"><input type="radio" name="q7" value="Sim"><span>Sim</span></label>
-        <label class="radio-opt"><input type="radio" name="q7" value="NÃ£o"><span>NÃ£o</span></label>
-        <label class="radio-opt"><input type="radio" name="q7" value="Quero conversar com vocÃªs."><span>Quero conversar com vocÃªs.</span></label>
+        <label class="radio-opt"><input type="radio" name="q7" value="Não"><span>Não</span></label>
+        <label class="radio-opt"><input type="radio" name="q7" value="Quero conversar com vocês."><span>Quero conversar com vocês.</span></label>
       </div>
-      <div class="error-msg" id="err-q7">Selecione uma opÃ§Ã£o.</div>
+      <div class="error-msg" id="err-q7">Selecione uma opção.</div>
     </div>
   </div>
 
   <div class="form-footer no-print">
     <button class="btn btn-ghost" onclick="window.print()">Imprimir / PDF</button>
-    <button class="btn btn-primary" id="btn-salvar" onclick="salvar()">Salvar registro â</button>
+    <button class="btn btn-primary" id="btn-salvar" onclick="salvar()">Salvar registro ↓</button>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-const SCRIPT_URL = 'https://docs.google.com/spreadsheets/d/1-MJAqaYPegBSO-TlWXMi6bVeW_pf7jcuJCudgSqv5JQ/edit?gid=912490700#gid=912490700';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYOEGropdzHP5V_nuR29qP7KNDEvFfNIV4JtDifPDZxIG1gX5T9buFyn361K_GISvvkQ/exec';
 
 function mostrarToast(msg, erro) {
   const t = document.getElementById('toast');
@@ -216,27 +249,35 @@ function mostrarToast(msg, erro) {
 
 function validar() {
   let ok = true;
-  const campos = ['nome','data','funcao','responsavel'];
-  campos.forEach(id => {
+
+  // Campos de texto
+  ['nome','data','funcao','responsavel'].forEach(id => {
     const el = document.getElementById(id);
-    if (!el.value.trim()) { el.style.borderColor='#c0392b'; ok=false; } 
+    if (!el.value.trim()) { el.style.borderColor='#c0392b'; ok=false; }
     else { el.style.borderColor=''; }
   });
+
+  // Radio buttons
   ['q1','q2','q3','q4','q5','q6','q7'].forEach(n => {
     const sel = document.querySelector('input[name='+n+']:checked');
     const err = document.getElementById('err-'+n);
-    if (!sel) { err.style.display='block'; ok=false; } 
+    if (!sel) { err.style.display='block'; ok=false; }
     else { err.style.display='none'; }
   });
-  const sug = document.getElementById('sugestao');
-  const errSug = document.getElementById('err-sugestao');
-  if (!sug.value.trim()) { errSug.style.display='block'; sug.style.borderColor='#c0392b'; ok=false; }
-  else { errSug.style.display='none'; sug.style.borderColor=''; }
+
+  // Textareas obrigatórias
+  ['dificuldade','ajuda-lider','treinamento','sugestao'].forEach(id => {
+    const el = document.getElementById(id);
+    const err = document.getElementById('err-'+id);
+    if (!el.value.trim()) { err.style.display='block'; el.style.borderColor='#c0392b'; ok=false; }
+    else { err.style.display='none'; el.style.borderColor=''; }
+  });
+
   return ok;
 }
 
 async function salvar() {
-  if (!validar()) { mostrarToast('Preencha todos os campos obrigatÃ³rios.', true); return; }
+  if (!validar()) { mostrarToast('Preencha todos os campos obrigatórios.', true); return; }
   const btn = document.getElementById('btn-salvar');
   btn.disabled = true; btn.textContent = 'Salvando...';
   const dados = {
@@ -247,21 +288,24 @@ async function salvar() {
     responsavel: document.getElementById('responsavel').value,
     q1: document.querySelector('input[name=q1]:checked')?.value,
     q2: document.querySelector('input[name=q2]:checked')?.value,
+    q6_adaptacao: document.querySelector('input[name=q6]:checked')?.value,
+    dificuldade: document.getElementById('dificuldade').value,
     q3: document.querySelector('input[name=q3]:checked')?.value,
     q4: document.querySelector('input[name=q4]:checked')?.value,
     q5: document.querySelector('input[name=q5]:checked')?.value,
-    q6: document.querySelector('input[name=q6]:checked')?.value,
+    ajudaLider: document.getElementById('ajuda-lider').value,
+    treinamento: document.getElementById('treinamento').value,
     sugestao: document.getElementById('sugestao').value,
     q7: document.querySelector('input[name=q7]:checked')?.value,
     timestamp: new Date().toLocaleString('pt-BR')
   };
   try {
     await fetch(SCRIPT_URL, {method:'POST',mode:'no-cors',body:JSON.stringify(dados)});
-    mostrarToast('â AvaliaÃ§Ã£o registrada com sucesso!', false);
+    mostrarToast('✓ Avaliação registrada com sucesso!', false);
     setTimeout(() => window.location.href='../index.html', 2500);
   } catch(e) {
     mostrarToast('Erro ao salvar. Tente novamente.', true);
-    btn.disabled = false; btn.textContent = 'Salvar registro â';
+    btn.disabled = false; btn.textContent = 'Salvar registro ↓';
   }
 }
 </script>
