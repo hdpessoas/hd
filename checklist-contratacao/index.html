@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Checklist de ContrataÃ§Ã£o | HD Distribuidora</title>
+  <title>Checklist de Contratação | HD Distribuidora</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -123,7 +123,7 @@
     .save-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid var(--border); padding: 0.85rem 1.5rem; display: none; align-items: center; justify-content: flex-end; gap: 1rem; flex-wrap: wrap; z-index: 100; box-shadow: 0 -4px 16px rgba(0,0,0,0.06); }
     .save-bar.visible { display: flex; }
 
-    /* ââ PRINT STYLES ââ */
+    /* ── PRINT STYLES ── */
     @media print {
       body { background: white; padding: 0; font-size: 11pt; }
       .selector-card, .tabs-nav, .save-bar, .complete-badge, .empty-state { display: none !important; }
@@ -168,7 +168,7 @@
   </style>
 </head>
 <body>
-<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'" class="no-print">â InÃ­cio</a>
+<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'" class="no-print">← Início</a>
 
 <div class="container">
   
@@ -177,8 +177,8 @@
   <div class="page-header">
     <img src="../logo.jpg" class="header-logo" alt="HD Distribuidora"/>
     <div>
-      <h1>Checklist de ContrataÃ§Ã£o</h1>
-      <p>Painel administrativo â HD Distribuidora RH</p>
+      <h1>Checklist de Contratação</h1>
+      <p>Painel administrativo — HD Distribuidora RH</p>
     </div>
   </div>
 
@@ -186,14 +186,14 @@
   <div class="print-header">
     <img src="../logo.jpg" alt="HD Distribuidora"/>
     <div class="print-header-text">
-      <h1>Checklist de ContrataÃ§Ã£o</h1>
-      <p>HD Distribuidora Tecnologia da InformaÃ§Ã£o Ltda</p>
+      <h1>Checklist de Contratação</h1>
+      <p>HD Distribuidora Tecnologia da Informação Ltda</p>
     </div>
   </div>
   <div class="print-colab-box" id="printColabBox">
     <div>
       <div class="label">Colaborador</div>
-      <div class="name" id="printColabName">â</div>
+      <div class="name" id="printColabName">—</div>
     </div>
   </div>
 
@@ -203,20 +203,20 @@
       <div class="selector-field">
         <label>Colaborador</label>
         <select id="selectColab" onchange="onColabChange()">
-          <option value="">â Selecione um colaborador â</option>
+          <option value="">— Selecione um colaborador —</option>
         </select>
       </div>
       <button class="btn btn-outline-green" onclick="loadColabs()">
         <div class="spinner"></div>
-        <span class="btn-label">â» Atualizar lista</span>
+        <span class="btn-label">↻ Atualizar lista</span>
       </button>
     </div>
     <div class="colab-banner" id="colabBanner">
       <div class="colab-info">
         <div class="colab-avatar" id="colabAvatar">--</div>
         <div>
-          <div class="colab-name" id="colabName">â</div>
-          <div class="colab-meta" id="colabMeta">â</div>
+          <div class="colab-name" id="colabName">—</div>
+          <div class="colab-meta" id="colabMeta">—</div>
         </div>
       </div>
       <span class="save-status" id="saveStatus"></span>
@@ -234,42 +234,42 @@
   <div class="tabs-wrapper" id="tabsWrapper">
     <div class="tabs-nav">
       <button class="tab-btn active" onclick="switchTab('docs', this)">
-        ð Documentos <span class="tab-pill" id="tPill-docs">0/14</span>
+        📁 Documentos <span class="tab-pill" id="tPill-docs">0/14</span>
       </button>
       <button class="tab-btn" onclick="switchTab('sign', this)">
-        âï¸ Assinaturas <span class="tab-pill" id="tPill-sign">0/6</span>
+        ✍️ Assinaturas <span class="tab-pill" id="tPill-sign">0/6</span>
       </button>
       <button class="tab-btn" onclick="switchTab('reg', this)">
-        ð¥ï¸ Registros <span class="tab-pill" id="tPill-reg">0/8</span>
+        🖥️ Registros <span class="tab-pill" id="tPill-reg">0/8</span>
       </button>
     </div>
 
     <!-- TAB DOCUMENTOS -->
     <div class="tab-panel active" id="tab-docs">
-      <span class="tab-section-title">ð Documentos ObrigatÃ³rios</span>
+      <span class="tab-section-title">📁 Documentos Obrigatórios</span>
       <div class="complete-badge" id="done-docs">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         Todos os documentos foram conferidos!
       </div>
       <div class="cl-card">
         <div class="cl-card-header green">
-          <span class="cl-card-title">ð Documentos para Encaminhamento de AdmissÃ£o</span>
+          <span class="cl-card-title">📁 Documentos para Encaminhamento de Admissão</span>
         </div>
         <ul class="cl-list" id="list-docs">
-          <li class="cl-item" onclick="toggleItem(this,'docs',0)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia da Carteira de Trabalho (se nÃ£o for digital)</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',0)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia da Carteira de Trabalho (se não for digital)</span></li>
           <li class="cl-item" onclick="toggleItem(this,'docs',1)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Ficha de Registro de Empregado</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',2)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia do RG</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',3)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia do CPF</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',4)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia do Comprovante de ResidÃªncia</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia do TÃ­tulo de Eleitor</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',6)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia da Carteira de HabilitaÃ§Ã£o</span><span class="tag-cond">Motorista</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',7)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia da CertidÃ£o de Nascimento ou Casamento</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',8)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia da CertidÃ£o de Reservista</span><span class="tag-cond">Sexo Masc.</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',9)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia da CertidÃ£o de Nascimento dos filhos menores de 14 anos</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',10)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia de Diploma ou Certificado Escolar</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',11)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CÃ³pia da Caderneta de VacinaÃ§Ã£o (filhos menores de 7 anos â anual)</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',12)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">1 foto recente 3Ã4</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'docs',13)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Exame MÃ©dico Admissional</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',2)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia do RG</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',3)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia do CPF</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',4)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia do Comprovante de Residência</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia do Título de Eleitor</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',6)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia da Carteira de Habilitação</span><span class="tag-cond">Motorista</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',7)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia da Certidão de Nascimento ou Casamento</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',8)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia da Certidão de Reservista</span><span class="tag-cond">Sexo Masc.</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',9)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia da Certidão de Nascimento dos filhos menores de 14 anos</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',10)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia de Diploma ou Certificado Escolar</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',11)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cópia da Caderneta de Vacinação (filhos menores de 7 anos — anual)</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',12)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">1 foto recente 3×4</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'docs',13)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Exame Médico Admissional</span></li>
         </ul>
         <div class="cl-footer green">
           <div class="prog-track"><div class="prog-fill" id="bar-docs"></div></div>
@@ -280,21 +280,21 @@
 
     <!-- TAB ASSINATURAS -->
     <div class="tab-panel" id="tab-sign">
-      <span class="tab-section-title">âï¸ Documentos para Assinatura na AdmissÃ£o na AdmissÃ£o</span>
+      <span class="tab-section-title">✍️ Documentos para Assinatura na Admissão na Admissão</span>
       <div class="complete-badge" id="done-sign">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         Todos os documentos foram assinados!
       </div>
       <div class="cl-card">
         <div class="cl-card-header green">
-          <span class="cl-card-title">âï¸ Documentos para Assinatura na AdmissÃ£o</span>
+          <span class="cl-card-title">✍️ Documentos para Assinatura na Admissão</span>
         </div>
         <ul class="cl-list" id="list-sign">
           <li class="cl-item" onclick="toggleItem(this,'sign',0)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Contrato de Trabalho</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'sign',1)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Contrato de RenovaÃ§Ã£o do PerÃ­odo de ExperiÃªncia</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'sign',2)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Acordo de HorÃ¡rio de Trabalho</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'sign',3)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Acordo de CompensaÃ§Ã£o de Horas de Trabalho</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'sign',4)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Acordo de ProrrogaÃ§Ã£o de Horas</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'sign',1)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Contrato de Renovação do Período de Experiência</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'sign',2)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Acordo de Horário de Trabalho</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'sign',3)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Acordo de Compensação de Horas de Trabalho</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'sign',4)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Acordo de Prorrogação de Horas</span></li>
           <li class="cl-item" onclick="toggleItem(this,'sign',5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Termo de Vale Transporte</span></li>
         </ul>
         <div class="cl-footer green">
@@ -306,21 +306,21 @@
 
     <!-- TAB REGISTROS -->
     <div class="tab-panel" id="tab-reg">
-      <span class="tab-section-title">ð¥ï¸ Registros NecessÃ¡rios</span>
+      <span class="tab-section-title">🖥️ Registros Necessários</span>
       <div class="complete-badge" id="done-reg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         Todos os registros foram realizados!
       </div>
       <div class="cl-card">
         <div class="cl-card-header green">
-          <span class="cl-card-title">ð¢ Setor de RH</span>
+          <span class="cl-card-title">🏢 Setor de RH</span>
           <span class="resp-tag tag-rh">RH</span>
         </div>
         <ul class="cl-list" id="list-reg-rh">
-          <li class="cl-item" onclick="toggleItem(this,'reg',0)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Senha de acesso Ã  porta â reconhecimento facial</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'reg',0)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Senha de acesso à porta — reconhecimento facial</span></li>
           <li class="cl-item" onclick="toggleItem(this,'reg',1)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cadastro do Empregado no Sistema Ponto</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'reg',2)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cadastro do Colaborador no CartÃ£o Caju</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'reg',3)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Subir documentos no Drive â Pasta Individual <em style="color:var(--text-hint);font-size:0.85em;">(em atÃ© 7 dias)</em></span></li>
+          <li class="cl-item" onclick="toggleItem(this,'reg',2)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cadastro do Colaborador no Cartão Caju</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'reg',3)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Subir documentos no Drive — Pasta Individual <em style="color:var(--text-hint);font-size:0.85em;">(em até 7 dias)</em></span></li>
           <li class="cl-item" onclick="toggleItem(this,'reg',4)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cadastro do(a) Colaborador(a) na Planilha de RH</span></li>
         </ul>
         <div class="cl-footer green">
@@ -330,13 +330,13 @@
       </div>
       <div class="cl-card">
         <div class="cl-card-header blue">
-          <span class="cl-card-title" style="color:var(--blue)">ð¤ Diretor / Coordenador</span>
+          <span class="cl-card-title" style="color:var(--blue)">👤 Diretor / Coordenador</span>
           <span class="resp-tag tag-dir">Diretor</span>
         </div>
         <ul class="cl-list" id="list-reg-dir">
-          <li class="cl-item" onclick="toggleItem(this,'reg',5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CriaÃ§Ã£o de E-mail (HD Distribuidora e Drive)</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'reg',6)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CriaÃ§Ã£o de Conta no Slack</span></li>
-          <li class="cl-item" onclick="toggleItem(this,'reg',7)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Encaminhamento para criaÃ§Ã£o de usuÃ¡rio nas ferramentas de trabalho (conforme setor)</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'reg',5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Criação de E-mail (HD Distribuidora e Drive)</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'reg',6)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Criação de Conta no Slack</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'reg',7)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Encaminhamento para criação de usuário nas ferramentas de trabalho (conforme setor)</span></li>
         </ul>
         <div class="cl-footer blue">
           <div class="prog-track"><div class="prog-fill prog-fill blue" id="bar-reg-dir" style="background:var(--blue)"></div></div>
@@ -350,10 +350,10 @@
 
 <!-- SAVE BAR -->
 <div class="save-bar" id="saveBar">
-  <button class="btn btn-ghost btn-sm" onclick="window.print()">ð¨ï¸ Imprimir</button>
+  <button class="btn btn-ghost btn-sm" onclick="window.print()">🖨️ Imprimir</button>
   <button class="btn btn-primary btn-sm" id="saveBtn" onclick="saveProgress()">
     <div class="spinner"></div>
-    <span class="btn-label">ð¾ Salvar progresso</span>
+    <span class="btn-label">💾 Salvar progresso</span>
   </button>
 </div>
 
@@ -373,12 +373,12 @@ async function loadColabs() {
     const res = await fetch(SCRIPT_URL);
     const data = await res.json();
     const sel = document.getElementById('selectColab');
-    sel.innerHTML = '<option value="">â Selecione um colaborador â</option>';
+    sel.innerHTML = '<option value="">— Selecione um colaborador —</option>';
     const list = data.fichas || [];
     list.forEach(c => {
       const name = c['Nome'] || '';
-      const cargo = c['Funcao'] || c['FunÃ§Ã£o'] || '';
-      const admissao = c['Admissao'] || c['AdmissÃ£o'] || '';
+      const cargo = c['Funcao'] || c['Função'] || '';
+      const admissao = c['Admissao'] || c['Admissão'] || '';
       if (!name) return;
       const opt = document.createElement('option');
       opt.value = name;
@@ -405,15 +405,15 @@ async function onColabChange() {
 
   currentColab = { nome: opt.value, cargo: '', admissao: '' };
 
-  // Busca dados admin (cargo, admissÃ£o, departamento)
+  // Busca dados admin (cargo, admissão, departamento)
   try {
     const url = SCRIPT_URL + '?acao=getDadosAdmin&colaborador=' + encodeURIComponent(opt.value);
     const res = await fetch(url);
     const data = await res.json();
     if (data.dados) {
       const d = data.dados;
-      currentColab.cargo = d['FunÃ§Ã£o'] || d['Funcao'] || d['funÃ§Ã£o'] || d['funcao'] || d['Cargo'] || '';
-      const rawAdmissao = d['Data AdmissÃ£o'] || d['Data Admissao'] || d['Data admissÃ£o'] || d['DataAdmissao'] || '';
+      currentColab.cargo = d['Função'] || d['Funcao'] || d['função'] || d['funcao'] || d['Cargo'] || '';
+      const rawAdmissao = d['Data Admissão'] || d['Data Admissao'] || d['Data admissão'] || d['DataAdmissao'] || '';
       if (rawAdmissao && rawAdmissao.includes('T')) {
         const parts = rawAdmissao.split('T')[0].split('-');
         currentColab.admissao = parts[2] + '/' + parts[1] + '/' + parts[0];
@@ -432,8 +432,8 @@ async function onColabChange() {
   let meta = [];
   if (currentColab.cargo) meta.push(currentColab.cargo);
   if (currentColab.departamento) meta.push(currentColab.departamento);
-  if (currentColab.admissao) meta.push('AdmissÃ£o: ' + currentColab.admissao);
-  document.getElementById('colabMeta').textContent = meta.join(' Â· ') || 'Colaborador HD Distribuidora';
+  if (currentColab.admissao) meta.push('Admissão: ' + currentColab.admissao);
+  document.getElementById('colabMeta').textContent = meta.join(' · ') || 'Colaborador HD Distribuidora';
   document.getElementById('colabBanner').classList.add('visible');
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('tabsWrapper').classList.add('visible');
@@ -443,14 +443,14 @@ async function onColabChange() {
 }
 
 async function loadSavedState() {
-  setSaveStatus('saving', 'â³ Carregando...');
+  setSaveStatus('saving', '⏳ Carregando...');
   try {
     const url = SCRIPT_URL + '?acao=getChecklist&colaborador=' + encodeURIComponent(currentColab.nome) + '&tipo=contratacao';
     const res = await fetch(url);
     const data = await res.json();
     if (data.checklist) {
       applyState(data.checklist);
-      setSaveStatus('saved', 'â Atualizado');
+      setSaveStatus('saved', '✓ Atualizado');
     } else {
       resetAllItems();
       setSaveStatus('');
@@ -542,7 +542,7 @@ async function saveProgress() {
   if (!currentColab) return;
   const btn = document.getElementById('saveBtn');
   btn.classList.add('loading'); btn.disabled = true;
-  setSaveStatus('saving','â³ Salvando...');
+  setSaveStatus('saving','⏳ Salvando...');
   const payload = {
     tipo: 'checklist',
     subtipo: 'contratacao',
@@ -557,8 +557,8 @@ async function saveProgress() {
   };
   try {
     await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
-    setSaveStatus('saved','â Salvo');
-  } catch(e) { setSaveStatus('error','â Erro ao salvar'); }
+    setSaveStatus('saved','✓ Salvo');
+  } catch(e) { setSaveStatus('error','✗ Erro ao salvar'); }
   btn.classList.remove('loading'); btn.disabled = false;
 }
 
