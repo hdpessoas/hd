@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro de Feedback â HD Distribuidora</title>
+<title>Registro de Feedback — HD Distribuidora</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -166,7 +166,7 @@
     margin-top: 2px;
   }
 
-  /* CiÃªncia botÃµes */
+  /* Ciência botões */
   .science-opts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
   .science-btn {
     padding: 8px 16px;
@@ -210,7 +210,7 @@
   .btn-danger { background: transparent; border-color: var(--border); color: #943030; font-size: 13px; padding: 7px 16px; }
   .btn-danger:hover { background: #FEF2F2; border-color: #943030; }
 
-  /* HistÃ³rico */
+  /* Histórico */
   .historico-section { margin-top: 2.5rem; }
   .historico-header {
     display: flex; align-items: center; justify-content: space-between;
@@ -279,17 +279,17 @@
 <!-- TELA DE LOGIN -->
 <div id="tela-login" style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#F0F3F8;padding:2rem 1rem;">
   <div style="background:white;border:1px solid #C8D6E8;border-radius:12px;padding:2.5rem 2rem;width:100%;max-width:380px;box-shadow:0 8px 32px rgba(0,0,0,0.08);">
-    <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:5px 12px;border-radius:8px;border:1.5px solid #2E4DA6;margin-bottom:1.5rem;transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">â InÃ­cio</a>
+    <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:5px 12px;border-radius:8px;border:1.5px solid #2E4DA6;margin-bottom:1.5rem;transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">← Início</a>
     <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;">
       <img src="../logo.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" alt="HD Distribuidora"/>
       <div>
         <div style="font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:#2E4DA6;">Registro de Feedback</div>
-        <div style="font-size:0.78rem;color:#9AA394;margin-top:1px;">HD Distribuidora Â· GestÃ£o de Pessoas</div>
+        <div style="font-size:0.78rem;color:#9AA394;margin-top:1px;">HD Distribuidora · Gestão de Pessoas</div>
       </div>
     </div>
     <div style="margin-bottom:1rem;">
-      <label style="display:block;font-size:0.82rem;font-weight:600;color:#5E6659;margin-bottom:0.35rem;">UsuÃ¡rio</label>
-      <input type="text" id="inp-usuario" placeholder="seu usuÃ¡rio" autocomplete="username"
+      <label style="display:block;font-size:0.82rem;font-weight:600;color:#5E6659;margin-bottom:0.35rem;">Usuário</label>
+      <input type="text" id="inp-usuario" placeholder="seu usuário" autocomplete="username"
         style="width:100%;padding:10px 13px;border:1px solid #C8D6E8;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;"
         onkeydown="if(event.key==='Enter')fazerLogin()"
         onfocus="this.style.borderColor='#2E4DA6';this.style.boxShadow='0 0 0 3px rgba(46,77,166,0.1)'"
@@ -304,12 +304,12 @@
         onblur="this.style.borderColor='#C8D6E8';this.style.boxShadow='none'">
     </div>
     <button onclick="fazerLogin()" style="width:100%;padding:11px;background:#2E4DA6;color:white;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#3a6347'" onmouseout="this.style.background='#2E4DA6'">Entrar</button>
-    <div id="login-erro" style="display:none;background:#fdf0ee;border:1px solid #e8b4ae;border-radius:8px;padding:0.6rem 0.9rem;font-size:0.85rem;color:#9b3a2e;margin-top:0.75rem;">UsuÃ¡rio ou senha incorretos.</div>
+    <div id="login-erro" style="display:none;background:#fdf0ee;border:1px solid #e8b4ae;border-radius:8px;padding:0.6rem 0.9rem;font-size:0.85rem;color:#9b3a2e;margin-top:0.75rem;">Usuário ou senha incorretos.</div>
   </div>
 </div>
 <div id="tela-conteudo" style="display:none;">
 
-<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'" class="no-print">â InÃ­cio</a>
+<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'" class="no-print">← Início</a>
 
 <div class="page-wrap">
 
@@ -319,27 +319,27 @@
       <div class="brand-icon"><img src="../logo.jpg" alt="HD Distribuidora"></div>
       <div class="brand-text">
         <span class="brand-name">HD Distribuidora</span>
-        <span class="brand-sub">Registro de Feedback â Colaboradores</span>
+        <span class="brand-sub">Registro de Feedback — Colaboradores</span>
       </div>
     </div>
-    <span class="rec-id" id="rec-id">â</span>
+    <span class="rec-id" id="rec-id">—</span>
   </div>
 
-  <!-- IdentificaÃ§Ã£o -->
+  <!-- Identificação -->
   <div class="card">
-    <div class="section-label">IdentificaÃ§Ã£o</div>
+    <div class="section-label">Identificação</div>
 
     <div class="field">
       <label>Colaborador</label>
       <input type="text" id="colaborador" placeholder="Nome completo">
     </div>
     <div class="field">
-      <label>ResponsÃ¡vel pelo feedback</label>
+      <label>Responsável pelo feedback</label>
       <input type="text" id="responsavel" placeholder="Quem conduz a conversa">
     </div>
     <div class="field">
-      <label>Cargo / Ã¡rea</label>
-      <input type="text" id="cargo" placeholder="Ex: Fisioterapeuta â Pilates">
+      <label>Cargo / área</label>
+      <input type="text" id="cargo" placeholder="Ex: Fisioterapeuta — Pilates">
     </div>
     <div class="field">
       <label>Data</label>
@@ -361,7 +361,7 @@
       <select id="formato">
         <option value="">Selecione</option>
         <option>Presencial</option>
-        <option>VideoconferÃªncia</option>
+        <option>Videoconferência</option>
         <option>Somente escrito</option>
       </select>
     </div>
@@ -371,9 +371,9 @@
   <div class="card">
     <div class="section-label">Motivo do feedback</div>
     <div class="field">
-      <label>Por que este feedback estÃ¡ sendo realizado?</label>
-      <textarea id="motivo" class="tall" placeholder="Descreva o contexto que motivou este feedback: situaÃ§Ãµes observadas, comportamentos, resultados ou perÃ­odo avaliado..."></textarea>
-      <span class="field-hint">Seja especÃ­fico â exemplos concretos tornam o feedback mais claro e Ãºtil.</span>
+      <label>Por que este feedback está sendo realizado?</label>
+      <textarea id="motivo" class="tall" placeholder="Descreva o contexto que motivou este feedback: situações observadas, comportamentos, resultados ou período avaliado..."></textarea>
+      <span class="field-hint">Seja específico — exemplos concretos tornam o feedback mais claro e útil.</span>
     </div>
   </div>
 
@@ -382,27 +382,27 @@
     <div class="section-label">O que ficou acertado</div>
     <div class="field">
       <label>Pontos positivos, conquistas e acordos desta conversa</label>
-      <textarea id="acertado" class="tall" placeholder="Descreva os pontos fortes observados, os resultados alcanÃ§ados e os combinados definidos entre as partes..."></textarea>
-      <span class="field-hint">Inclua tanto reconhecimentos quanto prÃ³ximos passos acordados.</span>
+      <textarea id="acertado" class="tall" placeholder="Descreva os pontos fortes observados, os resultados alcançados e os combinados definidos entre as partes..."></textarea>
+      <span class="field-hint">Inclua tanto reconhecimentos quanto próximos passos acordados.</span>
     </div>
   </div>
 
-  <!-- CiÃªncia -->
+  <!-- Ciência -->
   <div class="card">
-    <div class="section-label">CiÃªncia</div>
+    <div class="section-label">Ciência</div>
 
     <div class="field">
       <label>O colaborador tomou conhecimento deste feedback?</label>
       <div class="science-opts">
         <div class="science-btn" data-sci="Sim, ciente">Sim, ciente</div>
-        <div class="science-btn" data-sci="NÃ£o estava presente">NÃ£o estava presente</div>
+        <div class="science-btn" data-sci="Não estava presente">Não estava presente</div>
         <div class="science-btn" data-sci="Recebeu por escrito">Recebeu por escrito</div>
       </div>
     </div>
 
     <div class="field">
-      <label>ObservaÃ§Ã£o final</label>
-      <textarea id="obs-final" placeholder="Qualquer nota adicional do responsÃ¡vel pelo feedback ou comentÃ¡rio do colaborador..."></textarea>
+      <label>Observação final</label>
+      <textarea id="obs-final" placeholder="Qualquer nota adicional do responsável pelo feedback ou comentário do colaborador..."></textarea>
     </div>
   </div>
 
@@ -412,33 +412,33 @@
       <button class="btn btn-ghost" onclick="limpar()">Limpar</button>
       <button class="btn btn-ghost" onclick="window.print()">Imprimir / PDF</button>
     </div>
-    <button class="btn btn-primary" onclick="salvar()">Salvar no histÃ³rico â</button>
+    <button class="btn btn-primary" onclick="salvar()">Salvar no histórico ↓</button>
   </div>
 
-  <!-- HistÃ³rico -->
+  <!-- Histórico -->
   <div class="historico-section">
     <div class="historico-header">
-      <span class="historico-title">HistÃ³rico de registros</span>
+      <span class="historico-title">Histórico de registros</span>
       <span class="count-badge" id="count-badge">0</span>
     </div>
     <div id="historico-lista"></div>
     <div style="margin-top: 10px; text-align: right;">
-      <button class="btn btn-danger" onclick="exportar()">Exportar histÃ³rico (.txt)</button>
+      <button class="btn btn-danger" onclick="exportar()">Exportar histórico (.txt)</button>
     </div>
   </div>
 
-  <!-- Painel: HistÃ³rico da Planilha -->
+  <!-- Painel: Histórico da Planilha -->
   <div style="margin-top:2rem;">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
-      <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9AA394;">HistÃ³rico da Planilha</span>
+      <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9AA394;">Histórico da Planilha</span>
       <button onclick="carregarPlanilha()" id="btn-carregar-planilha"
         style="padding:7px 16px;background:#2E4DA6;color:white;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;"
         onmouseover="this.style.background='#3a6347'" onmouseout="this.style.background='#2E4DA6'">
-        â Carregar registros
+        ↓ Carregar registros
       </button>
     </div>
     <div style="margin-bottom:0.75rem;">
-      <input type="text" id="busca-planilha" placeholder="ð  Buscar por colaborador, responsÃ¡vel ou motivo..." oninput="filtrarPlanilha()"
+      <input type="text" id="busca-planilha" placeholder="🔍  Buscar por colaborador, responsável ou motivo..." oninput="filtrarPlanilha()"
         style="width:100%;padding:9px 13px;border:1px solid #C8D6E8;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;display:none;"
         onfocus="this.style.borderColor='#2E4DA6'" onblur="this.style.borderColor='#C8D6E8'">
     </div>
@@ -451,8 +451,8 @@
       <div style="position:sticky;top:0;background:white;padding:1.25rem 1.5rem;border-bottom:1px solid #C8D6E8;display:flex;align-items:center;justify-content:space-between;z-index:10;">
         <span style="font-family:'Lora',serif;font-size:1.1rem;font-weight:700;color:#2E4DA6;" id="modal-fb-titulo">Feedback</span>
         <div style="display:flex;gap:0.5rem;">
-          <button onclick="imprimirFeedback()" style="padding:6px 14px;background:#2E4DA6;color:white;border:none;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;">ð¨ï¸ Imprimir</button>
-          <button onclick="fecharModalFb()" style="width:32px;height:32px;border-radius:50%;border:none;background:#F0F3F8;cursor:pointer;font-size:1.1rem;color:#5E6659;">â</button>
+          <button onclick="imprimirFeedback()" style="padding:6px 14px;background:#2E4DA6;color:white;border:none;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;">🖨️ Imprimir</button>
+          <button onclick="fecharModalFb()" style="width:32px;height:32px;border-radius:50%;border:none;background:#F0F3F8;cursor:pointer;font-size:1.1rem;color:#5E6659;">✕</button>
         </div>
       </div>
       <div id="modal-fb-body" style="padding:1.5rem;"></div>
@@ -496,14 +496,14 @@
       id: gerarId(),
       data,
       proximo: '',
-      tipo_feedback: document.getElementById('tipo').value || 'â',
+      tipo_feedback: document.getElementById('tipo').value || '—',
       colaborador: nome,
       cargo: document.getElementById('cargo').value,
       responsavel: document.getElementById('responsavel').value,
       formato: document.getElementById('formato').value,
       motivo: document.getElementById('motivo').value,
       acertado: document.getElementById('acertado').value,
-      ciencia: cienciaVal || 'â',
+      ciencia: cienciaVal || '—',
       obsFinal: document.getElementById('obs-final').value,
     };
 
@@ -521,15 +521,15 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(r)
     }).then(() => {
-      btnSalvar.textContent = 'Salvo â';
+      btnSalvar.textContent = 'Salvo ✓';
       btnSalvar.style.background = '#1A2D6B';
       setTimeout(() => {
-        btnSalvar.textContent = 'Salvar no histÃ³rico â';
+        btnSalvar.textContent = 'Salvar no histórico ↓';
         btnSalvar.style.background = '';
         btnSalvar.disabled = false;
       }, 3000);
     }).catch(() => {
-      btnSalvar.textContent = 'Salvar no histÃ³rico â';
+      btnSalvar.textContent = 'Salvar no histórico ↓';
       btnSalvar.disabled = false;
     });
 
@@ -543,29 +543,29 @@
     document.getElementById('count-badge').textContent = registros.length;
 
     if (registros.length === 0) {
-      lista.innerHTML = '<div class="empty-state">Nenhum registro ainda. Preencha o formulÃ¡rio acima e salve.</div>';
+      lista.innerHTML = '<div class="empty-state">Nenhum registro ainda. Preencha o formulário acima e salve.</div>';
       return;
     }
 
     lista.innerHTML = registros.map((r, idx) => {
-      const fmtData = r.data ? new Date(r.data + 'T12:00:00').toLocaleDateString('pt-BR') : 'â';
+      const fmtData = r.data ? new Date(r.data + 'T12:00:00').toLocaleDateString('pt-BR') : '—';
       const fmtProx = r.proximo ? new Date(r.proximo + 'T12:00:00').toLocaleDateString('pt-BR') : null;
-      const motivo = r.motivo ? r.motivo.substring(0, 140) + (r.motivo.length > 140 ? 'â¦' : '') : null;
-      const acertado = r.acertado ? r.acertado.substring(0, 140) + (r.acertado.length > 140 ? 'â¦' : '') : null;
+      const motivo = r.motivo ? r.motivo.substring(0, 140) + (r.motivo.length > 140 ? '…' : '') : null;
+      const acertado = r.acertado ? r.acertado.substring(0, 140) + (r.acertado.length > 140 ? '…' : '') : null;
 
       return `
       <div class="hist-item">
-        <button class="hist-del" onclick="deletar(${idx})" title="Remover">Ã</button>
+        <button class="hist-del" onclick="deletar(${idx})" title="Remover">×</button>
         <div class="hist-top">
           <span class="hist-nome">${r.colaborador}</span>
-          ${r.tipo !== 'â' ? `<span class="hist-tipo">${r.tipo}</span>` : ''}
-          <span class="hist-data">${fmtData}${fmtProx ? ' â ' + fmtProx : ''}</span>
+          ${r.tipo !== '—' ? `<span class="hist-tipo">${r.tipo}</span>` : ''}
+          <span class="hist-data">${fmtData}${fmtProx ? ' → ' + fmtProx : ''}</span>
         </div>
         <div class="hist-body">
-          ${r.cargo ? `<b>Cargo:</b> ${r.cargo}${r.responsavel ? ' &nbsp;Â·&nbsp; <b>Resp.:</b> ' + r.responsavel : ''}<br>` : ''}
+          ${r.cargo ? `<b>Cargo:</b> ${r.cargo}${r.responsavel ? ' &nbsp;·&nbsp; <b>Resp.:</b> ' + r.responsavel : ''}<br>` : ''}
           ${motivo ? `<b>Motivo:</b> ${motivo}<br>` : ''}
           ${acertado ? `<b>Acertado:</b> ${acertado}<br>` : ''}
-          <b>CiÃªncia:</b> ${r.ciencia}${r.obsFinal ? ' &nbsp;Â·&nbsp; ' + r.obsFinal.substring(0,80) : ''}
+          <b>Ciência:</b> ${r.ciencia}${r.obsFinal ? ' &nbsp;·&nbsp; ' + r.obsFinal.substring(0,80) : ''}
         </div>
       </div>`;
     }).join('');
@@ -589,22 +589,22 @@
   function exportar() {
     if (registros.length === 0) { alert('Nenhum registro para exportar.'); return; }
     const txt = registros.map(r => {
-      const d = r.data ? new Date(r.data + 'T12:00:00').toLocaleDateString('pt-BR') : 'â';
-      const p = r.proximo ? new Date(r.proximo + 'T12:00:00').toLocaleDateString('pt-BR') : 'â';
+      const d = r.data ? new Date(r.data + 'T12:00:00').toLocaleDateString('pt-BR') : '—';
+      const p = r.proximo ? new Date(r.proximo + 'T12:00:00').toLocaleDateString('pt-BR') : '—';
       return [
         `=== ${r.id} ===`,
-        `Data: ${d} | PrÃ³ximo: ${p} | Tipo: ${r.tipo} | Formato: ${r.formato}`,
+        `Data: ${d} | Próximo: ${p} | Tipo: ${r.tipo} | Formato: ${r.formato}`,
         `Colaborador: ${r.colaborador} | Cargo: ${r.cargo}`,
-        `ResponsÃ¡vel: ${r.responsavel}`,
+        `Responsável: ${r.responsavel}`,
         '',
-        `MOTIVO DO FEEDBACK\n${r.motivo || 'â'}`,
+        `MOTIVO DO FEEDBACK\n${r.motivo || '—'}`,
         '',
-        `O QUE FICOU ACERTADO\n${r.acertado || 'â'}`,
+        `O QUE FICOU ACERTADO\n${r.acertado || '—'}`,
         '',
-        `CiÃªncia: ${r.ciencia}`,
-        r.obsFinal ? `ObservaÃ§Ã£o final: ${r.obsFinal}` : '',
+        `Ciência: ${r.ciencia}`,
+        r.obsFinal ? `Observação final: ${r.obsFinal}` : '',
       ].filter(l => l !== null).join('\n');
-    }).join('\n\n' + 'â'.repeat(50) + '\n\n');
+    }).join('\n\n' + '─'.repeat(50) + '\n\n');
 
     const blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
     const a = document.createElement('a');
@@ -615,7 +615,7 @@
 
   renderHistorico();
 
-  // ââ PAINEL PLANILHA ââââââââââââââââââââââââââââââââââââââ
+  // ── PAINEL PLANILHA ──────────────────────────────────────
   const SCRIPT_URL_FB = 'https://script.google.com/macros/s/AKfycbydGp7T9oQtr5Ii8uY08CiwCBNNd6L9rC0nYegtwzoI-otVQFZSXOKc8XzW5esGyAelVA/exec';
   let todosFeedbacks = [];
   let feedbackAtual = null;
@@ -632,13 +632,13 @@
       todosFeedbacks = (json.dados || []).reverse();
       document.getElementById('busca-planilha').style.display = todosFeedbacks.length ? 'block' : 'none';
       renderPlanilha(todosFeedbacks);
-      btn.textContent = 'âº Atualizar';
-      // Oculta o histÃ³rico local quando a planilha carregar
+      btn.textContent = '↺ Atualizar';
+      // Oculta o histórico local quando a planilha carregar
       const histLocal = document.querySelector('.historico-section');
       if (histLocal) histLocal.style.display = 'none';
     } catch(e) {
-      lista.innerHTML = '<div style="text-align:center;padding:1.5rem;color:#9b3a2e;font-size:0.9rem;">â ï¸ Erro ao carregar. Verifique a conexÃ£o.</div>';
-      btn.textContent = 'â Carregar registros';
+      lista.innerHTML = '<div style="text-align:center;padding:1.5rem;color:#9b3a2e;font-size:0.9rem;">⚠️ Erro ao carregar. Verifique a conexão.</div>';
+      btn.textContent = '↓ Carregar registros';
     }
     btn.disabled = false;
   }
@@ -647,7 +647,7 @@
     const q = document.getElementById('busca-planilha').value.toLowerCase().trim();
     if (!q) { renderPlanilha(todosFeedbacks); return; }
     const f = todosFeedbacks.filter(r => {
-      return ['Colaborador','ResponsÃ¡vel','Motivo','Tipo','Cargo'].some(k => (r[k]||'').toLowerCase().includes(q));
+      return ['Colaborador','Responsável','Motivo','Tipo','Cargo'].some(k => (r[k]||'').toLowerCase().includes(q));
     });
     renderPlanilha(f);
   }
@@ -655,12 +655,12 @@
   function renderPlanilha(registros) {
     const lista = document.getElementById('planilha-lista');
     if (!registros.length) {
-      lista.innerHTML = '<div style="text-align:center;padding:2rem;color:#9AA394;font-size:0.9rem;">ð­ Nenhum registro encontrado.</div>';
+      lista.innerHTML = '<div style="text-align:center;padding:2rem;color:#9AA394;font-size:0.9rem;">📭 Nenhum registro encontrado.</div>';
       return;
     }
     lista.innerHTML = registros.map((r, i) => {
-      const nome = r['Colaborador'] || 'â';
-      const resp = r['ResponsÃ¡vel'] || 'â';
+      const nome = r['Colaborador'] || '—';
+      const resp = r['Responsável'] || '—';
       const tipo = r['Tipo'] || r['Tipo Feedback'] || '';
       const data = r['Data'] || r['Timestamp'] || '';
       const dataFmt = formatarDataFb(data);
@@ -672,7 +672,7 @@
         onmouseout="this.style.borderColor='#C8D6E8';this.style.boxShadow='none'">
         <div>
           <div style="font-weight:700;font-size:0.9rem;color:#1C201A;">${nome}</div>
-          <div style="font-size:0.8rem;color:#5E6659;margin-top:2px;">Resp.: ${resp} Â· ${dataFmt}</div>
+          <div style="font-size:0.8rem;color:#5E6659;margin-top:2px;">Resp.: ${resp} · ${dataFmt}</div>
         </div>
         <span style="font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap;${tipoBg}">${tipo || 'feedback'}</span>
       </div>`;
@@ -682,20 +682,20 @@
   function abrirFeedback(idx) {
     feedbackAtual = todosFeedbacks[idx];
     const r = feedbackAtual;
-    document.getElementById('modal-fb-titulo').textContent = (r['Colaborador'] || 'Feedback') + ' â ' + formatarDataFb(r['Data']);
+    document.getElementById('modal-fb-titulo').textContent = (r['Colaborador'] || 'Feedback') + ' — ' + formatarDataFb(r['Data']);
     const campos = [
       ['Colaborador', r['Colaborador']], ['Data', formatarDataFb(r['Data'])],
-      ['Cargo', r['Cargo']], ['ResponsÃ¡vel', r['ResponsÃ¡vel']],
+      ['Cargo', r['Cargo']], ['Responsável', r['Responsável']],
       ['Tipo de Feedback', r['Tipo']], ['Formato', r['Formato']],
       ['Motivo do Feedback', r['Motivo']],
       ['O que ficou acertado', r['O que ficou acertado'] || r['Acertado']],
-      ['CiÃªncia do Colaborador', r['CiÃªncia'] || r['Ciencia']],
-      ['ObservaÃ§Ãµes Finais', r['Obs. Final'] || r['Obs Final'] || r['obsFinal']],
+      ['Ciência do Colaborador', r['Ciência'] || r['Ciencia']],
+      ['Observações Finais', r['Obs. Final'] || r['Obs Final'] || r['obsFinal']],
     ];
     document.getElementById('modal-fb-body').innerHTML = campos.map(([l,v]) => `
       <div style="margin-bottom:1rem;">
         <div style="font-size:0.75rem;font-weight:600;color:#9AA394;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.05em;">${l}</div>
-        <div style="font-size:0.9rem;color:#1C201A;line-height:1.5;">${v || 'â'}</div>
+        <div style="font-size:0.9rem;color:#1C201A;line-height:1.5;">${v || '—'}</div>
       </div>`).join('');
     document.getElementById('modal-fb').style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -713,15 +713,15 @@
 
   function imprimirFeedback() {
     const r = feedbackAtual; if (!r) return;
-    const nome    = r['Colaborador'] || 'â';
+    const nome    = r['Colaborador'] || '—';
     const data    = formatarDataFb(r['Data']);
-    const cargo   = r['Cargo'] || 'â';
-    const resp    = r['ResponsÃ¡vel'] || 'â';
-    const tipo    = r['Tipo'] || 'â';
-    const formato = r['Formato'] || 'â';
-    const motivo  = r['Motivo'] || 'â';
-    const acertado= r['O que ficou acertado'] || r['Acertado'] || 'â';
-    const ciencia = r['CiÃªncia'] || r['Ciencia'] || 'â';
+    const cargo   = r['Cargo'] || '—';
+    const resp    = r['Responsável'] || '—';
+    const tipo    = r['Tipo'] || '—';
+    const formato = r['Formato'] || '—';
+    const motivo  = r['Motivo'] || '—';
+    const acertado= r['O que ficou acertado'] || r['Acertado'] || '—';
+    const ciencia = r['Ciência'] || r['Ciencia'] || '—';
     const obs     = r['Obs. Final'] || r['Obs Final'] || r['obsFinal'] || '';
 
     const tipoBadgeColor = tipo === 'positivo' ? '#2e7d32' : tipo === 'construtivo' ? '#9b3a2e' : '#2E4DA6';
@@ -732,7 +732,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Registro de Feedback â ${nome}</title>
+<title>Registro de Feedback — ${nome}</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -760,12 +760,12 @@
     <img src="../logo.jpg" alt="HD Distribuidora"/>
     <div>
       <h1>Registro de Feedback</h1>
-      <p>HD Distribuidora Â· GestÃ£o de Pessoas</p>
+      <p>HD Distribuidora · Gestão de Pessoas</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="section-label">IdentificaÃ§Ã£o</div>
+    <div class="section-label">Identificação</div>
     <div class="grid-2">
       <div>
         <div class="field-label">Colaborador</div>
@@ -776,11 +776,11 @@
         <div class="field-value">${data}</div>
       </div>
       <div>
-        <div class="field-label">Cargo / Ãrea</div>
+        <div class="field-label">Cargo / Área</div>
         <div class="field-value">${cargo}</div>
       </div>
       <div>
-        <div class="field-label">ResponsÃ¡vel pelo feedback</div>
+        <div class="field-label">Responsável pelo feedback</div>
         <div class="field-value">${resp}</div>
       </div>
       <div>
@@ -798,7 +798,7 @@
 
   <div class="card">
     <div class="section-label">Motivo do Feedback</div>
-    <div class="field-label">Por que este feedback estÃ¡ sendo realizado?</div>
+    <div class="field-label">Por que este feedback está sendo realizado?</div>
     <div class="field-value long">${motivo}</div>
   </div>
 
@@ -809,12 +809,12 @@
   </div>
 
   <div class="card">
-    <div class="section-label">CiÃªncia do Colaborador</div>
+    <div class="section-label">Ciência do Colaborador</div>
     <div class="field-value">${ciencia}</div>
   </div>
 
   ${obs ? `<div class="card">
-    <div class="section-label">ObservaÃ§Ãµes Finais</div>
+    <div class="section-label">Observações Finais</div>
     <div class="field-value long">${obs}</div>
   </div>` : ''}
 
@@ -825,7 +825,7 @@
   }
 
   function formatarDataFb(d) {
-    if (!d) return 'â';
+    if (!d) return '—';
     const s = d.toString();
     if (s.includes('-') && s.length >= 10) {
       const parts = s.split('T')[0].split('-');
@@ -861,7 +861,7 @@ function fazerLogin() {
   document.getElementById('login-erro').style.display = 'none';
   document.getElementById('tela-login').style.display = 'none';
   document.getElementById('tela-conteudo').style.display = 'block';
-  // Oculta histÃ³rico local imediatamente apÃ³s login
+  // Oculta histórico local imediatamente após login
   setTimeout(() => {
     const h = document.querySelector('.historico-section');
     if (h) h.style.display = 'none';
