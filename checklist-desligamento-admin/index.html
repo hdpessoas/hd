@@ -134,7 +134,7 @@
   </style>
 </head>
 <body>
-<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'" class="no-print">â InÃ­cio</a>
+<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'" class="no-print">← Início</a>
 
 <div class="container">
   
@@ -143,7 +143,7 @@
     <img src="../logo.jpg" class="header-logo" alt="HD Distribuidora"/>
     <div>
       <h1>Checklist de Desligamento</h1>
-      <p>Painel administrativo â HD Distribuidora RH</p>
+      <p>Painel administrativo — HD Distribuidora RH</p>
     </div>
   </div>
 
@@ -151,13 +151,13 @@
     <img src="../logo.jpg" alt="HD Distribuidora"/>
     <div class="print-header-text">
       <h1>Checklist de Desligamento</h1>
-      <p>HD Distribuidora Tecnologia da InformaÃ§Ã£o Ltda</p>
+      <p>HD Distribuidora Tecnologia da Informação Ltda</p>
     </div>
   </div>
   <div class="print-colab-box" id="printColabBox">
     <div>
       <div class="label">Colaborador</div>
-      <div class="name" id="printColabName">â</div>
+      <div class="name" id="printColabName">—</div>
     </div>
   </div>
 
@@ -166,20 +166,20 @@
       <div class="selector-field">
         <label>Colaborador</label>
         <select id="selectColab" onchange="onColabChange()">
-          <option value="">â Selecione um colaborador â</option>
+          <option value="">— Selecione um colaborador —</option>
         </select>
       </div>
       <button class="btn btn-outline" onclick="loadColabs()">
         <div class="spinner"></div>
-        <span class="btn-label">â» Atualizar lista</span>
+        <span class="btn-label">↻ Atualizar lista</span>
       </button>
     </div>
     <div class="colab-banner" id="colabBanner">
       <div class="colab-info">
         <div class="colab-avatar" id="colabAvatar">--</div>
         <div>
-          <div class="colab-name" id="colabName">â</div>
-          <div class="colab-meta" id="colabMeta">â</div>
+          <div class="colab-name" id="colabName">—</div>
+          <div class="colab-meta" id="colabMeta">—</div>
         </div>
       </div>
       <span class="save-status" id="saveStatus"></span>
@@ -195,25 +195,25 @@
   <div class="checklist-area" id="checklistArea">
     <div class="complete-badge" id="done-desl">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      Todos os procedimentos de desligamento foram concluÃ­dos!
+      Todos os procedimentos de desligamento foram concluídos!
     </div>
     <div class="cl-card">
       <div class="cl-card-header">
-        <span class="cl-card-title">ð¢ Setor de RH â Registros de SaÃ­da</span>
+        <span class="cl-card-title">🏢 Setor de RH — Registros de Saída</span>
         <span class="resp-tag">RH</span>
       </div>
       <ul class="cl-list" id="list-desl">
         <li class="cl-item" onclick="toggleItem(this,0)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Exame Demissional</span></li>
-        <li class="cl-item" onclick="toggleItem(this,1)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Aviso PrÃ©vio</span></li>
-        <li class="cl-item" onclick="toggleItem(this,2)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Termo de RescisÃ£o Contratual</span></li>
+        <li class="cl-item" onclick="toggleItem(this,1)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Aviso Prévio</span></li>
+        <li class="cl-item" onclick="toggleItem(this,2)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Termo de Rescisão Contratual</span></li>
         <li class="cl-item" onclick="toggleItem(this,3)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cancelamento no Cadastro do Ponto</span></li>
-        <li class="cl-item" onclick="toggleItem(this,4)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cancelamento do CartÃ£o Caju</span></li>
-        <li class="cl-item" onclick="toggleItem(this,5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cancelamento de acesso Ã  porta â reconhecimento facial</span></li>
-        <li class="cl-item" onclick="toggleItem(this,6)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Encaminhamento de troca de senhas â sistemas do setor</span></li>
+        <li class="cl-item" onclick="toggleItem(this,4)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cancelamento do Cartão Caju</span></li>
+        <li class="cl-item" onclick="toggleItem(this,5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Cancelamento de acesso à porta — reconhecimento facial</span></li>
+        <li class="cl-item" onclick="toggleItem(this,6)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Encaminhamento de troca de senhas — sistemas do setor</span></li>
       </ul>
       <div class="cl-footer">
         <div class="prog-track"><div class="prog-fill" id="bar-desl"></div></div>
-        <div class="prog-label" id="lbl-desl">0 de 7 procedimentos concluÃ­dos</div>
+        <div class="prog-label" id="lbl-desl">0 de 7 procedimentos concluídos</div>
       </div>
     </div>
   </div>
@@ -221,10 +221,10 @@
 </div>
 
 <div class="save-bar" id="saveBar">
-  <button class="btn btn-ghost btn-sm" onclick="window.print()">ð¨ï¸ Imprimir</button>
+  <button class="btn btn-ghost btn-sm" onclick="window.print()">🖨️ Imprimir</button>
   <button class="btn btn-primary btn-sm" id="saveBtn" onclick="saveProgress()">
     <div class="spinner"></div>
-    <span class="btn-label">ð¾ Salvar progresso</span>
+    <span class="btn-label">💾 Salvar progresso</span>
   </button>
 </div>
 
@@ -241,14 +241,14 @@ async function loadColabs() {
     const res = await fetch(SCRIPT_URL);
     const data = await res.json();
     const sel = document.getElementById('selectColab');
-    sel.innerHTML = '<option value="">â Selecione um colaborador â</option>';
+    sel.innerHTML = '<option value="">— Selecione um colaborador —</option>';
     (data.fichas || []).forEach(c => {
       const name = c['Nome'] || '';
       if (!name) return;
       const opt = document.createElement('option');
       opt.value = name;
-      opt.dataset.cargo = c['Funcao'] || c['FuncÃ£o'] || '';
-      opt.dataset.admissao = c['Admissao'] || c['AdmissÃ£o'] || '';
+      opt.dataset.cargo = c['Funcao'] || c['Funcão'] || '';
+      opt.dataset.admissao = c['Admissao'] || c['Admissão'] || '';
       opt.textContent = name;
       sel.appendChild(opt);
     });
@@ -269,15 +269,15 @@ async function onColabChange() {
   }
   currentColab = { nome: opt.value, cargo: '', admissao: '' };
 
-  // Busca dados admin (cargo, admissÃ£o, departamento)
+  // Busca dados admin (cargo, admissão, departamento)
   try {
     const url = SCRIPT_URL + '?acao=getDadosAdmin&colaborador=' + encodeURIComponent(opt.value);
     const res = await fetch(url);
     const data = await res.json();
     if (data.dados) {
       const d = data.dados;
-      currentColab.cargo = d['FunÃ§Ã£o'] || d['Funcao'] || d['funÃ§Ã£o'] || d['funcao'] || d['Cargo'] || '';
-      const rawAdmissao = d['Data AdmissÃ£o'] || d['Data Admissao'] || d['Data admissÃ£o'] || d['DataAdmissao'] || '';
+      currentColab.cargo = d['Função'] || d['Funcao'] || d['função'] || d['funcao'] || d['Cargo'] || '';
+      const rawAdmissao = d['Data Admissão'] || d['Data Admissao'] || d['Data admissão'] || d['DataAdmissao'] || '';
       if (rawAdmissao && rawAdmissao.includes('T')) {
         const parts = rawAdmissao.split('T')[0].split('-');
         currentColab.admissao = parts[2] + '/' + parts[1] + '/' + parts[0];
@@ -296,8 +296,8 @@ async function onColabChange() {
   let meta = [];
   if (currentColab.cargo) meta.push(currentColab.cargo);
   if (currentColab.departamento) meta.push(currentColab.departamento);
-  if (currentColab.admissao) meta.push('AdmissÃ£o: ' + currentColab.admissao);
-  document.getElementById('colabMeta').textContent = meta.join(' Â· ') || 'Colaborador HD Distribuidora';
+  if (currentColab.admissao) meta.push('Admissão: ' + currentColab.admissao);
+  document.getElementById('colabMeta').textContent = meta.join(' · ') || 'Colaborador HD Distribuidora';
   document.getElementById('colabBanner').classList.add('visible');
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('checklistArea').classList.add('visible');
@@ -307,7 +307,7 @@ async function onColabChange() {
 }
 
 async function loadSavedState() {
-  setSaveStatus('saving', 'â³ Carregando...');
+  setSaveStatus('saving', '⏳ Carregando...');
   try {
     const url = SCRIPT_URL + '?acao=getChecklist&colaborador=' + encodeURIComponent(currentColab.nome) + '&tipo=desligamento';
     const res = await fetch(url);
@@ -316,7 +316,7 @@ async function loadSavedState() {
       resetItems();
       data.checklist.desl.forEach((v,i) => { if(v) markItem(i, true); });
       updateProgress();
-      setSaveStatus('saved', 'â Atualizado');
+      setSaveStatus('saved', '✓ Atualizado');
     } else {
       resetItems();
       setSaveStatus('');
@@ -344,7 +344,7 @@ function updateProgress() {
   const items = document.getElementById('list-desl').querySelectorAll('.cl-item');
   const done = [...items].filter(i => i.classList.contains('checked')).length;
   document.getElementById('bar-desl').style.width = (done/TOTAL*100)+'%';
-  document.getElementById('lbl-desl').textContent = done+' de '+TOTAL+' procedimentos concluÃ­dos';
+  document.getElementById('lbl-desl').textContent = done+' de '+TOTAL+' procedimentos concluídos';
   document.getElementById('done-desl').classList.toggle('visible', done === TOTAL);
 }
 
@@ -352,7 +352,7 @@ function resetItems() {
   state = new Array(TOTAL).fill(false);
   document.querySelectorAll('.cl-item.checked').forEach(i => i.classList.remove('checked'));
   document.getElementById('bar-desl').style.width = '0%';
-  document.getElementById('lbl-desl').textContent = '0 de '+TOTAL+' procedimentos concluÃ­dos';
+  document.getElementById('lbl-desl').textContent = '0 de '+TOTAL+' procedimentos concluídos';
   document.getElementById('done-desl').classList.remove('visible');
 }
 
@@ -367,7 +367,7 @@ async function saveProgress() {
   if (!currentColab) return;
   const btn = document.getElementById('saveBtn');
   btn.classList.add('loading'); btn.disabled = true;
-  setSaveStatus('saving','â³ Salvando...');
+  setSaveStatus('saving','⏳ Salvando...');
   const payload = {
     tipo: 'checklist',
     subtipo: 'desligamento',
@@ -380,8 +380,8 @@ async function saveProgress() {
   };
   try {
     await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
-    setSaveStatus('saved','â Salvo');
-  } catch(e) { setSaveStatus('error','â Erro ao salvar'); }
+    setSaveStatus('saved','✓ Salvo');
+  } catch(e) { setSaveStatus('error','✗ Erro ao salvar'); }
   btn.classList.remove('loading'); btn.disabled = false;
 }
 
