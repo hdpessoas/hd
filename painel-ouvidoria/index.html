@@ -76,7 +76,7 @@
   .detalhe-mensagem { font-size: 0.92rem; color: var(--text); line-height: 1.7; white-space: pre-wrap; background: var(--bg); border-radius: var(--radius-sm); padding: 1rem; border: 1px solid var(--border); }
   .detalhe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
 
-  /* IMPRESSÃO */
+  /* IMPRESSÃO */
   @media print {
     body * { visibility: hidden; }
     #area-impressao, #area-impressao * { visibility: visible; }
@@ -97,39 +97,39 @@
 </head>
 <body>
 
-<!-- ÃREA DE IMPRESSÃO (oculta na tela) -->
+<!-- ÁREA DE IMPRESSÃO (oculta na tela) -->
 <div id="area-impressao" style="display:none;"></div>
 
 <!-- LOGIN -->
 <div id="tela-login">
   <div class="login-box">
-    <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:5px 12px;border-radius:8px;border:1.5px solid #2E4DA6;margin-bottom:1.5rem;transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">â InÃ­cio</a>
+    <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:5px 12px;border-radius:8px;border:1.5px solid #2E4DA6;margin-bottom:1.5rem;transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">← Início</a>
     <div class="login-logo">
       <img src="../logo.jpg" alt="HD Distribuidora">
-      <div><h1>Painel Ouvidoria</h1><p>Conecta HD Distribuidora Â· RH</p></div>
+      <div><h1>Painel Ouvidoria</h1><p>Conecta HD Distribuidora · RH</p></div>
     </div>
     <div class="login-field">
-      <label>UsuÃ¡rio</label>
-      <input type="text" id="inp-usuario" placeholder="seu usuÃ¡rio" onkeydown="if(event.key==='Enter') fazerLogin()">
+      <label>Usuário</label>
+      <input type="text" id="inp-usuario" placeholder="seu usuário" onkeydown="if(event.key==='Enter') fazerLogin()">
     </div>
     <div class="login-field">
       <label>Senha</label>
       <input type="password" id="inp-senha" placeholder="sua senha" onkeydown="if(event.key==='Enter') fazerLogin()">
     </div>
     <button class="login-btn" onclick="fazerLogin()">Entrar</button>
-    <div class="login-erro" id="login-erro">UsuÃ¡rio ou senha incorretos.</div>
+    <div class="login-erro" id="login-erro">Usuário ou senha incorretos.</div>
   </div>
 </div>
 
 <!-- PAINEL -->
 <div id="tela-painel">
-  <a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">â InÃ­cio</a>
+  <a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">← Início</a>
   <div class="container" style="padding-top:4rem;">
     <div class="page-header">
       <img src="../logo.jpg" alt="HD Distribuidora" class="header-logo">
       <div>
-        <h1>Painel Ouvidoria â Conecta HD Distribuidora</h1>
-        <p>Mensagens recebidas Â· RH</p>
+        <h1>Painel Ouvidoria — Conecta HD Distribuidora</h1>
+        <p>Mensagens recebidas · RH</p>
       </div>
     </div>
     <div class="usuario-bar">
@@ -138,15 +138,15 @@
     </div>
     <div class="filtros">
       <div class="search-bar">
-        <span class="search-icon">ð</span>
+        <span class="search-icon">🔍</span>
         <input type="text" id="busca" placeholder="Buscar por nome ou mensagem..." oninput="filtrar()">
       </div>
       <span class="filtro-pill active" onclick="filtrarCategoria('Todos', this)">Todos</span>
       <span class="filtro-pill" onclick="filtrarCategoria('Elogio', this)">Elogio</span>
-      <span class="filtro-pill" onclick="filtrarCategoria('SugestÃ£o', this)">SugestÃ£o</span>
-      <span class="filtro-pill" onclick="filtrarCategoria('ReclamaÃ§Ã£o', this)">ReclamaÃ§Ã£o</span>
-      <span class="filtro-pill" onclick="filtrarCategoria('DÃºvida', this)">DÃºvida</span>
-      <span class="filtro-pill" onclick="filtrarCategoria('DenÃºncia', this)">DenÃºncia</span>
+      <span class="filtro-pill" onclick="filtrarCategoria('Sugestão', this)">Sugestão</span>
+      <span class="filtro-pill" onclick="filtrarCategoria('Reclamação', this)">Reclamação</span>
+      <span class="filtro-pill" onclick="filtrarCategoria('Dúvida', this)">Dúvida</span>
+      <span class="filtro-pill" onclick="filtrarCategoria('Denúncia', this)">Denúncia</span>
       <span class="filtro-pill" onclick="filtrarCategoria('Outro', this)">Outro</span>
     </div>
     <div id="lista-wrap"><div class="loading">Carregando mensagens...</div></div>
@@ -159,8 +159,8 @@
     <div class="modal-header">
       <span class="modal-titulo" id="modal-titulo">Detalhe</span>
       <div class="modal-header-btns">
-        <button class="btn-imprimir" onclick="imprimirMensagem()">ð¨ï¸ Imprimir</button>
-        <button class="modal-close" onclick="fecharModal()">â</button>
+        <button class="btn-imprimir" onclick="imprimirMensagem()">🖨️ Imprimir</button>
+        <button class="modal-close" onclick="fecharModal()">✕</button>
       </div>
     </div>
     <div class="modal-body" id="modal-body"></div>
@@ -181,7 +181,7 @@ let todosRegistros = [];
 let categoriaAtiva = 'Todos';
 let registroAtual  = null;
 
-// ââ LOGIN ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── LOGIN ────────────────────────────────────────────────────
 function fazerLogin() {
   const u   = document.getElementById('inp-usuario').value.trim().toLowerCase();
   const s   = document.getElementById('inp-senha').value;
@@ -206,7 +206,7 @@ function sair() {
   document.getElementById('inp-senha').value   = '';
 }
 
-// ââ PARSER CSV CORRETO (lida com vÃ­rgula na data) ââââââââââââ
+// ── PARSER CSV CORRETO (lida com vírgula na data) ────────────
 function parseCSVLine(linha) {
   const resultado = [];
   let atual = '';
@@ -226,7 +226,7 @@ function parseCSVLine(linha) {
   return resultado;
 }
 
-// ââ CARREGAR âââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── CARREGAR ─────────────────────────────────────────────────
 async function carregar() {
   document.getElementById('lista-wrap').innerHTML = '<div class="loading">Carregando...</div>';
   try {
@@ -249,7 +249,7 @@ async function carregar() {
       .reverse();
     renderLista();
   } catch(e) {
-    document.getElementById('lista-wrap').innerHTML = '<div class="empty">â ï¸ Erro ao carregar dados.</div>';
+    document.getElementById('lista-wrap').innerHTML = '<div class="empty">⚠️ Erro ao carregar dados.</div>';
   }
 }
 
@@ -262,7 +262,7 @@ function filtrarCategoria(cat, el) {
   renderLista();
 }
 
-// ââ RENDERIZAR LISTA âââââââââââââââââââââââââââââââââââââââââ
+// ── RENDERIZAR LISTA ─────────────────────────────────────────
 function renderLista() {
   const q = document.getElementById('busca').value.toLowerCase().trim();
   let dados = [...todosRegistros];
@@ -277,7 +277,7 @@ function renderLista() {
     );
   }
   if (!dados.length) {
-    document.getElementById('lista-wrap').innerHTML = '<div class="empty">ð­ Nenhuma mensagem encontrada.</div>';
+    document.getElementById('lista-wrap').innerHTML = '<div class="empty">📭 Nenhuma mensagem encontrada.</div>';
     return;
   }
   document.getElementById('lista-wrap').innerHTML = '<div class="lista">' +
@@ -298,13 +298,13 @@ function renderLista() {
     }).join('') + '</div>';
 }
 
-// ââ DETALHE ââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── DETALHE ──────────────────────────────────────────────────
 function abrirDetalhe(idx) {
   registroAtual = todosRegistros[idx];
   const r = registroAtual;
   const cats = r.categorias
     ? r.categorias.split(',').map(c => `<span class="cat-badge" style="font-size:0.8rem;padding:3px 10px;">${c.trim()}</span>`).join(' ')
-    : 'â';
+    : '—';
   document.getElementById('modal-titulo').textContent = r.nome;
   document.getElementById('modal-body').innerHTML = `
     <div class="detalhe-grid">
@@ -332,17 +332,17 @@ function fecharModalClick(e) {
   if (e.target === document.getElementById('modal-overlay')) fecharModal();
 }
 
-// ââ IMPRIMIR âââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── IMPRIMIR ─────────────────────────────────────────────────
 function imprimirMensagem() {
   if (!registroAtual) return;
   const r = registroAtual;
   const cats = r.categorias
     ? r.categorias.split(',').map(c => `<span class="print-cat">${c.trim()}</span>`).join('')
-    : 'â';
+    : '—';
 
   document.getElementById('area-impressao').innerHTML = `
-    <div class="print-header-label">HD Distribuidora Â· GestÃ£o de Pessoas</div>
-    <div class="print-title">Ouvidoria â Conecta HD Distribuidora</div>
+    <div class="print-header-label">HD Distribuidora · Gestão de Pessoas</div>
+    <div class="print-title">Ouvidoria — Conecta HD Distribuidora</div>
     <div class="print-sub">Registro de mensagem recebida</div>
     <table class="print-table">
       <tr>
@@ -365,7 +365,7 @@ function imprimirMensagem() {
     <div class="print-sec">Mensagem</div>
     <div class="print-msg">${r.mensagem}</div>
     <div class="print-footer">
-      <span>HD Distribuidora Â· GestÃ£o de Pessoas</span>
+      <span>HD Distribuidora · Gestão de Pessoas</span>
       <span>${r.data}</span>
     </div>
   `;
