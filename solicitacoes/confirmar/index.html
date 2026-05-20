@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ConfirmaÃÂ§ÃÂ£o Ã¢ÂÂ HD Distribuidora RH</title>
+  <title>Confirmação — HD Distribuidora RH</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,37 +40,37 @@
 <div class="card" id="card">
   <!-- Estado: carregando -->
   <div id="estado-loading">
-    <div class="icon icon-loading">Ã¢ÂÂ³</div>
+    <div class="icon icon-loading">⏳</div>
     <h1>Verificando...</h1>
-    <p>Aguarde enquanto carregamos sua solicitaÃÂ§ÃÂ£o.</p>
+    <p>Aguarde enquanto carregamos sua solicitação.</p>
   </div>
 
-  <!-- Estado: aguardando resposta (resposta nÃÂ£o veio na URL, mostra botÃÂµes) -->
+  <!-- Estado: aguardando resposta (resposta não veio na URL, mostra botões) -->
   <div id="estado-confirmar" style="display:none;">
-    <div class="icon icon-ajuste">Ã¢ÂÂ Ã¯Â¸Â</div>
-    <h1>Confirme o ajuste de perÃÂ­odo</h1>
-    <p id="msg-confirmar">O RH aprovou sua solicitaÃÂ§ÃÂ£o com um ajuste de perÃÂ­odo. Por favor, confirme se vocÃÂª concorda.</p>
+    <div class="icon icon-ajuste">⚠️</div>
+    <h1>Confirme o ajuste de período</h1>
+    <p id="msg-confirmar">O RH aprovou sua solicitação com um ajuste de período. Por favor, confirme se você concorda.</p>
     <div class="btns">
-      <button class="btn-concordo" onclick="responder('Concordo')">Ã¢ÂÂ Concordo</button>
-      <button class="btn-discordo" onclick="responder('Discordo')">Ã¢ÂÂ Discordo</button>
+      <button class="btn-concordo" onclick="responder('Concordo')">✅ Concordo</button>
+      <button class="btn-discordo" onclick="responder('Discordo')">❌ Discordo</button>
     </div>
   </div>
 
   <!-- Estado: sucesso -->
   <div id="estado-ok" style="display:none;">
-    <div class="icon icon-ok">Ã¢ÂÂ</div>
+    <div class="icon icon-ok">✅</div>
     <h1 id="ok-titulo">Resposta registrada!</h1>
     <p id="ok-msg">Sua resposta foi registrada com sucesso. O RH foi notificado.</p>
   </div>
 
   <!-- Estado: erro -->
   <div id="estado-erro" style="display:none;">
-    <div class="icon icon-erro">Ã¢ÂÂ</div>
-    <h1>Link invÃÂ¡lido</h1>
-    <p>Este link nÃÂ£o ÃÂ© vÃÂ¡lido ou jÃÂ¡ foi utilizado. Em caso de dÃÂºvidas, entre em contato com o RH pelo e-mail <strong>hd.pessoas@gmail.com</strong>.</p>
+    <div class="icon icon-erro">❌</div>
+    <h1>Link inválido</h1>
+    <p>Este link não é válido ou já foi utilizado. Em caso de dúvidas, entre em contato com o RH pelo e-mail <strong>rh@hddistribuidora.com</strong>.</p>
   </div>
 
-  <div class="footer">HD Distribuidora ÃÂ· GestÃÂ£o de Pessoas</div>
+  <div class="footer">HD Distribuidora · Gestão de Pessoas</div>
 </div>
 
 <script>
@@ -92,10 +92,10 @@
       const r = await fetch(`${SCRIPT_URL}?acao=confirmar&token=${encodeURIComponent(token)}&resposta=${encodeURIComponent(resposta)}`);
       const data = await r.json();
       if (data.ok) {
-        document.getElementById('ok-titulo').textContent = resposta === 'Concordo' ? 'Ã¢ÂÂ Confirmado!' : 'Ã¢ÂÂ DiscordÃÂ¢ncia registrada';
+        document.getElementById('ok-titulo').textContent = resposta === 'Concordo' ? '✅ Confirmado!' : '❌ Discordância registrada';
         document.getElementById('ok-msg').textContent = resposta === 'Concordo'
-          ? `Obrigado, ${data.nome ? data.nome.split(' ')[0] : ''}! Sua confirmaÃÂ§ÃÂ£o foi registrada. O RH foi notificado.`
-          : `Sua discordÃÂ¢ncia foi registrada. O RH entrarÃÂ¡ em contato para alinhar um novo perÃÂ­odo.`;
+          ? `Obrigado, ${data.nome ? data.nome.split(' ')[0] : ''}! Sua confirmação foi registrada. O RH foi notificado.`
+          : `Sua discordância foi registrada. O RH entrará em contato para alinhar um novo período.`;
         mostrar('estado-ok');
       } else {
         mostrar('estado-erro');
@@ -109,10 +109,10 @@
   if (!token) {
     mostrar('estado-erro');
   } else if (respostaURL === 'Concordo' || respostaURL === 'Discordo') {
-    // Resposta jÃÂ¡ veio na URL (clique direto no link do e-mail)
+    // Resposta já veio na URL (clique direto no link do e-mail)
     responder(respostaURL);
   } else {
-    // Mostra botÃÂµes para o colaborador escolher
+    // Mostra botões para o colaborador escolher
     mostrar('estado-confirmar');
   }
 </script>
