@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro de Feedback â ZenFisio</title>
+<title>Registro de Feedback â HD Distribuidora</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -281,10 +281,10 @@
   <div style="background:white;border:1px solid #C8D6E8;border-radius:12px;padding:2.5rem 2rem;width:100%;max-width:380px;box-shadow:0 8px 32px rgba(0,0,0,0.08);">
     <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:5px 12px;border-radius:8px;border:1.5px solid #2E4DA6;margin-bottom:1.5rem;transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">â InÃ­cio</a>
     <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;">
-      <img src="../logo.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" alt="ZenFisio"/>
+      <img src="../logo.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" alt="HD Distribuidora"/>
       <div>
         <div style="font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:#2E4DA6;">Registro de Feedback</div>
-        <div style="font-size:0.78rem;color:#9AA394;margin-top:1px;">ZenFisio Â· GestÃ£o de Pessoas</div>
+        <div style="font-size:0.78rem;color:#9AA394;margin-top:1px;">HD Distribuidora Â· GestÃ£o de Pessoas</div>
       </div>
     </div>
     <div style="margin-bottom:1rem;">
@@ -316,9 +316,9 @@
   <!-- Header -->
   <div class="page-header">
     <div class="brand">
-      <div class="brand-icon"><img src="../logo.jpg" alt="ZenFisio"></div>
+      <div class="brand-icon"><img src="../logo.jpg" alt="HD Distribuidora"></div>
       <div class="brand-text">
-        <span class="brand-name">ZenFisio</span>
+        <span class="brand-name">HD Distribuidora</span>
         <span class="brand-sub">Registro de Feedback â Colaboradores</span>
       </div>
     </div>
@@ -462,7 +462,7 @@
 
 <script>
   let cienciaVal = '';
-  let registros = JSON.parse(localStorage.getItem('zenfisio_fb') || '[]');
+  let registros = JSON.parse(localStorage.getItem('hddistribuidora_fb') || '[]');
 
   function gerarId() {
     const d = new Date();
@@ -508,7 +508,7 @@
     };
 
     registros.unshift(r);
-    localStorage.setItem('zenfisio_fb', JSON.stringify(registros));
+    localStorage.setItem('hddistribuidora_fb', JSON.stringify(registros));
     renderHistorico();
 
     const btnSalvar = document.querySelector('.btn-primary');
@@ -574,7 +574,7 @@
   function deletar(idx) {
     if (!confirm('Remover este registro?')) return;
     registros.splice(idx, 1);
-    localStorage.setItem('zenfisio_fb', JSON.stringify(registros));
+    localStorage.setItem('hddistribuidora_fb', JSON.stringify(registros));
     renderHistorico();
   }
 
@@ -609,7 +609,7 @@
     const blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `feedbacks_zenfisio_${new Date().toISOString().slice(0,10)}.txt`;
+    a.download = `feedbacks_hddistribuidora_${new Date().toISOString().slice(0,10)}.txt`;
     a.click();
   }
 
@@ -757,10 +757,10 @@
 </head>
 <body>
   <div class="header">
-    <img src="../logo.jpg" alt="ZenFisio"/>
+    <img src="../logo.jpg" alt="HD Distribuidora"/>
     <div>
       <h1>Registro de Feedback</h1>
-      <p>ZenFisio Â· GestÃ£o de Pessoas</p>
+      <p>HD Distribuidora Â· GestÃ£o de Pessoas</p>
     </div>
   </div>
 
