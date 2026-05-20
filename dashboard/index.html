@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Perfil da Equipe â HD Distribuidora</title>
+  <title>Perfil da Equipe — HD Distribuidora</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
@@ -30,7 +30,7 @@
     .resumo-num { font-family: 'Lora', serif; font-size: 36px; font-weight: 600; color: var(--accent); line-height: 1; margin-bottom: 6px; }
     .resumo-label { font-size: 12px; color: var(--text-hint); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
 
-    /* GRID DE GRÃFICOS */
+    /* GRID DE GRÁFICOS */
     .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
     @media (max-width: 700px) { .charts-grid { grid-template-columns: 1fr; } }
 
@@ -38,7 +38,7 @@
     .chart-title { font-family: 'Lora', serif; font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 20px; text-align: center; }
     .chart-wrap { position: relative; height: 220px; }
 
-    /* TABELA ANIVERSÃRIOS */
+    /* TABELA ANIVERSÁRIOS */
     .aniv-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
     .aniv-header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
     .aniv-header h2 { font-family: 'Lora', serif; font-size: 15px; font-weight: 600; }
@@ -56,7 +56,7 @@
 <body>
 
 <header>
-  <a class="header-back" href="../">â Portal RH</a>
+  <a class="header-back" href="../">← Portal RH</a>
   <span class="header-title">Perfil da Equipe</span>
   <span class="header-sub" id="header-sub">Carregando...</span>
 </header>
@@ -68,11 +68,11 @@
     <!-- Resumo -->
     <div class="resumo-grid" id="resumo-grid"></div>
 
-    <!-- GrÃ¡ficos -->
-    <p class="section-title">DistribuiÃ§Ã£o da Equipe</p>
+    <!-- Gráficos -->
+    <p class="section-title">Distribuição da Equipe</p>
     <div class="charts-grid">
       <div class="chart-card">
-        <div class="chart-title">Faixa EtÃ¡ria</div>
+        <div class="chart-title">Faixa Etária</div>
         <div class="chart-wrap"><canvas id="chart-faixa"></canvas></div>
       </div>
       <div class="chart-card">
@@ -80,11 +80,11 @@
         <div class="chart-wrap"><canvas id="chart-tempo"></canvas></div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">GÃªnero</div>
+        <div class="chart-title">Gênero</div>
         <div class="chart-wrap"><canvas id="chart-genero"></canvas></div>
       </div>
       <div class="chart-card">
-        <div class="chart-title">Modelo de ContrataÃ§Ã£o</div>
+        <div class="chart-title">Modelo de Contratação</div>
         <div class="chart-wrap"><canvas id="chart-contrato"></canvas></div>
       </div>
     </div>
@@ -94,14 +94,14 @@
       <div class="chart-wrap" style="height:180px;"><canvas id="chart-setor"></canvas></div>
     </div>
 
-    <!-- AniversÃ¡rios -->
-    <p class="section-title">ð PrÃ³ximos AniversÃ¡rios de Empresa</p>
+    <!-- Aniversários -->
+    <p class="section-title">🎉 Próximos Aniversários de Empresa</p>
     <div class="aniv-card">
       <table class="aniv-table">
         <thead>
           <tr>
             <th>Colaborador</th>
-            <th>Data de InÃ­cio</th>
+            <th>Data de Início</th>
             <th>Tempo de Empresa</th>
           </tr>
         </thead>
@@ -139,18 +139,18 @@
     // Resumo
     document.getElementById('resumo-grid').innerHTML = `
       <div class="resumo-card"><div class="resumo-num">${total}</div><div class="resumo-label">Colaboradores</div></div>
-      <div class="resumo-card"><div class="resumo-num">${d.mediaIdade}</div><div class="resumo-label">MÃ©dia de Idade</div></div>
+      <div class="resumo-card"><div class="resumo-num">${d.mediaIdade}</div><div class="resumo-label">Média de Idade</div></div>
       <div class="resumo-card"><div class="resumo-num">${d.setor.length}</div><div class="resumo-label">Setores</div></div>
       <div class="resumo-card"><div class="resumo-num">${d.modeloContratacao.find(m => m.label === 'CLT')?.valor || 0}</div><div class="resumo-label">CLT</div></div>
     `;
 
-    // GrÃ¡ficos de pizza
+    // Gráficos de pizza
     criarPizza('chart-faixa', d.faixaEtaria);
     criarPizza('chart-tempo', d.tempoEmpresa);
     criarPizza('chart-genero', d.genero);
     criarPizza('chart-contrato', d.modeloContratacao);
 
-    // GrÃ¡fico de barras â Setor
+    // Gráfico de barras — Setor
     new Chart(document.getElementById('chart-setor'), {
       type: 'bar',
       data: {
@@ -167,7 +167,7 @@
       }
     });
 
-    // AniversÃ¡rios
+    // Aniversários
     const tbody = document.getElementById('aniv-tbody');
     tbody.innerHTML = d.aniversarios.map(a => `
       <tr>
