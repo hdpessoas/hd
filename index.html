@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal de RH — ZenFisio</title>
+<title>Portal de RH â ZenFisio</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #F2F4F0; --surface: #FFFFFF; --border: #DDE0D8; --border-focus: #4A7C59;
+    --bg: #F0F3F8; --surface: #FFFFFF; --border: #C8D6E8; --border-focus: #2E4DA6;
     --text: #1C201A; --text-muted: #5E6659; --text-hint: #9AA394;
-    --accent: #4A7C59; --accent-light: #EAF2EC; --accent-text: #2D5438;
+    --accent: #2E4DA6; --accent-light: #E8EDF8; --accent-text: #1A2D6B;
     --radius: 12px; --radius-sm: 8px;
   }
   body { font-family: "Lora"; background: var(--bg); color: var(--text);
@@ -18,7 +18,7 @@
     align-items: center; justify-content: center; padding: 2rem 1rem; }
   .wrap { max-width: 560px; width: 100%; text-align: center; }
   .logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
-    margin-bottom: 1.25rem; border: 3px solid rgba(74,124,89,0.2); }
+    margin-bottom: 1.25rem; border: 3px solid rgba(46,77,166,0.2); }
   .title { font-family: "Lora"; font-size: 28px; font-weight: 600;
     color: var(--text); letter-spacing: -0.3px; margin-bottom: 0.4rem; }
   .subtitle { font-size: 14px; color: var(--text-hint); margin-bottom: 2.5rem; }
@@ -29,11 +29,11 @@
     border-radius: var(--radius); padding: 1.25rem 1.5rem;
     text-decoration: none; transition: all 0.15s; text-align: left; cursor: pointer;
   }
-  .card-link:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(74,124,89,0.1); transform: translateY(-1px); }
+  .card-link:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(46,77,166,0.1); transform: translateY(-1px); }
   .card-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.15s; }
   .card-group:hover { border-color: var(--accent); }
   .card-toggle { display: flex; align-items: center; gap: 16px; padding: 1.25rem 1.5rem; cursor: pointer; background: transparent; border: none; width: 100%; text-align: left; font-family:"Lora"; font-size: 15px; font-weight: 500; color: var(--text); }
-  .card-toggle:hover { background: rgba(74,124,89,0.03); }
+  .card-toggle:hover { background: rgba(46,77,166,0.03); }
   .card-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 10px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; }
   .card-body { flex: 1; }
   .card-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
@@ -45,7 +45,7 @@
   .sub-items.open { display: block; }
   .sub-link { display: flex; align-items: center; gap: 14px; padding: 1rem 1.5rem 1rem 5rem; text-decoration: none; border-bottom: 1px solid #f0f0ec; transition: background 0.15s; }
   .sub-link:last-child { border-bottom: none; }
-  .sub-link:hover { background: rgba(74,124,89,0.04); }
+  .sub-link:hover { background: rgba(46,77,166,0.04); }
   .sub-body { flex: 1; text-align: left; }
   .sub-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
   .sub-desc { font-size: 12px; color: var(--text-hint); }
@@ -68,7 +68,7 @@
   .form-field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.4rem; font-family: 'DM Sans', sans-serif; }
   .form-field .opcional { font-weight: 400; color: var(--text-hint); font-size: 0.78rem; }
   .form-field input, .form-field textarea { width: 100%; padding: 10px 13px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; transition: border-color 0.15s; color: var(--text); background: white; }
-  .form-field input:focus, .form-field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,124,89,0.1); }
+  .form-field input:focus, .form-field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(46,77,166,0.1); }
   .form-field textarea { min-height: 110px; resize: vertical; }
   .form-contador { font-size: 0.75rem; color: var(--text-hint); text-align: right; margin-top: 4px; font-family: 'DM Sans', sans-serif; }
   .categorias { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
@@ -90,27 +90,27 @@
 <div class="wrap">
   <img src="assets/logo.png" alt="ZenFisio" class="logo">
   <h1 class="title">Portal de RH</h1>
-  <p class="subtitle">ZenFisio &mdash; Gestão de Pessoas</p>
+  <p class="subtitle">ZenFisio &mdash; GestÃ£o de Pessoas</p>
 
   <div class="cards">
 
     <!-- Manual -->
     <a class="card-link" href="manual/index.html">
       <div class="card-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
         </svg>
       </div>
       <div class="card-body">
         <div class="card-title">Manual de Conduta &amp; Cultura</div>
-        <div class="card-desc">Valores, princípios e diretrizes da ZenFisio</div>
+        <div class="card-desc">Valores, princÃ­pios e diretrizes da ZenFisio</div>
       </div>
-      <span class="card-arrow">→</span>
+      <span class="card-arrow">â</span>
     </a>
 
 <a class="card-link" href="dashboard/index.html">
   <div class="card-icon">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
       <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
     </svg>
@@ -119,46 +119,46 @@
     <div class="card-title">Perfil da Equipe</div>
     <div class="card-desc">Indicadores gerais sobre a equipe ZenFisio</div>
   </div>
-  <span class="card-arrow">→</span>
+  <span class="card-arrow">â</span>
 </a>
    
     <!-- Ouvidoria -->
     <div class="card-group">
       <button class="card-toggle" onclick="toggle('ouvidoria')">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             <line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="12" y2="13"/>
           </svg>
         </div>
         <div class="card-body">
-          <div class="card-title">Ouvidoria — Conecta ZenFisio</div>
-          <div class="card-desc">Envie sua opinião, sugestão ou reclamação</div>
+          <div class="card-title">Ouvidoria â Conecta ZenFisio</div>
+          <div class="card-desc">Envie sua opiniÃ£o, sugestÃ£o ou reclamaÃ§Ã£o</div>
         </div>
-        <span class="card-arrow" id="arrow-ouvidoria">→</span>
+        <span class="card-arrow" id="arrow-ouvidoria">â</span>
       </button>
       <div class="sub-items" id="sub-ouvidoria">
         <div class="sub-link" onclick="abrirOuvidoria()" style="cursor:pointer;">
           <div class="sub-body">
             <div class="sub-title">Enviar mensagem</div>
-            <div class="sub-desc">Anônimo ou identificado — tratado com sigilo pelo RH</div>
+            <div class="sub-desc">AnÃ´nimo ou identificado â tratado com sigilo pelo RH</div>
           </div>
-          <span class="sub-arrow">→</span>
+          <span class="sub-arrow">â</span>
         </div>
         <a class="sub-link" href="painel-ouvidoria/index.html">
           <div class="sub-body">
             <div class="sub-title">Painel da Ouvidoria</div>
-            <div class="sub-desc">Consulta e gestão das mensagens recebidas — RH</div>
+            <div class="sub-desc">Consulta e gestÃ£o das mensagens recebidas â RH</div>
           </div>
-          <span class="sub-arrow">→</span>
+          <span class="sub-arrow">â</span>
         </a>
       </div>
     </div>
 
-    <!-- Calendário -->
+    <!-- CalendÃ¡rio -->
     <a class="card-link" href="calendario/index.html">
       <div class="card-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
           <line x1="16" y1="2" x2="16" y2="6"/>
           <line x1="8" y1="2" x2="8" y2="6"/>
@@ -166,17 +166,17 @@
         </svg>
       </div>
       <div class="card-body">
-        <div class="card-title">Calendário de Eventos</div>
-        <div class="card-desc">Aniversários, admissões e férias da equipe</div>
+        <div class="card-title">CalendÃ¡rio de Eventos</div>
+        <div class="card-desc">AniversÃ¡rios, admissÃµes e fÃ©rias da equipe</div>
       </div>
-      <span class="card-arrow">→</span>
+      <span class="card-arrow">â</span>
     </a>
 
-    <!-- Solicitações -->
+    <!-- SolicitaÃ§Ãµes -->
     <div class="card-group">
       <button class="card-toggle" onclick="toggle('solicitacoes')">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
             <polyline points="14 2 14 8 20 8"/>
             <line x1="9" y1="13" x2="15" y2="13"/>
@@ -184,54 +184,54 @@
           </svg>
         </div>
         <div class="card-body">
-          <div class="card-title">Solicitações</div>
-          <div class="card-desc">Férias e folgas — nova solicitação ou ajuste</div>
+          <div class="card-title">SolicitaÃ§Ãµes</div>
+          <div class="card-desc">FÃ©rias e folgas â nova solicitaÃ§Ã£o ou ajuste</div>
         </div>
-        <span class="card-arrow" id="arrow-solicitacoes">→</span>
+        <span class="card-arrow" id="arrow-solicitacoes">â</span>
       </button>
       <div class="sub-items" id="sub-solicitacoes">
         <a class="sub-link" href="solicitacoes/index.html?aba=ferias">
           <div class="sub-body">
-            <div class="sub-title">🏖️ Solicitação de Férias</div>
-            <div class="sub-desc">Nova solicitação ou ajuste de período</div>
+            <div class="sub-title">ðï¸ SolicitaÃ§Ã£o de FÃ©rias</div>
+            <div class="sub-desc">Nova solicitaÃ§Ã£o ou ajuste de perÃ­odo</div>
           </div>
-          <span class="sub-arrow">→</span>
+          <span class="sub-arrow">â</span>
         </a>
         <a class="sub-link" href="solicitacoes/index.html?aba=folga">
           <div class="sub-body">
-            <div class="sub-title">📅 Solicitação de Folga</div>
-            <div class="sub-desc">Antecipação de férias, abono ou outro</div>
+            <div class="sub-title">ð SolicitaÃ§Ã£o de Folga</div>
+            <div class="sub-desc">AntecipaÃ§Ã£o de fÃ©rias, abono ou outro</div>
           </div>
-          <span class="sub-arrow">→</span>
+          <span class="sub-arrow">â</span>
         </a>
         <a class="sub-link" href="painel-solicitacoes/index.html">
           <div class="sub-body">
-            <div class="sub-title">🗂️ Painel de Solicitações</div>
-            <div class="sub-desc">Consulta e gestão das solicitações — RH</div>
+            <div class="sub-title">ðï¸ Painel de SolicitaÃ§Ãµes</div>
+            <div class="sub-desc">Consulta e gestÃ£o das solicitaÃ§Ãµes â RH</div>
           </div>
-          <span class="sub-arrow">→</span>
+          <span class="sub-arrow">â</span>
         </a>
       </div>
     </div>
 
-    <!-- Contratação -->
+    <!-- ContrataÃ§Ã£o -->
     <div class="card-group">
       <button class="card-toggle" onclick="toggle('contratacao')">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
         </div>
         <div class="card-body">
-          <div class="card-title">Contratação</div>
-          <div class="card-desc">Formulários e checklists de admissão</div>
+          <div class="card-title">ContrataÃ§Ã£o</div>
+          <div class="card-desc">FormulÃ¡rios e checklists de admissÃ£o</div>
         </div>
-        <span class="card-arrow" id="arrow-contratacao">→</span>
+        <span class="card-arrow" id="arrow-contratacao">â</span>
       </button>
       <div class="sub-items" id="sub-contratacao">
-        <a class="sub-link" href="admissao/index.html"><div class="sub-body"><div class="sub-title">Ficha de Admissão</div><div class="sub-desc">Formulário para ingresso de colaboradores</div></div><span class="sub-arrow">→</span></a>
-        <a class="sub-link" href="admissao-admin/index.html"><div class="sub-body"><div class="sub-title">Admissão — Admin</div><div class="sub-desc">Formulário interno de admissão para o RH</div></div><span class="sub-arrow">→</span></a>
-        <a class="sub-link" href="checklist-contratacao/index.html"><div class="sub-body"><div class="sub-title">Checklist de Contratação</div><div class="sub-desc">Conferência de documentos e registros de admissão</div></div><span class="sub-arrow">→</span></a>
+        <a class="sub-link" href="admissao/index.html"><div class="sub-body"><div class="sub-title">Ficha de AdmissÃ£o</div><div class="sub-desc">FormulÃ¡rio para ingresso de colaboradores</div></div><span class="sub-arrow">â</span></a>
+        <a class="sub-link" href="admissao-admin/index.html"><div class="sub-body"><div class="sub-title">AdmissÃ£o â Admin</div><div class="sub-desc">FormulÃ¡rio interno de admissÃ£o para o RH</div></div><span class="sub-arrow">â</span></a>
+        <a class="sub-link" href="checklist-contratacao/index.html"><div class="sub-body"><div class="sub-title">Checklist de ContrataÃ§Ã£o</div><div class="sub-desc">ConferÃªncia de documentos e registros de admissÃ£o</div></div><span class="sub-arrow">â</span></a>
       </div>
     </div>
 
@@ -239,20 +239,20 @@
     <div class="card-group">
       <button class="card-toggle" onclick="toggle('desligamento')">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
           </svg>
         </div>
         <div class="card-body">
           <div class="card-title">Desligamento</div>
-          <div class="card-desc">Processos de encerramento de vínculo</div>
+          <div class="card-desc">Processos de encerramento de vÃ­nculo</div>
         </div>
-        <span class="card-arrow" id="arrow-desligamento">→</span>
+        <span class="card-arrow" id="arrow-desligamento">â</span>
       </button>
       <div class="sub-items" id="sub-desligamento">
-        <a class="sub-link" href="solicitacao-desligamento/index.html"><div class="sub-body"><div class="sub-title">Solicitação de Desligamento</div><div class="sub-desc">Registro interno para gestores e RH</div></div><span class="sub-arrow">→</span></a>
-        <a class="sub-link" href="entrevista/index.html"><div class="sub-body"><div class="sub-title">Entrevista de Desligamento</div><div class="sub-desc">Formulário para o colaborador responder</div></div><span class="sub-arrow">→</span></a>
-        <a class="sub-link" href="checklist-desligamento-admin/index.html"><div class="sub-body"><div class="sub-title">Checklist de Desligamento</div><div class="sub-desc">Procedimentos de saída do colaborador</div></div><span class="sub-arrow">→</span></a>
+        <a class="sub-link" href="solicitacao-desligamento/index.html"><div class="sub-body"><div class="sub-title">SolicitaÃ§Ã£o de Desligamento</div><div class="sub-desc">Registro interno para gestores e RH</div></div><span class="sub-arrow">â</span></a>
+        <a class="sub-link" href="entrevista/index.html"><div class="sub-body"><div class="sub-title">Entrevista de Desligamento</div><div class="sub-desc">FormulÃ¡rio para o colaborador responder</div></div><span class="sub-arrow">â</span></a>
+        <a class="sub-link" href="checklist-desligamento-admin/index.html"><div class="sub-body"><div class="sub-title">Checklist de Desligamento</div><div class="sub-desc">Procedimentos de saÃ­da do colaborador</div></div><span class="sub-arrow">â</span></a>
       </div>
     </div>
 
@@ -260,7 +260,7 @@
     <div class="card-group">
       <button class="card-toggle" onclick="toggle('acompanhamento')">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
           </svg>
         </div>
@@ -268,44 +268,44 @@
           <div class="card-title">Acompanhamento</div>
           <div class="card-desc">Ferramentas de desenvolvimento e feedback</div>
         </div>
-        <span class="card-arrow" id="arrow-acompanhamento">→</span>
+        <span class="card-arrow" id="arrow-acompanhamento">â</span>
       </button>
       <div class="sub-items" id="sub-acompanhamento">
-        <a class="sub-link" href="feedback/index.html"><div class="sub-body"><div class="sub-title">Registro de Feedback</div><div class="sub-desc">Feedback 1:1 entre gestor e colaborador</div></div><span class="sub-arrow">→</span></a>
-        <div style="margin: 0.75rem 0 0.5rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-hint); padding: 0 0.25rem;">Avaliação — Período de Experiência</div>
-        <a class="sub-link" href="avaliacao-colaborador/index.html"><div class="sub-body"><div class="sub-title">Avaliação Colaborador</div><div class="sub-desc">Autoavaliação no período de experiência</div></div><span class="sub-arrow">→</span></a>
-        <a class="sub-link" href="avaliacao-lider/index.html"><div class="sub-body"><div class="sub-title">Avaliação Líder</div><div class="sub-desc">Avaliação do colaborador pelo gestor</div></div><span class="sub-arrow">→</span></a>
-        <a class="sub-link" href="entrevistas-admin/index.html"><div class="sub-body"><div class="sub-title">Entrevistas de Acompanhamento</div><div class="sub-desc">Consulta e painel de respostas das avaliações</div></div><span class="sub-arrow">→</span></a>
+        <a class="sub-link" href="feedback/index.html"><div class="sub-body"><div class="sub-title">Registro de Feedback</div><div class="sub-desc">Feedback 1:1 entre gestor e colaborador</div></div><span class="sub-arrow">â</span></a>
+        <div style="margin: 0.75rem 0 0.5rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-hint); padding: 0 0.25rem;">AvaliaÃ§Ã£o â PerÃ­odo de ExperiÃªncia</div>
+        <a class="sub-link" href="avaliacao-colaborador/index.html"><div class="sub-body"><div class="sub-title">AvaliaÃ§Ã£o Colaborador</div><div class="sub-desc">AutoavaliaÃ§Ã£o no perÃ­odo de experiÃªncia</div></div><span class="sub-arrow">â</span></a>
+        <a class="sub-link" href="avaliacao-lider/index.html"><div class="sub-body"><div class="sub-title">AvaliaÃ§Ã£o LÃ­der</div><div class="sub-desc">AvaliaÃ§Ã£o do colaborador pelo gestor</div></div><span class="sub-arrow">â</span></a>
+        <a class="sub-link" href="entrevistas-admin/index.html"><div class="sub-body"><div class="sub-title">Entrevistas de Acompanhamento</div><div class="sub-desc">Consulta e painel de respostas das avaliaÃ§Ãµes</div></div><span class="sub-arrow">â</span></a>
       </div>
     </div>
 
    <a class="card-link" href="painel-gestao/index.html">
   <div class="card-icon">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 2L2 7l10 5 10-5-10-5z"/>
       <path d="M2 17l10 5 10-5"/>
       <path d="M2 12l10 5 10-5"/>
     </svg>
   </div>
   <div class="card-body">
-    <div class="card-title">Painel de Gestão</div>
-    <div class="card-desc">Remuneração e indicadores — acesso restrito RH</div>
+    <div class="card-title">Painel de GestÃ£o</div>
+    <div class="card-desc">RemuneraÃ§Ã£o e indicadores â acesso restrito RH</div>
   </div>
-  <span class="card-arrow">→</span>
+  <span class="card-arrow">â</span>
 </a> 
    
     <!-- Aniversariantes -->
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;text-align:left;transition:border-color 0.15s,box-shadow 0.15s;" onmouseover="this.style.borderColor='#4A7C59';this.style.boxShadow='0 4px 16px rgba(74,124,89,0.1)'" onmouseout="this.style.borderColor='#DDE0D8';this.style.boxShadow='none'">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;text-align:left;transition:border-color 0.15s,box-shadow 0.15s;" onmouseover="this.style.borderColor='#2E4DA6';this.style.boxShadow='0 4px 16px rgba(46,77,166,0.1)'" onmouseout="this.style.borderColor='#C8D6E8';this.style.boxShadow='none'">
       <div style="display:flex;align-items:center;gap:16px;margin-bottom:0.9rem;">
         <div class="card-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E4DA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="10" width="20" height="12" rx="2"/>
             <path d="M12 2a4 4 0 0 1 4 4v4H8V6a4 4 0 0 1 4-4z"/>
             <line x1="12" y1="2" x2="12" y2="4"/>
           </svg>
         </div>
         <div class="card-body">
-          <div class="card-title">🎂 Aniversariantes do Mês</div>
+          <div class="card-title">ð Aniversariantes do MÃªs</div>
           <div class="card-desc" id="aniv-desc">Carregando...</div>
         </div>
       </div>
@@ -320,25 +320,25 @@
 <div class="modal-overlay" id="modal-ouvidoria" onclick="fecharModalClick(event)">
   <div class="modal">
     <div class="modal-header">
-      <h2>💬 Ouvidoria — Conecta ZenFisio</h2>
-      <button class="modal-close" onclick="fecharOuvidoria()">✕</button>
+      <h2>ð¬ Ouvidoria â Conecta ZenFisio</h2>
+      <button class="modal-close" onclick="fecharOuvidoria()">â</button>
     </div>
     <div class="modal-body" id="modal-form">
       <div class="modal-aviso">
-        🔒 Sua mensagem é tratada com sigilo pelo RH. A identificação é totalmente opcional.
+        ð Sua mensagem Ã© tratada com sigilo pelo RH. A identificaÃ§Ã£o Ã© totalmente opcional.
       </div>
       <div class="form-field">
-        <label>Nome <span class="opcional">(opcional — deixe em branco para envio anônimo)</span></label>
+        <label>Nome <span class="opcional">(opcional â deixe em branco para envio anÃ´nimo)</span></label>
         <input type="text" id="ouv-nome" placeholder="Seu nome ou apelido" maxlength="100">
       </div>
       <div class="form-field">
         <label>Categoria <span class="opcional">*</span></label>
         <div class="categorias">
           <span class="cat-pill" onclick="selecionarCategoria(this)">Elogio</span>
-          <span class="cat-pill" onclick="selecionarCategoria(this)">Sugestão</span>
-          <span class="cat-pill" onclick="selecionarCategoria(this)">Reclamação</span>
-          <span class="cat-pill" onclick="selecionarCategoria(this)">Dúvida</span>
-          <span class="cat-pill" onclick="selecionarCategoria(this)">Denúncia</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">SugestÃ£o</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">ReclamaÃ§Ã£o</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">DÃºvida</span>
+          <span class="cat-pill" onclick="selecionarCategoria(this)">DenÃºncia</span>
           <span class="cat-pill" onclick="selecionarCategoria(this)">Outro</span>
         </div>
       </div>
@@ -350,9 +350,9 @@
       <button class="btn-enviar" id="btn-enviar" onclick="enviarOuvidoria()">Enviar mensagem</button>
     </div>
     <div class="modal-sucesso" id="modal-sucesso">
-      <div class="sucesso-icon">✅</div>
+      <div class="sucesso-icon">â</div>
       <div class="sucesso-titulo">Mensagem enviada!</div>
-      <div class="sucesso-desc">Obrigado pelo seu retorno. Sua mensagem foi recebida pelo RH e será tratada com sigilo.</div>
+      <div class="sucesso-desc">Obrigado pelo seu retorno. Sua mensagem foi recebida pelo RH e serÃ¡ tratada com sigilo.</div>
       <button class="btn-fechar" onclick="fecharOuvidoria()">Fechar</button>
     </div>
   </div>
@@ -427,7 +427,7 @@
         method: 'POST', mode: 'no-cors',
         body: JSON.stringify({
           tipo: 'ouvidoria',
-          nome: nome || 'Anônimo',
+          nome: nome || 'AnÃ´nimo',
           categorias: categoriasSelecionadas.join(', '),
           mensagem,
           data: new Date().toLocaleString('pt-BR'),
@@ -447,11 +447,11 @@
     const arrow = document.getElementById('arrow-' + id);
     const isOpen = sub.classList.contains('open');
     document.querySelectorAll('.sub-items').forEach(el => el.classList.remove('open'));
-    document.querySelectorAll('.card-arrow[id]').forEach(el => { el.classList.remove('open'); el.textContent = '→'; });
+    document.querySelectorAll('.card-arrow[id]').forEach(el => { el.classList.remove('open'); el.textContent = 'â'; });
     if (!isOpen) {
       sub.classList.add('open');
       arrow.classList.add('open');
-      arrow.textContent = '↓';
+      arrow.textContent = 'â';
     }
   }
 
@@ -460,7 +460,7 @@
     const SHEET_ID = '1X0PlIpFRuZudc4vgbpFotm2lPjQf1eDeIMExNNPYQbQ';
     const GID = '786777393';
     const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}`;
-    const nomesMes = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+    const nomesMes = ['Janeiro','Fevereiro','MarÃ§o','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
     const mesAtual = new Date().getMonth();
     const nomeMes = nomesMes[mesAtual];
     const mesNum = String(mesAtual + 1).padStart(2, '0');
@@ -481,16 +481,16 @@
         if (partes.length === 2 && partes[1].trim() === mesNum) aniversariantes.push({ nome, data });
       }
       aniversariantes.sort((a, b) => parseInt(a.data) - parseInt(b.data));
-      if (aniversariantes.length === 0) { descEl.textContent = nomeMes + ' — nenhum aniversariante'; return; }
-      descEl.textContent = nomeMes + ' · ' + aniversariantes.length + ' aniversariante' + (aniversariantes.length > 1 ? 's' : '');
+      if (aniversariantes.length === 0) { descEl.textContent = nomeMes + ' â nenhum aniversariante'; return; }
+      descEl.textContent = nomeMes + ' Â· ' + aniversariantes.length + ' aniversariante' + (aniversariantes.length > 1 ? 's' : '');
       listaEl.innerHTML = aniversariantes.map((a, i, arr) => {
         const borda = i < arr.length - 1 ? 'border-bottom:1px solid #f0f0ec;' : '';
         return `<div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;${borda}font-family:'DM Sans',sans-serif;">
-          <span style="font-size:14px;font-weight:500;color:#1C201A;">🎉 ${a.nome}</span>
+          <span style="font-size:14px;font-weight:500;color:#1C201A;">ð ${a.nome}</span>
           <span style="font-size:13px;color:#9AA394;font-weight:600;">${a.data}</span>
         </div>`;
       }).join('');
-    } catch(e) { descEl.textContent = 'Não foi possível carregar os dados.'; }
+    } catch(e) { descEl.textContent = 'NÃ£o foi possÃ­vel carregar os dados.'; }
   })();
 </script>
 </body>
