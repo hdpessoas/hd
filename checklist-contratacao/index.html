@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Checklist de ContrataÃ§Ã£o | ZenFisio</title>
+  <title>Checklist de ContrataÃ§Ã£o | HD Distribuidora</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -175,19 +175,19 @@
 
   <!-- SCREEN HEADER -->
   <div class="page-header">
-    <img src="../logo.jpg" class="header-logo" alt="ZenFisio"/>
+    <img src="../logo.jpg" class="header-logo" alt="HD Distribuidora"/>
     <div>
       <h1>Checklist de ContrataÃ§Ã£o</h1>
-      <p>Painel administrativo â ZenFisio RH</p>
+      <p>Painel administrativo â HD Distribuidora RH</p>
     </div>
   </div>
 
   <!-- PRINT HEADER -->
   <div class="print-header">
-    <img src="../logo.jpg" alt="ZenFisio"/>
+    <img src="../logo.jpg" alt="HD Distribuidora"/>
     <div class="print-header-text">
       <h1>Checklist de ContrataÃ§Ã£o</h1>
-      <p>ZenFisio Tecnologia da InformaÃ§Ã£o Ltda</p>
+      <p>HD Distribuidora Tecnologia da InformaÃ§Ã£o Ltda</p>
     </div>
   </div>
   <div class="print-colab-box" id="printColabBox">
@@ -334,7 +334,7 @@
           <span class="resp-tag tag-dir">Diretor</span>
         </div>
         <ul class="cl-list" id="list-reg-dir">
-          <li class="cl-item" onclick="toggleItem(this,'reg',5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CriaÃ§Ã£o de E-mail (ZenFisio e Drive)</span></li>
+          <li class="cl-item" onclick="toggleItem(this,'reg',5)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CriaÃ§Ã£o de E-mail (HD Distribuidora e Drive)</span></li>
           <li class="cl-item" onclick="toggleItem(this,'reg',6)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">CriaÃ§Ã£o de Conta no Slack</span></li>
           <li class="cl-item" onclick="toggleItem(this,'reg',7)"><div class="chkbox"><svg viewBox="0 0 12 10"><polyline points="1,5 4,9 11,1"/></svg></div><span class="cl-label">Encaminhamento para criaÃ§Ã£o de usuÃ¡rio nas ferramentas de trabalho (conforme setor)</span></li>
         </ul>
@@ -433,7 +433,7 @@ async function onColabChange() {
   if (currentColab.cargo) meta.push(currentColab.cargo);
   if (currentColab.departamento) meta.push(currentColab.departamento);
   if (currentColab.admissao) meta.push('AdmissÃ£o: ' + currentColab.admissao);
-  document.getElementById('colabMeta').textContent = meta.join(' Â· ') || 'Colaborador ZenFisio';
+  document.getElementById('colabMeta').textContent = meta.join(' Â· ') || 'Colaborador HD Distribuidora';
   document.getElementById('colabBanner').classList.add('visible');
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('tabsWrapper').classList.add('visible');
