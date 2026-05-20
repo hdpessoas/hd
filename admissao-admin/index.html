@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ficha de AdmissÃ£o â Admin HD Distribuidora</title>
+<title>Ficha de Admissão — Admin HD Distribuidora</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -86,17 +86,17 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);pad
 <!-- TELA DE LOGIN -->
 <div id="tela-login" style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#F0F3F8;padding:2rem 1rem;">
   <div style="background:white;border:1px solid #C8D6E8;border-radius:12px;padding:2.5rem 2rem;width:100%;max-width:380px;box-shadow:0 8px 32px rgba(0,0,0,0.08);">
-    <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:5px 12px;border-radius:8px;border:1.5px solid #2E4DA6;margin-bottom:1.5rem;transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">â InÃ­cio</a>
+    <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:5px 12px;border-radius:8px;border:1.5px solid #2E4DA6;margin-bottom:1.5rem;transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'">← Início</a>
     <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;">
       <img src="../logo.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" alt="HD Distribuidora"/>
       <div>
-        <div style="font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:#2E4DA6;">AdmissÃ£o â Admin</div>
-        <div style="font-size:0.78rem;color:#9AA394;margin-top:1px;">HD Distribuidora Â· GestÃ£o de Pessoas</div>
+        <div style="font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:#2E4DA6;">Admissão — Admin</div>
+        <div style="font-size:0.78rem;color:#9AA394;margin-top:1px;">HD Distribuidora · Gestão de Pessoas</div>
       </div>
     </div>
     <div style="margin-bottom:1rem;">
-      <label style="display:block;font-size:0.82rem;font-weight:600;color:#5E6659;margin-bottom:0.35rem;">UsuÃ¡rio</label>
-      <input type="text" id="inp-usuario" placeholder="seu usuÃ¡rio" autocomplete="username"
+      <label style="display:block;font-size:0.82rem;font-weight:600;color:#5E6659;margin-bottom:0.35rem;">Usuário</label>
+      <input type="text" id="inp-usuario" placeholder="seu usuário" autocomplete="username"
         style="width:100%;padding:10px 13px;border:1px solid #C8D6E8;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;"
         onkeydown="if(event.key==='Enter')fazerLogin()"
         onfocus="this.style.borderColor='#2E4DA6';this.style.boxShadow='0 0 0 3px rgba(46,77,166,0.1)'"
@@ -111,32 +111,32 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);pad
         onblur="this.style.borderColor='#C8D6E8';this.style.boxShadow='none'">
     </div>
     <button onclick="fazerLogin()" style="width:100%;padding:11px;background:#2E4DA6;color:white;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;" onmouseover="this.style.background='#3a6347'" onmouseout="this.style.background='#2E4DA6'">Entrar</button>
-    <div id="login-erro" style="display:none;background:#fdf0ee;border:1px solid #e8b4ae;border-radius:8px;padding:0.6rem 0.9rem;font-size:0.85rem;color:#9b3a2e;margin-top:0.75rem;">UsuÃ¡rio ou senha incorretos.</div>
+    <div id="login-erro" style="display:none;background:#fdf0ee;border:1px solid #e8b4ae;border-radius:8px;padding:0.6rem 0.9rem;font-size:0.85rem;color:#9b3a2e;margin-top:0.75rem;">Usuário ou senha incorretos.</div>
   </div>
 </div>
 <div id="tela-conteudo" style="display:none;">
 
-<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'" class="no-print">â InÃ­cio</a>
+<a href="../index.html" style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#2E4DA6;text-decoration:none;padding:6px 14px;border-radius:8px;border:1.5px solid #2E4DA6;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:background 0.15s;" onmouseover="this.style.background='#E8EDF8'" onmouseout="this.style.background='white'" class="no-print">← Início</a>
 
 
 <div class="container">
     <div class="page-header no-print">
     <img src="../logo.jpg" class="header-logo" alt="HD Distribuidora"/>
     <div>
-      <h1>HD Distribuidora â Admin RH</h1>
+      <h1>HD Distribuidora — Admin RH</h1>
       <p>Ficha de Cadastro de Empregado</p>
     </div>
   </div>
 
 
 
-  <!-- TELA DE SELEÃÃO -->
+  <!-- TELA DE SELEÇÃO -->
   <div id="select-screen">
     <div class="card">
       <div class="section-label">Fichas recebidas</div>
       <div class="alert-info">Clique em "Atualizar" para carregar as fichas enviadas pelos colaboradores. Selecione uma para completar os dados da empresa e gerar o PDF.</div>
       <div class="btn-group">
-        <button class="btn btn-primary" onclick="carregarFichas()">â» Atualizar fichas</button>
+        <button class="btn btn-primary" onclick="carregarFichas()">↻ Atualizar fichas</button>
         <button class="btn btn-ghost" onclick="novaFicha()">+ Preencher manualmente</button>
       </div>
       <div id="lista-fichas"><div class="empty">Clique em "Atualizar fichas" para carregar.</div></div>
@@ -150,21 +150,21 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);pad
       <img src="../logo.jpg" alt="HD Distribuidora" class="pdf-logo">
       <div>
         <div class="pdf-title">Ficha de Cadastro de Empregado</div>
-        <div class="pdf-sub">HD Distribuidora Tecnologia da InformaÃ§Ã£o Ltda â CNPJ: 35.824.553/0001-43</div>
+        <div class="pdf-sub">HD Distribuidora Tecnologia da Informação Ltda — CNPJ: 35.824.553/0001-43</div>
       </div>
     </div>
 
     <div class="btn-group no-print">
-      <button class="btn btn-ghost" onclick="voltarSelecao()">â Voltar</button>
-      <button class="btn btn-pdf" onclick="prepararPDF()">ð¨ï¸ Salvar como PDF</button>
+      <button class="btn btn-ghost" onclick="voltarSelecao()">← Voltar</button>
+      <button class="btn btn-pdf" onclick="prepararPDF()">🖨️ Salvar como PDF</button>
       <button class="btn btn-primary no-print" onclick="salvarNoSheets()" id="btnSalvar">
-        <span id="btnSalvarLabel">ð¾ Salvar no Sheets</span>
+        <span id="btnSalvarLabel">💾 Salvar no Sheets</span>
       </button>
     </div>
 
     <!-- Dados do colaborador -->
     <div class="card">
-      <div class="section-label">Dados do empregado â preenchido pelo colaborador</div>
+      <div class="section-label">Dados do empregado — preenchido pelo colaborador</div>
       <div class="field"><label>Nome completo</label><input type="text" id="f_nome" class="field-readonly" readonly></div>
       <div class="grid-3">
         <div class="field"><label>Data de nascimento</label><input type="text" id="f_nascimento" class="field-readonly" readonly></div>
@@ -172,12 +172,12 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);pad
         <div class="field"><label>UF</label><input type="text" id="f_uf_nasc" class="field-readonly" readonly></div>
       </div>
       <div class="grid-2">
-        <div class="field"><label>FiliaÃ§Ã£o â Pai</label><input type="text" id="f_pai" class="field-readonly" readonly></div>
-        <div class="field"><label>FiliaÃ§Ã£o â MÃ£e</label><input type="text" id="f_mae" class="field-readonly" readonly></div>
+        <div class="field"><label>Filiação — Pai</label><input type="text" id="f_pai" class="field-readonly" readonly></div>
+        <div class="field"><label>Filiação — Mãe</label><input type="text" id="f_mae" class="field-readonly" readonly></div>
       </div>
       <div class="grid-2">
-        <div class="field"><label>EndereÃ§o residencial</label><input type="text" id="f_endereco" class="field-readonly" readonly></div>
-        <div class="field"><label>NÃºmero</label><input type="text" id="f_numero" class="field-readonly" readonly></div>
+        <div class="field"><label>Endereço residencial</label><input type="text" id="f_endereco" class="field-readonly" readonly></div>
+        <div class="field"><label>Número</label><input type="text" id="f_numero" class="field-readonly" readonly></div>
       </div>
       <div class="grid-3">
         <div class="field"><label>Complemento</label><input type="text" id="f_complemento" class="field-readonly" readonly></div>
@@ -198,94 +198,94 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);pad
         <div class="field"><label>Quantidade</label><input type="text" id="f_qtd_filhos" class="field-readonly" readonly></div>
       </div>
       <div class="grid-2">
-        <div class="field"><label>Nome do cÃ´njuge</label><input type="text" id="f_conjuge" class="field-readonly" readonly></div>
-        <div class="field"><label>Nasc. cÃ´njuge</label><input type="text" id="f_nasc_conjuge" class="field-readonly" readonly></div>
+        <div class="field"><label>Nome do cônjuge</label><input type="text" id="f_conjuge" class="field-readonly" readonly></div>
+        <div class="field"><label>Nasc. cônjuge</label><input type="text" id="f_nasc_conjuge" class="field-readonly" readonly></div>
       </div>
       <div class="grid-3">
         <div class="field"><label>CTPS Digital?</label><input type="text" id="f_ctps_digital" class="field-readonly" readonly></div>
-        <div class="field"><label>NÂº CTPS</label><input type="text" id="f_ctps_num" class="field-readonly" readonly></div>
-        <div class="field"><label>SÃ©rie / Data</label><input type="text" id="f_ctps_serie" class="field-readonly" readonly></div>
+        <div class="field"><label>Nº CTPS</label><input type="text" id="f_ctps_num" class="field-readonly" readonly></div>
+        <div class="field"><label>Série / Data</label><input type="text" id="f_ctps_serie" class="field-readonly" readonly></div>
       </div>
       <div class="grid-3">
-        <div class="field"><label>NÂº do RG</label><input type="text" id="f_rg" class="field-readonly" readonly></div>
-        <div class="field"><label>Data expediÃ§Ã£o RG</label><input type="text" id="f_rg_data" class="field-readonly" readonly></div>
-        <div class="field"><label>ÃrgÃ£o emissor</label><input type="text" id="f_rg_orgao" class="field-readonly" readonly></div>
+        <div class="field"><label>Nº do RG</label><input type="text" id="f_rg" class="field-readonly" readonly></div>
+        <div class="field"><label>Data expedição RG</label><input type="text" id="f_rg_data" class="field-readonly" readonly></div>
+        <div class="field"><label>Órgão emissor</label><input type="text" id="f_rg_orgao" class="field-readonly" readonly></div>
       </div>
       <div class="grid-3">
         <div class="field"><label>CPF</label><input type="text" id="f_cpf" class="field-readonly" readonly></div>
-        <div class="field"><label>NÂº do PIS</label><input type="text" id="f_pis" class="field-readonly" readonly></div>
+        <div class="field"><label>Nº do PIS</label><input type="text" id="f_pis" class="field-readonly" readonly></div>
         <div class="field"><label>Cadastro PIS em</label><input type="text" id="f_pis_data" class="field-readonly" readonly></div>
       </div>
       <div class="grid-3">
-        <div class="field"><label>TÃ­tulo de eleitor</label><input type="text" id="f_titulo" class="field-readonly" readonly></div>
+        <div class="field"><label>Título de eleitor</label><input type="text" id="f_titulo" class="field-readonly" readonly></div>
         <div class="field"><label>Zona</label><input type="text" id="f_zona" class="field-readonly" readonly></div>
-        <div class="field"><label>SeÃ§Ã£o</label><input type="text" id="f_secao" class="field-readonly" readonly></div>
+        <div class="field"><label>Seção</label><input type="text" id="f_secao" class="field-readonly" readonly></div>
       </div>
       <div class="grid-3">
-        <div class="field"><label>RaÃ§a / Cor</label><input type="text" id="f_raca" class="field-readonly" readonly></div>
-        <div class="field"><label>Grau de instruÃ§Ã£o</label><input type="text" id="f_instrucao" class="field-readonly" readonly></div>
+        <div class="field"><label>Raça / Cor</label><input type="text" id="f_raca" class="field-readonly" readonly></div>
+        <div class="field"><label>Grau de instrução</label><input type="text" id="f_instrucao" class="field-readonly" readonly></div>
         <div class="field"><label>Primeiro emprego?</label><input type="text" id="f_primeiro" class="field-readonly" readonly></div>
       </div>
     </div>
 
     <!-- Preenchimento da empresa -->
     <div class="card">
-      <div class="section-label">Preenchimento da empresa â RH HD Distribuidora</div>
+      <div class="section-label">Preenchimento da empresa — RH HD Distribuidora</div>
       <div class="grid-2">
-        <div class="field"><label>FunÃ§Ã£o</label><input type="text" id="f_funcao" placeholder="Cargo/funÃ§Ã£o"></div>
-        <div class="field"><label>Data de admissÃ£o</label><input type="date" id="f_admissao"></div>
+        <div class="field"><label>Função</label><input type="text" id="f_funcao" placeholder="Cargo/função"></div>
+        <div class="field"><label>Data de admissão</label><input type="date" id="f_admissao"></div>
       </div>
       <div class="grid-2">
-        <div class="field"><label>Departamento</label><input type="text" id="f_departamento" placeholder="Ãrea/setor"></div>
-        <div class="field"><label>Contrato de experiÃªncia (dias)</label><input type="text" id="f_contrato" placeholder="Ex: 45 dias"></div>
+        <div class="field"><label>Departamento</label><input type="text" id="f_departamento" placeholder="Área/setor"></div>
+        <div class="field"><label>Contrato de experiência (dias)</label><input type="text" id="f_contrato" placeholder="Ex: 45 dias"></div>
       </div>
       <div class="grid-2">
-        <div class="field"><label>SalÃ¡rio contratual (R$)</label><input type="text" id="f_salario" placeholder="0,00"></div>
-        <div class="field"><label>BenefÃ­cios</label><input type="text"></div>
+        <div class="field"><label>Salário contratual (R$)</label><input type="text" id="f_salario" placeholder="0,00"></div>
+        <div class="field"><label>Benefícios</label><input type="text"></div>
       </div>
-      <div class="subsection">HorÃ¡rio de trabalho</div>
+      <div class="subsection">Horário de trabalho</div>
       <div class="grid-2">
-        <div class="field"><label>Segunda a sexta â ManhÃ£</label><input type="text" id="f_h_manha" value="08:00h Ã s 12:00h"></div>
-        <div class="field"><label>Segunda a sexta â Tarde</label><input type="text" id="f_h_tarde" value="13:30h Ã s 17:30h"></div>
+        <div class="field"><label>Segunda a sexta — Manhã</label><input type="text" id="f_h_manha" value="08:00h às 12:00h"></div>
+        <div class="field"><label>Segunda a sexta — Tarde</label><input type="text" id="f_h_tarde" value="13:30h às 17:30h"></div>
       </div>
       <div class="grid-2">
-        <div class="field"><label>SÃ¡bados</label><input type="text" id="f_h_sab" placeholder="â"></div>
-        <div class="field"><label>Domingos</label><input type="text" id="f_h_dom" placeholder="â"></div>
+        <div class="field"><label>Sábados</label><input type="text" id="f_h_sab" placeholder="—"></div>
+        <div class="field"><label>Domingos</label><input type="text" id="f_h_dom" placeholder="—"></div>
       </div>
-      <div class="subsection">BenefÃ­cios e descontos</div>
+      <div class="subsection">Benefícios e descontos</div>
       <div class="grid-2">
         <div class="field">
           <label>Desconta Vale Transporte?</label>
           <div class="radio-group">
             <div class="radio-btn" onclick="sel(this)">Sim</div>
-            <div class="radio-btn on" onclick="sel(this)">NÃ£o</div>
+            <div class="radio-btn on" onclick="sel(this)">Não</div>
           </div>
         </div>
-        <div class="field"><label>Quantos VT/dia?</label><input type="text" id="f_vt_qtd" placeholder="â"></div>
+        <div class="field"><label>Quantos VT/dia?</label><input type="text" id="f_vt_qtd" placeholder="—"></div>
       </div>
       <div class="grid-2">
         <div class="field">
-          <label>Desconta Vale RefeiÃ§Ã£o?</label>
+          <label>Desconta Vale Refeição?</label>
           <div class="radio-group">
             <div class="radio-btn" onclick="sel(this)">Sim</div>
-            <div class="radio-btn on" onclick="sel(this)">NÃ£o</div>
+            <div class="radio-btn on" onclick="sel(this)">Não</div>
           </div>
         </div>
-        <div class="field"><label>Valor do VR</label><input type="text" id="f_vr_val" placeholder="â"></div>
+        <div class="field"><label>Valor do VR</label><input type="text" id="f_vr_val" placeholder="—"></div>
       </div>
       <div class="grid-2">
         <div class="field">
-          <label>Recebe adiantamento de salÃ¡rio?</label>
+          <label>Recebe adiantamento de salário?</label>
           <div class="radio-group">
             <div class="radio-btn" onclick="sel(this)">Sim</div>
-            <div class="radio-btn on" onclick="sel(this)">NÃ£o</div>
+            <div class="radio-btn on" onclick="sel(this)">Não</div>
           </div>
         </div>
         <div class="field">
           <label>Possui PPRA/LTCAT?</label>
           <div class="radio-group">
             <div class="radio-btn" onclick="sel(this)">Sim</div>
-            <div class="radio-btn on" onclick="sel(this)">NÃ£o</div>
+            <div class="radio-btn on" onclick="sel(this)">Não</div>
           </div>
         </div>
       </div>
@@ -294,21 +294,21 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);pad
           <label>Periculosidade?</label>
           <div class="radio-group">
             <div class="radio-btn" onclick="sel(this)">Sim</div>
-            <div class="radio-btn on" onclick="sel(this)">NÃ£o</div>
+            <div class="radio-btn on" onclick="sel(this)">Não</div>
           </div>
         </div>
         <div class="field">
           <label>Insalubridade?</label>
           <div class="radio-group">
             <div class="radio-btn" onclick="sel(this)">Sim</div>
-            <div class="radio-btn on" onclick="sel(this)">NÃ£o</div>
+            <div class="radio-btn on" onclick="sel(this)">Não</div>
             <div class="radio-btn" onclick="sel(this)">40%</div>
             <div class="radio-btn" onclick="sel(this)">20%</div>
             <div class="radio-btn" onclick="sel(this)">10%</div>
           </div>
         </div>
       </div>
-      <div class="field"><label>ObservaÃ§Ãµes</label><textarea id="f_obs" placeholder="InformaÃ§Ãµes adicionais..."></textarea></div>
+      <div class="field"><label>Observações</label><textarea id="f_obs" placeholder="Informações adicionais..."></textarea></div>
     </div>
 
   </div>
@@ -332,15 +332,15 @@ function carregarFichas() {
         <div class="ficha-item" onclick="selecionarFicha(${i})">
           <div>
             <div class="ficha-nome">${f['Nome'] || 'Sem nome'}</div>
-            <div class="ficha-data">Enviado em: ${f['Data Envio'] || 'â'} Â· CPF: ${f['CPF'] || 'â'}</div>
+            <div class="ficha-data">Enviado em: ${f['Data Envio'] || '—'} · CPF: ${f['CPF'] || '—'}</div>
           </div>
-          <span class="ficha-arrow">â</span>
+          <span class="ficha-arrow">→</span>
         </div>
       `).join('');
       window._fichas = data.fichas;
     })
     .catch(() => {
-      lista.innerHTML = '<div class="empty">Erro ao carregar. Verifique sua conexÃ£o.</div>';
+      lista.innerHTML = '<div class="empty">Erro ao carregar. Verifique sua conexão.</div>';
     });
 }
 
@@ -370,9 +370,9 @@ function selecionarFicha(idx) {
   set('f_naturalidade', get(['Naturalidade']));
   set('f_uf_nasc',      get(['UF Nasc']));
   set('f_pai',          get(['Pai']));
-  set('f_mae',          get(['MÃ£e','Mae']));
-  set('f_endereco',     get(['EndereÃ§o','Endereco']));
-  set('f_numero',       get(['NÃºmero','Numero']));
+  set('f_mae',          get(['Mãe','Mae']));
+  set('f_endereco',     get(['Endereço','Endereco']));
+  set('f_numero',       get(['Número','Numero']));
   set('f_complemento',  get(['Complemento']));
   set('f_bairro',       get(['Bairro']));
   set('f_cidade',       get(['Cidade']));
@@ -383,22 +383,22 @@ function selecionarFicha(idx) {
   set('f_estado_civil', get(['Estado Civil']));
   set('f_filhos',       get(['Filhos']));
   set('f_qtd_filhos',   get(['Qtd Filhos']));
-  set('f_conjuge',      get(['CÃ´njuge','Conjuge']));
-  set('f_nasc_conjuge', get(['Nasc CÃ´njuge','Nasc Conjuge']));
+  set('f_conjuge',      get(['Cônjuge','Conjuge']));
+  set('f_nasc_conjuge', get(['Nasc Cônjuge','Nasc Conjuge']));
   set('f_ctps_digital', get(['CTPS Digital']));
-  set('f_ctps_num',     get(['NÂº CTPS','CTPS Num']));
-  set('f_ctps_serie',   get(['SÃ©rie CTPS','CTPS Serie']));
+  set('f_ctps_num',     get(['Nº CTPS','CTPS Num']));
+  set('f_ctps_serie',   get(['Série CTPS','CTPS Serie']));
   set('f_rg',           get(['RG']));
   set('f_rg_data',      get(['Data RG','RG Data']));
-  set('f_rg_orgao',     get(['ÃrgÃ£o RG','RG Orgao']));
+  set('f_rg_orgao',     get(['Órgão RG','RG Orgao']));
   set('f_cpf',          get(['CPF']));
   set('f_pis',          get(['PIS']));
   set('f_pis_data',     get(['Data PIS','PIS Data']));
-  set('f_titulo',       get(['TÃ­tulo Eleitor','Titulo']));
+  set('f_titulo',       get(['Título Eleitor','Titulo']));
   set('f_zona',         get(['Zona']));
-  set('f_secao',        get(['SeÃ§Ã£o','Secao']));
-  set('f_raca',         get(['RaÃ§a','Raca']));
-  set('f_instrucao',    get(['InstruÃ§Ã£o','Instrucao']));
+  set('f_secao',        get(['Seção','Secao']));
+  set('f_raca',         get(['Raça','Raca']));
+  set('f_instrucao',    get(['Instrução','Instrucao']));
   set('f_primeiro',     get(['Primeiro Emprego']));
   document.getElementById('select-screen').style.display = 'none';
   document.getElementById('form-screen').style.display = 'block';
@@ -408,8 +408,8 @@ function selecionarFicha(idx) {
 
 function novaFicha() {
   document.querySelectorAll('[id^="f_"]').forEach(el => { if(el.tagName !== 'BUTTON') el.value = ''; });
-  document.getElementById('f_h_manha').value = '08:00h Ã s 12:00h';
-  document.getElementById('f_h_tarde').value = '13:30h Ã s 17:30h';
+  document.getElementById('f_h_manha').value = '08:00h às 12:00h';
+  document.getElementById('f_h_tarde').value = '13:30h às 17:30h';
   document.getElementById('select-screen').style.display = 'none';
   document.getElementById('form-screen').style.display = 'block';
   window.scrollTo(0,0);
@@ -474,7 +474,7 @@ function salvarNoSheets() {
   if (!nome) { alert('Selecione um colaborador antes de salvar.'); return; }
   const btn = document.getElementById('btnSalvar');
   const label = document.getElementById('btnSalvarLabel');
-  label.textContent = 'â³ Salvando...';
+  label.textContent = '⏳ Salvando...';
   btn.disabled = true;
   function radioVal(group) {
     const on = group ? group.querySelector('.radio-btn.on') : null;
@@ -507,14 +507,14 @@ function salvarNoSheets() {
     body: JSON.stringify(payload)
   })
   .then(() => {
-    label.textContent = 'â Salvo!';
+    label.textContent = '✓ Salvo!';
     btn.style.background = '#276843';
-    setTimeout(() => { label.textContent = 'ð¾ Salvar no Sheets'; btn.style.background = ''; btn.disabled = false; }, 3000);
+    setTimeout(() => { label.textContent = '💾 Salvar no Sheets'; btn.style.background = ''; btn.disabled = false; }, 3000);
   })
   .catch(() => {
-    label.textContent = 'â Erro';
+    label.textContent = '✗ Erro';
     btn.style.background = '#9b3a2e';
-    setTimeout(() => { label.textContent = 'ð¾ Salvar no Sheets'; btn.style.background = ''; btn.disabled = false; }, 3000);
+    setTimeout(() => { label.textContent = '💾 Salvar no Sheets'; btn.style.background = ''; btn.disabled = false; }, 3000);
   });
 }
 
@@ -529,22 +529,22 @@ function carregarDadosAdmin(nome) {
         const el = document.getElementById(id);
         if (el && val) el.value = val;
       }
-      const rawAdmissao = d['Data AdmissÃ£o'] || d['Data Admissao'] || '';
+      const rawAdmissao = d['Data Admissão'] || d['Data Admissao'] || '';
       let admissaoFmt = rawAdmissao;
       if (rawAdmissao && rawAdmissao.includes('T')) {
         const parts = rawAdmissao.split('T')[0].split('-');
         admissaoFmt = parts[0] + '-' + parts[1] + '-' + parts[2];
       }
-      setVal('f_funcao',       d['FunÃ§Ã£o'] || d['Funcao'] || d['funÃ§Ã£o'] || d['funcao'] || d['Cargo'] || '');
+      setVal('f_funcao',       d['Função'] || d['Funcao'] || d['função'] || d['funcao'] || d['Cargo'] || '');
       setVal('f_admissao',     admissaoFmt);
       setVal('f_departamento', d['Departamento'] || d['departamento'] || '');
-      setVal('f_contrato',     d['Contrato ExperiÃªncia'] || d['Contrato Experiencia'] || '');
-      setVal('f_salario',      d['SalÃ¡rio'] || d['Salario'] || '');
-      setVal('f_h_manha',      d['HorÃ¡rio ManhÃ£'] || d['Horario Manha'] || '');
-      setVal('f_h_tarde',      d['HorÃ¡rio Tarde'] || d['Horario Tarde'] || '');
-      setVal('f_h_sab',        d['HorÃ¡rio SÃ¡b'] || d['Horario Sab'] || '');
-      setVal('f_h_dom',        d['HorÃ¡rio Dom'] || d['Horario Dom'] || '');
-      setVal('f_obs',          d['ObservaÃ§Ãµes'] || d['Observacoes'] || '');
+      setVal('f_contrato',     d['Contrato Experiência'] || d['Contrato Experiencia'] || '');
+      setVal('f_salario',      d['Salário'] || d['Salario'] || '');
+      setVal('f_h_manha',      d['Horário Manhã'] || d['Horario Manha'] || '');
+      setVal('f_h_tarde',      d['Horário Tarde'] || d['Horario Tarde'] || '');
+      setVal('f_h_sab',        d['Horário Sáb'] || d['Horario Sab'] || '');
+      setVal('f_h_dom',        d['Horário Dom'] || d['Horario Dom'] || '');
+      setVal('f_obs',          d['Observações'] || d['Observacoes'] || '');
     })
     .catch(() => {});
 }
